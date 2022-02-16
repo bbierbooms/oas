@@ -5,7 +5,7 @@ info:
     Collection of PostNL API's for ecommerce processes
   version: v1
   x-logo:
-    url: http://localhost:7001/oas/logo.png
+    url: https://www.postnl.nl/img/logo.png
 servers:
   - url: 'https://api-sandbox.postnl.nl'
   - url: 'https://api.postnl.nl'
