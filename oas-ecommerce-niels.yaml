@@ -11467,8 +11467,8 @@ paths:
 #    $ref: ''
 #  '/shipment/v3/locations/lookup':
 #    $ref: ''
-#  '/shipment/v2_1/calculate/timeframes':
-#    $ref: ''
+  '/shipment/v2_1/calculate/timeframes':
+    $ref: 'https://api-acc.postnl.nl/shipment/v2_1/calculate/timeframes?swagger#/paths/~1shipment~1v2_1~1calculate~1timeframes'
 #  '/v1/shipment':
 #    $ref: ''
 #  '/shipment/v1_1/barcode':
