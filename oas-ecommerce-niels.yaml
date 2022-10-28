@@ -206,6 +206,10 @@ tags:
         OriginCountryCode  
         CutoffTime.Available  
         New delivery option: MyTime (Delivery on demand)
+        
+        __NOTE: THIS PRODUCT NO LONGER EXIST__
+    
+    * If applicable, sustainability scores are now returned for each option
 - name: Locations
   description: |
     ### Summary
@@ -218,7 +222,11 @@ tags:
     
     ### Guidelines
     
-    At the [DEVELOPER CENTER](https://developer.postnl.nl/browse-apis/delivery-options/location-webservice/documentation/) you can find information about the use and functionality of the API. It is strongly recommended that you read this carefully before starting the implementation.
+    At the <a href="https://developer.postnl.nl/" target="_blank" rel="noopener noreferrer">Developer Portal</a> you can find information about the use and functionality of the API. It is strongly recommended that you read this carefully before starting the implementation.
+    
+    <button type="button">
+      <a href="https://developer.postnl.nl/browse-apis/delivery-options/location-webservice/" target="_blank" rel="noopener noreferrer">Documentation</a>
+    </button>
     
     ### Versioning
     
@@ -264,14 +272,6 @@ tags:
           <td>Yes</td>
           <td>REST and SOAP</td>
         </tr>
-        <tr>
-          <td>v3</td>
-          <td>Jan 01, 2020</td>
-          <td>Current version</td>
-          <td>See below</td>
-          <td>Yes</td>
-          <td>REST</td>
-        </tr>
       </tbody>
     </table>
     
@@ -279,39 +279,40 @@ tags:
     
     #### v1.1
     
-    *   The operation GetNearestLocations has been updated with new request properties:  
-        Countrycode [M] has been added for international locations  
-        Location.City [O] has been added for better international matching  
-        Location.HouseNr [O] has been added for better international matching  
-        Location.HouseNrExt [O] has been added for better international matching  
-        Location.Street [O] has been added for better international matching*   The operation GetLocationsInArea has been updated with new request properties:  
-        Countrycode [M] has been added for international locations*   The operation GetBLSLocation has been removed*   The operation GetLocation has been added*   The Location Type has been extended with international address properties.
-    
+    * The operation GetNearestLocations has been updated with new request properties:  
+      * Countrycode [M] has been added for international locations  
+      * Location.City [O] has been added for better international matching  
+      * Location.HouseNr [O] has been added for better international matching  
+      * Location.HouseNrExt [O] has been added for better international matching  
+      * Location.Street [O] has been added for better international matching
+    * The operation GetLocationsInArea has been updated with new request properties:  
+      * Countrycode [M] has been added for international locations
+      * The operation GetBLSLocation has been removed
+      * The operation GetLocation has been added
+      * The Location Type has been extended with international address properties.
+        
     #### v2.1
     
-    *   The Location Type has been extended with PartnerLocationCodes (ResponseLocationCode).
+    * The Location Type has been extended with PartnerLocationCodes (ResponseLocationCode).
+    * If applicable, sustainability scores are now returned for each option
     
-    #### v3
-    
-    *   The response has been made more consistent with regards to data types:  
-        Moved locations to a Locations array instead of GetLocationsResult.ResponseLocation  
-        Forced HouseNr to return an integer  
-        Forced LocationCode to return a string  
-        Added LocationID as a combination of LocationCode and RetailNetworkID  
-        Removed string object in OpeningHours array. The result is an array of string values for each day of the week    
 - name: Timeframes
   description: |
     ### Summary
     
     * Reason to Call: To get a timeframe in which a parcel is estimated to be delivered.
-    * Input: Details of dates, delivery options and the address of the customer.
-    * Output: Timeframes and the possible reason no timeframe could be given.
+    * Input: Details of dates, delivery options and the address of the recipient.
+    * Output: Expected delivery timeframes and the possible reason no timeframe could be given.
     
     Please note that you can use the all-in-one [Checkout API](#tag/Checkout) as well. This API combines he the functionality of the DeliveryDate, Location and Timeframe webservices. So it will be easier to implement the PostNL delivery options and there is less overhead in requesting the PostNL services by using this 3-in-1 API.
     
     ### Guidelines
     
-    At the [DEVELOPER CENTER](https://developer.postnl.nl/browse-apis/delivery-options/timeframe-webservice/documentation/) you can find information about the use and functionality of the API. It is strongly recommended that you read this carefully before starting the implementation.
+    At the <a href="https://developer.postnl.nl/" target="_blank" rel="noopener noreferrer">Developer Portal</a> you can find information about the use and functionality of the API. It is strongly recommended that you read this carefully before starting the implementation.
+    
+    <button type="button">
+      <a href="https://developer.postnl.nl/browse-apis/delivery-options/timeframe-webservice/" target="_blank" rel="noopener noreferrer">Documentation</a>
+    </button>
     
     ### Versioning
     
@@ -384,12 +385,15 @@ tags:
         Timeframe.Interval (used to filter certain timeframes which can be returned for delivery on demand)  
         Timeframe.TimeframeRange.Start (used to specify a specific range of timeframes to be returned for delivery on demand)  
         Timeframe.TimeframeRange.End
-    
+                
+        __NOTE: THIS PRODUCT NO LONGER EXIST__
+        
     #### v2.2
     
-    *   The following fields have been added to the interface:  
-        OriginCountryCode  
-        CutoffTime.Available
+    * The following fields have been added to the interface:  
+      * OriginCountryCode  
+      * CutoffTime.Available
+    * If applicable, sustainability scores are now returned for each option
 - name: Shipping
   description: |
     ### Summary
@@ -688,6 +692,7 @@ tags:
     
     A Codingtext have been added to the labels for mailbox parcels (brievenbuspakje)
     * Shipment.CodingText (response)
+    
 - name: Barcode
   description: |
     ### Summary
@@ -976,6 +981,7 @@ tags:
         The following fields have been added to the interface;  
         maxDays  
         language  
+    
 - name: Error codes
   description: |
     
@@ -6205,6 +6211,7 @@ tags:
         </tr>
       </tbody>
     </table>
+        
 - name: Product codes
   description: |
     
@@ -6264,14 +6271,14 @@ tags:
     </table>
     
     **Business rules (for all products)**
-    *  Receiver address fields required:<br>
+    *	Receiver address fields required:<br>
       * Home number (only mandatory for Benelux shipments)<br>
       * Postcode (only mandatory for Benelux shipments)<br>
       * City<br>
       * Country code<br>
       * Street<br>
       * Last name/ Company name (at least one is required)<br>
-    *  Barcode requirements (not mandatory for Parcels non-EU labels):<br>
+    *	Barcode requirements (not mandatory for Parcels non-EU labels):<br>
       * Type must be 3S<br>
       * Range must be 1-4 letter string<br>
       * Serie must be 7-12 digits<br>
@@ -11450,6 +11457,7 @@ tags:
         </tr>
       </tbody>
     </table>
+    
 paths:
   '/shipment/checkout/v1/postalcodecheck':
     $ref: 'https://api-acc.postnl.nl/shipment/checkout/v1/postalcodecheck?swagger#/paths/~1shipment~1checkout~1v1~1postalcodecheck'
@@ -11459,29 +11467,35 @@ paths:
     $ref: 'https://api-acc.postnl.nl/shipment/v2_2/calculate/date?swagger#/paths/~1shipment~1v2_2~1calculate~1date~1delivery'
   '/shipment/v2_2/calculate/date/shipping':
     $ref: 'https://api-acc.postnl.nl/shipment/v2_2/calculate/date?swagger#/paths/~1shipment~1v2_2~1calculate~1date~1shipping'
-#  '/shipment/v3/locations/nearest':
-#    $ref: ''
-#  '/shipment/v3/locations/nearest/geocode':
-#    $ref: ''
-#  '/shipment/v3/locations/area':
-#    $ref: ''
-#  '/shipment/v3/locations/lookup':
-#    $ref: ''
+  '/shipment/v2_1/locations/nearest':
+    $ref: 'https://api-acc.postnl.nl/shipment/v2_1/locations?swagger#/paths/~1shipment~1v2_1~1locations~1nearest'
+  '/shipment/v2_1/locations/nearest/geocode':
+    $ref: 'https://api-acc.postnl.nl/shipment/v2_1/locations?swagger#/paths/~1shipment~1v2_1~1locations~1nearest~1geocode'
+  '/shipment/v2_1/locations/area':
+    $ref: 'https://api-acc.postnl.nl/shipment/v2_1/locations?swagger#/paths/~1shipment~1v2_1~1locations~1area'
+  '/shipment/v2_1/locations/lookup':
+    $ref: 'https://api-acc.postnl.nl/shipment/v2_1/locations?swagger#/paths/~1shipment~1v2_1~1locations~1lookup'
   '/shipment/v2_1/calculate/timeframes':
     $ref: 'https://api-acc.postnl.nl/shipment/v2_1/calculate/timeframes?swagger#/paths/~1shipment~1v2_1~1calculate~1timeframes'
 #  '/v1/shipment':
-#    $ref: ''
+#    $ref: 'paths/shipment-v1'
 #  '/shipment/v1_1/barcode':
-#    $ref: ''
+#    $ref: 'paths/barcode-v1-1'
 #  '/shipment/v2/confirm':
-#    $ref: ''
-#  '/shipment/v3/status/barcode/{barcode}':
-#    $ref: ''
-#  '/shipment/v3/status/reference/{referenceId}':
-#    $ref: ''
-#  '/shipment/v3/status/signature/{barcode}':
-#    $ref: ''
-#  '/shipment/v3/status/{customernumber}/updatedshipments':
-#    $ref: ''
+#    $ref: 'paths/confirm-v2'
+#  '/shipment/v2/status/barcode/{barcode}':
+#    $ref: 'paths/status-v3-barcode'
+#  '/shipment/v2/status/reference/{referenceId}':
+#    $ref: 'paths/status-v3-reference'
+#  '/shipment/v2/status/signature/{barcode}':
+#    $ref: 'paths/status-v3-signature'
+#  '/shipment/v2/status/{customernumber}/updatedshipments':
+#    $ref: 'paths/status-v3-updatedshipments'
 #  '/shipment/v2_2/label':
-#    $ref: ''
+#    $ref: 'paths/labelling-v2-2#/paths/~1shipment~1v2_2~1label'
+components:
+  securitySchemes:
+    APIKeyHeader:
+      type: apiKey
+      name: apikey
+      in: header
