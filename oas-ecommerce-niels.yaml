@@ -445,15 +445,21 @@ tags:
   description: |
     ### Summary
     
-    * Reason to Call: Create a shipment and send a confirmation to PostNL (optional).
-    * Input: All information about the shipment.
+    * Reason to Call: Create a label and send a confirmation to PostNL (optional).
+    * Input: Information about the shipment.
     * Output: One or more shipping labels.
     
-    With the Confirm boolean in the request (true of false), you can determine if you want to confirm the shipment in the same call or not.
+    Please note that you can use the all-in-one [Shipping API](#tag/Shipping) as well. This API combines the functionality of the Barcode, Labelling, Confirmation and Easy Return API. With this API you generate unique barcodes at the same time you create a label and so cutting down the number of API requests.
+    
+    When using the [Shipping](#tag/Shipping) or Labelling API (With the Confirm boolean true in the request) the Confirming service does no longer need to be integrated in your system.
     
     ### Guidelines
     
-    At the [DEVELOPER CENTER](https://developer.postnl.nl) you can find information about the use and functionality of the API. It is strongly recommended that you read this carefully before starting the implementation.
+    At the <a href="https://developer.postnl.nl/" target="_blank" rel="noopener noreferrer">Developer Portal</a> you can find information about the use and functionality of the API. It is strongly recommended that you read this carefully before starting the implementation.
+    
+    <button type="button">
+      <a href="https://developer.postnl.nl/browse-apis/send-and-track/labelling-webservice//" target="_blank" rel="noopener noreferrer">Documentation</a>
+    </button>
     
     ### Versioning
     
@@ -703,11 +709,11 @@ tags:
     * Input: Customer code and customer number and some specifications of the required barcode.
     * Output: An unique identifier to use for creating shipments and to track and trace the status of the parcels.
     
-    Please note that you can use the all-in-one [Shipping API](#tag/Shipping) as well. This API combines the functionality of the Barcode, Labelling, Confirmation and Easy Return API. With this API you generate unique barcodes at the same time you create a label and so cutting down the number of API requests.
+    Please note that you can use the all-in-one [Shipping API](#tag/Shipment) as well. This API combines the functionality of the Barcode, Labelling, Confirmation and Easy Return API. With this API you generate unique barcodes at the same time you create a label and so cutting down the number of API requests.
     
     ### Guidelines
     
-    At the [DEVELOPER CENTER](#tag/Shipping) you can find information about the use and functionality of the API. It is strongly recommended that you read this carefully before starting the implementation.
+    At the <a href="https://developer.postnl.nl/" target="_blank" rel="noopener noreferrer">Developer Portal</a> you can find information about the use and functionality of the API. It is strongly recommended that you read this carefully before starting the implementation.
     
     ### Versioning
     
@@ -747,13 +753,17 @@ tags:
     * Input: Information about the shipment.
     * Output: Confirm shipment information.
     
-    Please note that you can use the all-in-one [Shipping API](#tag/Shipping) as well. This API combines the functionality of the Barcode, Labelling, Confirmation and Easy Return API. With this API you generate unique barcodes at the same time you create a label and so cutting down the number of API requests.
+    Please note that you can use the all-in-one [Shipping API](#tag/Shipment) as well. This API combines the functionality of the Barcode, Labelling, Confirmation and Easy Return API. With this API you generate unique barcodes at the same time you create a label and so cutting down the number of API requests.
     
-    When using the [Shipping](#tag/Shipping) or Labelling API (With the Confirm boolean true in the request) the Confirming service does no longer need to be integrated in your system.
+    When using the [Shipping](#tag/Shipment) or Labelling API (With the Confirm boolean true in the request) the Confirming service does no longer need to be integrated in your system.
     
     ### Guidelines
     
-    At the [DEVELOPER CENTER](https://developer.postnl.nl) you can find information about the use and functionality of the API. It is strongly recommended that you read this carefully before starting the implementation.
+    At the <a href="https://developer.postnl.nl/" target="_blank" rel="noopener noreferrer">Developer Portal</a> you can find information about the use and functionality of the API. It is strongly recommended that you read this carefully before starting the implementation.
+    
+    <button type="button">
+      <a href="https://developer.postnl.nl/browse-apis/send-and-track/labelling-webservice//" target="_blank" rel="noopener noreferrer">Documentation</a>
+    </button>
     
     ### Versioning
     
@@ -865,6 +875,8 @@ tags:
     
     DeliveryTimestampStart  
     DeliveryTimestampEnd
+    
+    _NOTE: THIS PRODUCT NO LONGER EXISTS._
     
     #### v2
     
@@ -11483,8 +11495,8 @@ paths:
     $ref: 'https://api-acc.postnl.nl/v1/shipment?swagger#/paths/~1v1~1shipment'
 #  '/shipment/v1_1/barcode':
 #    $ref: 'paths/barcode-v1-1'
-#  '/shipment/v2/confirm':
-#    $ref: 'paths/confirm-v2'
+  '/shipment/v2/confirm':
+    $ref: 'https://api-acc.postnl.nl/shipment/v2/confirm?swagger#/paths/~1shipment~1v2~1confirm'
 #  '/shipment/v2/status/barcode/{barcode}':
 #    $ref: 'paths/status-v3-barcode'
 #  '/shipment/v2/status/reference/{referenceId}':
@@ -11493,8 +11505,8 @@ paths:
 #    $ref: 'paths/status-v3-signature'
 #  '/shipment/v2/status/{customernumber}/updatedshipments':
 #    $ref: 'paths/status-v3-updatedshipments'
-#  '/shipment/v2_2/label':
-#    $ref: 'paths/labelling-v2-2#/paths/~1shipment~1v2_2~1label'
+  '/shipment/v2_2/label':
+    $ref: 'https://api-acc.postnl.nl/shipment/v2_2/label?swagger#/paths/~1shipment~1v2_2~1label'
 components:
   securitySchemes:
     APIKeyHeader:
