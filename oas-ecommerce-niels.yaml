@@ -12,7 +12,7 @@ servers:
 x-tagGroups:
   - name: 'Send & Track'
     tags:
-    - Shipping
+    - Shipment
     - Track & Trace
     - Barcode
     - Labelling
@@ -394,19 +394,21 @@ tags:
       * OriginCountryCode  
       * CutoffTime.Available
     * If applicable, sustainability scores are now returned for each option
-- name: Shipping
+- name: Shipment
   description: |
     ### Summary
     
-    * Reason to Call: Create a barcode, shipment and send a confirmation to PostNL (optional).
-    * Input: All information about the shipment.
-    * Output: One or more shipping labels.
-    
-    With the Confirm boolean in the request (true of false), you can determine if you want to confirm the shipment in the same call or not.
+    * Reason to Call: Create a barcode, shipment and send a confirmation to PostNL
+    * Input: All information about the shipment
+    * Output: One or more shipping labels
     
     ### Guidelines
     
-    At the [DEVELOPER CENTER](https://developer.postnl.nl) you can find information about the use and functionality of the API. It is strongly recommended that you read this carefully before starting the implementation.
+    At the <a href="https://developer.postnl.nl/" target="_blank" rel="noopener noreferrer">Developer Portal</a> you can find information about the use and functionality of the API. It is strongly recommended that you read this carefully before starting the implementation.
+    
+    <button type="button">
+      <a href="https://developer.postnl.nl/browse-apis/send-and-track/shipping-webservice/" target="_blank" rel="noopener noreferrer">Documentation</a>
+    </button>
     
     ### Versioning
     
@@ -11477,8 +11479,8 @@ paths:
     $ref: 'https://api-acc.postnl.nl/shipment/v2_1/locations?swagger#/paths/~1shipment~1v2_1~1locations~1lookup'
   '/shipment/v2_1/calculate/timeframes':
     $ref: 'https://api-acc.postnl.nl/shipment/v2_1/calculate/timeframes?swagger#/paths/~1shipment~1v2_1~1calculate~1timeframes'
-#  '/v1/shipment':
-#    $ref: 'paths/shipment-v1'
+  '/v1/shipment':
+    $ref: 'https://api-acc.postnl.nl/v1/shipment?swagger#/paths/~1v1~1shipment'
 #  '/shipment/v1_1/barcode':
 #    $ref: 'paths/barcode-v1-1'
 #  '/shipment/v2/confirm':
