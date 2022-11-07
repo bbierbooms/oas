@@ -11493,8 +11493,8 @@ paths:
     $ref: 'https://api-acc.postnl.nl/shipment/v2_1/calculate/timeframes?swagger#/paths/~1shipment~1v2_1~1calculate~1timeframes'
   '/v1/shipment':
     $ref: 'https://api-acc.postnl.nl/v1/shipment?swagger#/paths/~1v1~1shipment'
-#  '/shipment/v1_1/barcode':
-#    $ref: 'paths/barcode-v1-1'
+  '/shipment/v1_1/barcode':
+    $ref: 'https://api-acc.postnl.nl/shipment/v1_1/barcode?swagger#/paths/~1shipment~1v1_1~1barcode'
   '/shipment/v2/confirm':
     $ref: 'https://api-acc.postnl.nl/shipment/v2/confirm?swagger#/paths/~1shipment~1v2~1confirm'
 #  '/shipment/v2/status/barcode/{barcode}':
