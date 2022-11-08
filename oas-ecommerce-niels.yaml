@@ -451,14 +451,14 @@ tags:
     
     Please note that you can use the all-in-one [Shipping API](#tag/Shipping) as well. This API combines the functionality of the Barcode, Labelling, Confirmation and Easy Return API. With this API you generate unique barcodes at the same time you create a label and so cutting down the number of API requests.
     
-    When using the [Shipping](#tag/Shipping) or Labelling API (With the Confirm boolean true in the request) the Confirming service does no longer need to be integrated in your system.
+    When using the [Shipping](#tag/Shipment) or Labelling API (With the Confirm boolean true in the request) the Confirming service does no longer need to be integrated in your system.
     
     ### Guidelines
     
     At the <a href="https://developer.postnl.nl/" target="_blank" rel="noopener noreferrer">Developer Portal</a> you can find information about the use and functionality of the API. It is strongly recommended that you read this carefully before starting the implementation.
     
     <button type="button">
-      <a href="https://developer.postnl.nl/browse-apis/send-and-track/labelling-webservice//" target="_blank" rel="noopener noreferrer">Documentation</a>
+      <a href="https://developer.postnl.nl/browse-apis/send-and-track/labelling-webservice/" target="_blank" rel="noopener noreferrer">Documentation</a>
     </button>
     
     ### Versioning
@@ -715,6 +715,10 @@ tags:
     
     At the <a href="https://developer.postnl.nl/" target="_blank" rel="noopener noreferrer">Developer Portal</a> you can find information about the use and functionality of the API. It is strongly recommended that you read this carefully before starting the implementation.
     
+    <button type="button">
+      <a href="https://developer.postnl.nl/browse-apis/send-and-track/barcode-webservice/" target="_blank" rel="noopener noreferrer">Documentation</a>
+    </button>
+    
     ### Versioning
     
     <table>
@@ -762,7 +766,7 @@ tags:
     At the <a href="https://developer.postnl.nl/" target="_blank" rel="noopener noreferrer">Developer Portal</a> you can find information about the use and functionality of the API. It is strongly recommended that you read this carefully before starting the implementation.
     
     <button type="button">
-      <a href="https://developer.postnl.nl/browse-apis/send-and-track/labelling-webservice//" target="_blank" rel="noopener noreferrer">Documentation</a>
+      <a href="https://developer.postnl.nl/browse-apis/send-and-track/confirming-webservice/" target="_blank" rel="noopener noreferrer">Documentation</a>
     </button>
     
     ### Versioning
@@ -898,7 +902,11 @@ tags:
     
     ### Guidelines
     
-    At the [DEVELOPER CENTER](https://developer.postnl.nl/browse-apis/send-and-track/shippingstatus-webservice/) you can find information about the use and functionality of the API. It is strongly recommended that you read this carefully before starting the implementation.
+    At the <a href="https://developer.postnl.nl/" target="_blank" rel="noopener noreferrer">Developer Portal</a> you can find information about the use and functionality of the API. It is strongly recommended that you read this carefully before starting the implementation.
+    
+    <button type="button">
+      <a href="https://developer.postnl.nl/browse-apis/send-and-track/shippingstatus-webservice/" target="_blank" rel="noopener noreferrer">Documentation</a>
+    </button>
     
     ### Versioning
     
@@ -993,8 +1001,8 @@ tags:
     * A new method has ben added to the interface;  
         /v2/status/{customernumber}/updatedshipments. This method returns the updated statuses for a particular customer number.  
         The following fields have been added to the interface;  
-        maxDays  
-        language  
+        * maxDays
+        * language
     
 - name: Error codes
   description: |
@@ -11497,14 +11505,14 @@ paths:
     $ref: 'https://api-acc.postnl.nl/shipment/v1_1/barcode?swagger#/paths/~1shipment~1v1_1~1barcode'
   '/shipment/v2/confirm':
     $ref: 'https://api-acc.postnl.nl/shipment/v2/confirm?swagger#/paths/~1shipment~1v2~1confirm'
-#  '/shipment/v2/status/barcode/{barcode}':
-#    $ref: 'paths/status-v3-barcode'
-#  '/shipment/v2/status/reference/{referenceId}':
-#    $ref: 'paths/status-v3-reference'
-#  '/shipment/v2/status/signature/{barcode}':
-#    $ref: 'paths/status-v3-signature'
-#  '/shipment/v2/status/{customernumber}/updatedshipments':
-#    $ref: 'paths/status-v3-updatedshipments'
+  '/shipment/v2/status/barcode/{barcode}':
+    $ref: 'https://api-acc.postnl.nl/shipment/v2/status?swagger#/paths/~1shipment~1v2~1status~1barcode~1{barcode}'
+  '/shipment/v2/status/reference/{referenceId}':
+    $ref: 'https://api-acc.postnl.nl/shipment/v2/status?swagger#/paths/~1shipment~1v2~1status~1reference~1{referenceId}'
+  '/shipment/v2/status/signature/{barcode}':
+    $ref: 'https://api-acc.postnl.nl/shipment/v2/status?swagger#/paths/~1shipment~1v2~1status~1{customernumber}~1updatedshipments'
+  '/shipment/v2/status/signature/{barcode}':
+    $ref: 'https://api-acc.postnl.nl/shipment/v2/status?swagger#/paths/~1shipment~1v2~1status~1{customernumber}~1updatedshipments'
   '/shipment/v2_2/label':
     $ref: 'https://api-acc.postnl.nl/shipment/v2_2/label?swagger#/paths/~1shipment~1v2_2~1label'
 components:
