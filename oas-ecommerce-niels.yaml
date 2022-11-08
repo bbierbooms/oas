@@ -11510,8 +11510,8 @@ paths:
   '/shipment/v2/status/reference/{referenceId}':
     $ref: 'https://api-acc.postnl.nl/shipment/v2/status?swagger#/paths/~1shipment~1v2~1status~1reference~1{referenceId}'
   '/shipment/v2/status/signature/{barcode}':
-    $ref: 'https://api-acc.postnl.nl/shipment/v2/status?swagger#/paths/~1shipment~1v2~1status~1{customernumber}~1updatedshipments'
-  '/shipment/v2/status/signature/{barcode}':
+    $ref: 'https://api-acc.postnl.nl/shipment/v2/status?swagger#/paths/~1shipment~1v2~1status~1signature~1{barcode}'
+  '/shipment/v2/status/{customernumber}/updatedshipments':
     $ref: 'https://api-acc.postnl.nl/shipment/v2/status?swagger#/paths/~1shipment~1v2~1status~1{customernumber}~1updatedshipments'
   '/shipment/v2_2/label':
     $ref: 'https://api-acc.postnl.nl/shipment/v2_2/label?swagger#/paths/~1shipment~1v2_2~1label'
@@ -11520,4 +11520,5 @@ components:
     APIKeyHeader:
       type: apiKey
       name: apikey
+      in: header
       in: header
