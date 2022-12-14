@@ -1,4 +1,4 @@
-openapi: 3.0.0
+openapi: 3.0.1
 info:
   title: PostNL Ecommerce APIs
   description: |
@@ -26,9 +26,10 @@ x-tagGroups:
     - Locations
   - name: 'Reference data'
     tags:
-    - Product codes
     - Error codes
-    - T&T codes
+    - Product codes
+    - T&T status codes
+    - Additional codes
 tags:
 - name: Postalcode check
   description: | 
@@ -1008,14 +1009,16 @@ tags:
   description: |
     
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td><strong>Code</strong></td>
-          <td><strong>Type</strong></td>
-          <td><strong>Description</strong></td>
-          <td><strong>Usage</strong></td>
-          <td><strong>Occurrence</strong></td>
+          <th>Code</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Usage</th>
+          <th>Occurrence</th>
         </tr>
+      <thead>
+      <tbody>
         <tr>
           <td>1</td>
           <td>Error</td>
@@ -6248,19 +6251,13 @@ tags:
     We distinguish three common products:
     
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>
-            <p>
-              <strong>Product code</strong>
-            </p>
-          </td>
-          <td>
-            <p>
-              <strong>Description</strong>
-            </p>
-          </td>
+          <th>Product code</th>
+          <th>Description</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>3085</td>
           <td>Standard shipment</td>
@@ -6309,19 +6306,13 @@ tags:
     ## Extra cover
     
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>
-            <p>
-              <strong>Product code</strong>
-            </p>
-          </td>
-          <td>
-            <p>
-              <strong>Description</strong>
-            </p>
-          </td>
+          <th>Product code</th>
+          <th>Description</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>
             <p>3087</p>
@@ -6345,19 +6336,13 @@ tags:
     ## Signature on delivery
     
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>
-            <p>
-              <strong>Product code</strong>
-            </p>
-          </td>
-          <td>
-            <p>
-              <strong>Description</strong>
-            </p>
-          </td>
+          <th>Product code</th>
+          <th>Description</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>
             <p>3089</p>
@@ -6412,19 +6397,13 @@ tags:
     Confirming is essential for Pick up Points shipments. Without a confirming on time, it is not possible to process these parcels.
     
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>
-            <p>
-              <strong>Product code</strong>
-            </p>
-          </td>
-          <td>
-            <p>
-              <strong>Description</strong>
-            </p>
-          </td>
+          <th>Product code</th>
+          <th>Description</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>
             <p>3533</p>
@@ -6483,19 +6462,13 @@ tags:
     With this product you will have the possibility to send a shipment that fits into the mailbox of your customers and have some shipping status information during the shipping process.
     
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>
-            <p>
-              <strong>Product code</strong>
-            </p>
-          </td>
-          <td>
-            <p>
-              <strong>Description</strong>
-            </p>
-          </td>
+          <th>Product code</th>
+          <th>Description</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>
             <p>2928</p>
@@ -6561,15 +6534,13 @@ tags:
     **Age validation**
     
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>
-            <strong>Product code *</strong>
-          </td>
-          <td>
-            <strong>Description</strong>
-          </td>
+          <th>Product code</th>
+          <th>Description</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>3438</td>
           <td>Standard shipment + Age Check</td>
@@ -6598,15 +6569,13 @@ tags:
     We distinguish the following types:
     
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>
-            <strong>Type</strong>
-          </td>
-          <td>
-            <strong>Description</strong>
-          </td>
+          <th>Type</th>
+          <th>Description</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>01</td>
           <td>Dutch residence document</td>
@@ -6639,15 +6608,13 @@ tags:
     It is also possbile to send the parcels to PostNL Pickup Points. You can use the below product codes. Please note that you also have to use the product options and business rules as described above.
     
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>
-            <strong>Product code *</strong>
-          </td>
-          <td>
-            <strong>Description</strong>
-          </td>
+          <th>Product code *</th>
+          <th>Description</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>3571</td>
           <td>Ophalen bij PostNL locatie + Age Check&nbsp;</td>
@@ -6686,19 +6653,13 @@ tags:
     These products can only be used after consulting your PostNL account manager.
     
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>
-            <p>
-              <strong>Product code</strong>
-            </p>
-          </td>
-          <td>
-            <p>
-              <strong>Description</strong>
-            </p>
-          </td>
+          <th>Product code</th>
+          <th>Description</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>
             <p>1010, 1011*</p>
@@ -6766,19 +6727,13 @@ tags:
     PostNL Parcels also offers the possibility of providing a single return label, which allows consumers to send parcels to your Business reply number (Antwoordnummer).
     
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>
-            <p>
-              <strong>Product code**</strong>
-            </p>
-          </td>
-          <td>
-            <p>
-              <strong>Description</strong>
-            </p>
-          </td>
+          <th>Product code **</th>
+          <th>Description</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>
             <p>- *</p>
@@ -6815,19 +6770,13 @@ tags:
     The Smart Returns service is available for the following product: 
     
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>
-            <p>
-              <strong>Product code*</strong>
-            </p>
-          </td>
-          <td>
-            <p>
-              <strong>Description</strong>
-            </p>
-          </td>
+          <th>Product code *</th>
+          <th>Description</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>
             <p>2285**</p>
@@ -6866,19 +6815,13 @@ tags:
     The Afhaalservice Basis and Plus (Pickup Basic and Plus) allows you to instruct a PostNL Parcels driver to go to a specific address on a specific date to retrieve (a) parcel(s). A maximum of 5 parcels can be collected per pick up, pick up requests with more than 5 parcels will be denied. The parcel(s) will then be delivered to an (antwoordnummer)address specified by you. The driver will provide the shipment label, so there is no option to create one via the API. For these products, the Confirming WebService must be used. For an example of a Pickup basic shipment, please refer to the Confirming WebService documentation.
     
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>
-            <p>
-              <strong>Product code</strong>
-            </p>
-          </td>
-          <td>
-            <p>
-              <strong>Description</strong>
-            </p>
-          </td>
+          <th>Product code</th>
+          <th>Description</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>
             <p>3151*</p>
@@ -6940,19 +6883,13 @@ tags:
     Pickup plus products consist of two Shipments, the collection order and the delivery order. Both orders must be placed in a separate Shipment in the request. This means that a request for a pickup plus product will contain two Shipment segments. The below structure is required:
     
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>
-            <p>
-              <strong>Pickup plus Confirming structure</strong>
-            </p>
-          </td>
-          <td>
-            <p>
-              <strong>Pickup basic Confirming structure&nbsp;</strong>
-            </p>
-          </td>
+          <th>Pickup plus Confirming structure</th>
+          <th>Pickup basic Confirming structure</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>
             <p>Customer</p>
@@ -7041,19 +6978,13 @@ tags:
     For evening delivery, confirming is essential. Without a confirming on time, it is not possible to process these parcels. Therefore, we advise strongly to use the method ‘generate label’ in the labelling service. Furthermore, you will need to hand over the parcels one day before the delivery date. If you hand over the evening parcels too soon or too late, they will be delivered the next evening.
     
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>
-            <p>
-              <strong>Product code *</strong>
-            </p>
-          </td>
-          <td>
-            <p>
-              <strong>Description</strong>
-            </p>
-          </td>
+          <th>Product code *</th>
+          <th>Description</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>3085 **</td>
           <td>Standard shipment</td>
@@ -7148,19 +7079,13 @@ tags:
     PostNL Pakketten will deliver parcels on sundays between 12:00 -18:00 pm. All postal codes (except P.O boxes) in the Netherlands are being served. Only the Wadden Islands are exclude from this service for the time being.
     
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>
-            <p>
-              <strong>Product code *</strong>
-            </p>
-          </td>
-          <td>
-            <p>
-              <strong>Description</strong>
-            </p>
-          </td>
+          <th>Product code *</th>
+          <th>Description</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>
             <p>3087**</p>
@@ -7242,19 +7167,13 @@ tags:
     Furthermore, parcels need to be handed over between 05.00 and 11.00 AM at the specified  location for Today. If Today parcels are handed over to the wrong location, they will be delivered the next day at the first available delivery moment.
     
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>
-            <p>
-              <strong>Product code *</strong>
-            </p>
-          </td>
-          <td>
-            <p>
-              <strong>Description</strong>
-            </p>
-          </td>
+          <th>Product code *</th>
+          <th>Description</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>3085 **</td>
           <td>Standard shipment</td>
@@ -7348,19 +7267,13 @@ tags:
     \*This is a indicative time; for the exact time please contact your PostNL Pakketten account manager.
     
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>
-            <p>
-              <strong>Product code *</strong>
-            </p>
-          </td>
-          <td>
-            <p>
-              <strong>Description</strong>
-            </p>
-          </td>
+          <th>Product code *</th>
+          <th>Description</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>3085 **</td>
           <td>Standard shipment</td>
@@ -7457,19 +7370,13 @@ tags:
     This service is available for the whole Netherlands, excluding the Wadden Islands. There is no guaranteed distribution on Saturday and Sunday. To be able to use guaranteed delivery, please contact your PostNL Pakketten account manager for more information.
     
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>
-            <p>
-              <strong>Product code *</strong>
-            </p>
-          </td>
-          <td>
-            <p>
-              <strong>Description</strong>
-            </p>
-          </td>
+          <th>Product code *</th>
+          <th>Description</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>
             <p>3085 **</p>
@@ -7592,19 +7499,13 @@ tags:
     This timeframe option can be combined with the following products:
     
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>
-            <p>
-              <strong>Product code*</strong>
-            </p>
-          </td>
-          <td>
-            <p>
-              <strong>Description</strong>
-            </p>
-          </td>
+          <th>Product code *</th>
+          <th>Description</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>
             <p>3070**</p>
@@ -7649,15 +7550,13 @@ tags:
     ## Belgium domestic
     
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>
-            <strong>Product code *</strong>
-          </td>
-          <td>
-            <strong>Description</strong>
-          </td>
+          <th>Product code *</th>
+          <th>Description</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>
             <p>4960</p>
@@ -7706,15 +7605,13 @@ tags:
     ## Pickup at PostNL location Belgium
     
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>
-            <strong>Product code *</strong>
-          </td>
-          <td>
-            <strong>Description</strong>
-          </td>
+          <th>Product code *</th>
+          <th>Description</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>
             <p>4878</p>
@@ -7750,15 +7647,13 @@ tags:
     Please be aware: these products need to be added to your contract before using them. Contact your PostNL Pakketten accountmanager in order to check if additional action is needed.
     
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>
-            <strong>Product code*</strong>
-          </td>
-          <td>
-            <strong>Description</strong>
-          </td>
+          <th>Product code *</th>
+          <th>Description</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>
             <p>4936</p>
@@ -7829,19 +7724,13 @@ tags:
     For the return process in Belgium, a printed label on the box is required. Labels can not be printed within the PostNL pick-up points.
     
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>
-            <p>
-              <strong>Product code</strong>
-            </p>
-          </td>
-          <td>
-            <p>
-              <strong>Description</strong>
-            </p>
-          </td>
+          <th>Product code</th>
+          <th>Description</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>
             <p>- *</p>
@@ -7882,18 +7771,14 @@ tags:
     ## Parcels EU
     
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>
-            <strong>Product code</strong>
-          </td>
-          <td>
-            <strong>Combilabel *</strong>
-          </td>
-          <td>
-            <strong>Description</strong>
-          </td>
+          <th>Product code</th>
+          <th>Combilabel *</th>
+          <th>Description</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>4940</td>
           <td>4950</td>
@@ -7925,13 +7810,15 @@ tags:
     ** *Country codes* **
     
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>Destination</td>
-          <td>Country code ISO2</td>
-          <td>Destination</td>
-          <td>Country code ISO2</td>
+          <th>Destination</th>
+          <th>Country code ISO2</th>
+          <th>Destination</th>
+          <th>Country code ISO2</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>Austria</td>
           <td>AT</td>
@@ -8047,15 +7934,13 @@ tags:
     Check the [PostNL site](https://www.postnl.nl/zakelijke-oplossingen/pakket-versturen/retouren/internationale-retouren/) for more information and the countries where this service can be used.
     
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>
-            <strong>Productcode*</strong>
-          </td>
-          <td>
-            <strong>Description</strong>
-          </td>
+          <th>Product code *</th>
+          <th>Description</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>4910</td>
           <td>Europe Returns</td>
@@ -8105,29 +7990,15 @@ tags:
     *Barcode type*
     
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>
-            <p>
-              <strong>Product code</strong>
-            </p>
-          </td>
-          <td>
-            <p>
-              <strong>Barcode type</strong>
-            </p>
-          </td>
-          <td>
-            <p>
-              <strong>Barcode length</strong>
-            </p>
-          </td>
-          <td>
-            <p>
-              <strong>In field</strong>
-            </p>
-          </td>
+          <th>Product code</th>
+          <th>Barcode type</th>
+          <th>Barcode length</th>
+          <th>In field</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>
             <p>4945</p>
@@ -8171,18 +8042,14 @@ tags:
     This product is only available on our Shipping V1 and Labelling API version 2.2.
     
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>
-            <strong>Product code</strong>
-          </td>
-          <td>
-            <strong>Combi label</strong>
-          </td>
-          <td>
-            <strong>Description</strong>
-          </td>
+          <th>Product code</th>
+          <th>Combilabel</th>
+          <th>Description</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>
             <p>4905*</p>
@@ -8230,19 +8097,13 @@ tags:
     Since this product is a collaboration between PostNL and our partner abroad, some fields in our API are restricted to a max number of characters which differ from the amount of characters normally accepted by PostNL. Please note the following. 
     
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>
-            <p>
-              <strong>PostNL API fieldname</strong>
-            </p>
-          </td>
-          <td>
-            <p>
-              <strong>Max length</strong>
-            </p>
-          </td>
+          <th>PostNL API fieldname</th>
+          <th>Max length</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>
             <p>TelNr</p>
@@ -8355,18 +8216,14 @@ tags:
     This product is only available on our Shipping V1 and Labelling API version 2.2
     
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>
-            <strong>Product code</strong>
-          </td>
-          <td>
-            <strong>Combi label</strong>
-          </td>
-          <td>
-            <strong>Description</strong>
-          </td>
+          <th>Product code</th>
+          <th>Combilabel</th>
+          <th>Description</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>
             <p>4905*</p>
@@ -8416,19 +8273,13 @@ tags:
     Since this product is a collaboration between PostNL and our partner, some fields in our API are restricted to a max number of characters which differ from the amount of characters normally accepted by PostNL. Please note the following.
     
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>
-            <p>
-              <strong>PostNL API fieldname</strong>
-            </p>
-          </td>
-          <td>
-            <p>
-              <strong>Max length</strong>
-            </p>
-          </td>
+          <th>PostNL API fieldname</th>
+          <th>Max length</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>
             <p>TelNr</p>
@@ -8581,21 +8432,15 @@ tags:
     # International Mail & Packets
     
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>
-            <strong>Service</strong>
-          </td>
-          <td>
-            <strong>Productcode</strong>
-          </td>
-          <td>
-            <strong>Productname</strong>
-          </td>
-          <td>
-            <strong>Required Barcodetype</strong>
-          </td>
+          <th>Service</th>
+          <th>Product code</th>
+          <th>Product name</th>
+          <th>Required barcode type</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>Untracked</td>
           <td>6905*</td>
@@ -8702,19 +8547,13 @@ tags:
     * Pallets can only be sent to **B2B addresses**, not to Post office boxes or consumers.
     
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>
-            <p>
-              <strong>Product code *</strong>
-            </p>
-          </td>
-          <td>
-            <p>
-              <strong>Description</strong>
-            </p>
-          </td>
+          <th>Product code *</th>
+          <th>Description</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>
             <p>3606</p>
@@ -8924,13 +8763,15 @@ tags:
     **Country codes Eurofreight**
     
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td><strong>Destination</strong></td>
-          <td><strong>Country code ISO2</strong></td>
-          <td><strong>Destination</strong></td>
-          <td><strong>Country code ISO2</strong></td>
+          <th>Destination</th>
+          <th>Country code ISO2</th>
+          <th>Destination</th>
+          <th>Country code ISO2</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>Andorra</td>
           <td>AD</td>
@@ -9037,24 +8878,16 @@ tags:
     When having a shipment with different load carriers for the same receiver address.(Pallets in combination with a Roll Cage Container in one shipment for example), use the ‘content’ field (in Shipments -> Shipment, String [0-35]) to let us know which load carrier the item will be on. Remark: This is not a necessary field for shipping a standard pallet or parcel plus. Always consult your account manager before implementing the load carriers. The following carriers can be used for with the different product codes:
     
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>
-            <p><strong>Load Carrier</strong></p>
-          </td>
-          <td>
-            <p><strong>Productcode</strong></p>
-          </td>
-          <td>
-            <p><strong>Description</strong></p>
-          </td>
-          <td>
-            <p><strong>Country</strong></p>
-          </td>
-          <td>
-            <p><strong>Special</strong></p>
-          </td>
+          <th>Load carrier</th>
+          <th>Product code</th>
+          <th>Description</th>
+          <th>Country</th>
+          <th>Special</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>
             <p>BLK, EUR, EWP, KTF, P, P+, P1X, P2X, P3X</p>
@@ -9513,19 +9346,13 @@ tags:
     ## Cargo pickup
     
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>
-            <p>
-              <strong>Product code *</strong>
-            </p>
-          </td>
-          <td>
-            <p>
-              <strong>Description</strong>
-            </p>
-          </td>
+          <th>Product code *</th>
+          <th>Description</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>
             <p>3606 **</p>
@@ -9683,24 +9510,14 @@ tags:
     Delivery will be on weekdays (Monday till Friday) between 08:00 and 21:00 and optional on Saturday (with a surcharge).
     
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>
-            <p>
-              <strong>Product code*</strong>
-            </p>
-          </td>
-          <td>
-            <p>
-              <strong>Description</strong>
-            </p>
-          </td>
-          <td>
-            <p>
-              <strong>Available destinations</strong>
-            </p>
-          </td>
+          <th>Product code *</th>
+          <th>Description</th>
+          <th>Available destinations</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>
             <p>3628</p>
@@ -9815,15 +9632,13 @@ tags:
     The pickup service allows you to instruct a PostNL Parcels driver to go to a specific address on a specific date to retrieve (a) parcel(s). The parcel(s) will then be delivered to an address specified by you. The driver will provide the shipment label, so there is no option to create one via the API. For these products, the Confirming WebService must be used. For an example of a Extra @ Home Pickup shipment, please refer to the Confirming WebService documentation.
     
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td>
-            <strong>Product code*</strong>
-          </td>
-          <td>
-            <strong>Description</strong>
-          </td>
+          <th>Product code *</th>
+          <th>Description</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>
             <p>3794</p>
@@ -9901,16 +9716,8 @@ tags:
     <table>
       <thead>
         <tr>
-          <th>
-            <p>
-              <strong>Code</strong>
-            </p>
-          </th>
-          <th>
-            <p>
-              <strong>Description</strong>
-            </p>
-          </th>
+          <th>Code</th>
+          <th>Description</th>
         </tr>
       </thead>
       <tbody>
@@ -9940,18 +9747,20 @@ tags:
         </tr>
       </tbody>
     </table>
-- name: T&T codes
+- name: T&T status codes
   description: |
     # Status codes
     
     <table>
-      <tbody>
+      <thead>
         <tr>
-          <td><strong>Status code</strong></td>
-          <td><strong>Phase</strong></td>
-          <td><strong>Description NL</strong></td>
-          <td><strong>Description EN</strong></td>
+          <th>Status code</th>
+          <th>Phase</th>
+          <th>Description NL</th>
+          <th>Description EN</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
           <td>1</td>
           <td>1, Collectie</td>
@@ -10095,1390 +9904,1785 @@ tags:
     
     # Event codes
     
-    <table>
+    <style type="text/css">
+    .tg  {border-collapse:collapse;border-spacing:0;}
+    .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+      overflow:hidden;padding:10px 5px;word-break:normal;}
+    .tg .tg-8fdo{background-color:#CFC;text-align:left;vertical-align:top}
+    .tg .tg-eb4o{background-color:#E6B8B7;text-align:left;vertical-align:top}
+    .tg .tg-1wv6{background-color:#808080;color:#FFF;text-align:left;vertical-align:top}
+    .tg .tg-mmlj{background-color:#FABF8F;text-align:left;vertical-align:top}
+    .tg .tg-145f{background-color:#FF9;text-align:left;vertical-align:top}
+    .tg .tg-0lax{text-align:left;vertical-align:top}
+    .tg .tg-4c9j{background-color:#8DB4E2;text-align:left;vertical-align:top}
+    </style>
+    <table class="tg">
+      <thead>
+        <tr>
+          <th>Event</th>
+          <th>Description NL ext</th>
+          <th>Description EN ext</th>
+          <th>Status option</th>
+        </tr>
+      </thead>
       <tbody>
         <tr>
-          <td><strong>Event code</strong></td>
-          <td><strong>Description NL</strong></td>
-          <td><strong>Description EN</strong></td>
+          <td class="tg-0lax">A01</td>
+          <td class="tg-0lax">Pakket is nog niet door PostNL ontvangen of&nbsp;&nbsp;&nbsp;verwerkt</td>
+          <td class="tg-0lax">Shipment expected, but not yet arrived at PostNL</td>
+          <td class="tg-mmlj">01, Zending voorgemeld</td>
         </tr>
         <tr>
-          <td>A01</td>
-          <td>Zending is voorgemeld.</td>
-          <td>Shipment is expected, but not yet in sorting process</td>
+          <td class="tg-0lax">A10</td>
+          <td class="tg-0lax">Verzender heeft retourlabel gegenereerd</td>
+          <td class="tg-0lax">Sender has generated return label</td>
+          <td class="tg-mmlj">01, Zending voorgemeld</td>
         </tr>
         <tr>
-          <td>A08</td>
-          <td>Keuze van ontvanger: Bezorgen bij buren</td>
-          <td>Recipient&rsquo;s choice: deliver to neighbour</td>
+          <td class="tg-0lax">A71</td>
+          <td class="tg-0lax">Zending aangemeld</td>
+          <td class="tg-0lax">Shipment registered</td>
+          <td class="tg-mmlj">01, Zending voorgemeld</td>
         </tr>
         <tr>
-          <td>A09</td>
-          <td>Keuze van ontvanger: Bezorgen bij afhaallocatie.</td>
-          <td>Recipient&rsquo;s choice: deliver to PostNL location</td>
+          <td class="tg-0lax">F01</td>
+          <td class="tg-0lax">Afhaalzending wordt opgehaald</td>
+          <td class="tg-0lax">Pick-up shipment will be collected</td>
+          <td class="tg-mmlj">01, Zending voorgemeld</td>
         </tr>
         <tr>
-          <td>A10</td>
-          <td>Keuze van verzender: Retourenlabel gegenereerd.</td>
-          <td>Recipient&rsquo;s choice: Sender has generated return label</td>
+          <td class="tg-0lax">J93</td>
+          <td class="tg-0lax">Voorgemelde zending gedeeltelijk niet aangetroffen</td>
+          <td class="tg-0lax">Pre-alerted shipment partially not found</td>
+          <td class="tg-mmlj">01, Zending voorgemeld</td>
         </tr>
         <tr>
-          <td>A11</td>
-          <td>Keuze van ontvanger: Bezorgen bij willekeurige buren</td>
-          <td>Recipient&rsquo;s choice: deliver to random neighbour</td>
+          <td class="tg-0lax">M03</td>
+          <td class="tg-0lax">Geldigheidsduur label verstreken</td>
+          <td class="tg-0lax">Period of validity label expired</td>
+          <td class="tg-mmlj">01, Zending voorgemeld</td>
         </tr>
         <tr>
-          <td>A12</td>
-          <td>Keuze van ontvanger: Bezorgen op andere dag.</td>
-          <td>Recipient&rsquo;s choice: deliver on a different day</td>
+          <td class="tg-0lax">X80</td>
+          <td class="tg-0lax">Afhaalopdracht ontvangen</td>
+          <td class="tg-0lax">Collection order received</td>
+          <td class="tg-mmlj">01, Zending voorgemeld</td>
         </tr>
         <tr>
-          <td>A13</td>
-          <td>Keuze van ontvanger: Bezorgen in een ander dagdeel</td>
-          <td>Recipient&rsquo;s choice: deliver on a different part of the day</td>
+          <td class="tg-0lax">X81</td>
+          <td class="tg-0lax">Retourzending ontvangen in land van bestemming</td>
+          <td class="tg-0lax">Return shipment received in country of destination</td>
+          <td class="tg-mmlj">01, Zending voorgemeld</td>
         </tr>
         <tr>
-          <td>A20</td>
-          <td>Verzoek tot betaling kosten voor zending verstuurd</td>
-          <td>Request for payment of shipment costs sent</td>
+          <td class="tg-0lax">B01</td>
+          <td class="tg-0lax">Zending is ontvangen door PostNL</td>
+          <td class="tg-0lax">Shipment received by PostNL</td>
+          <td class="tg-mmlj">02, Zending in ontvangst genomen</td>
         </tr>
         <tr>
-          <td>A21</td>
-          <td>Betaling van kosten voor zending ontvangen</td>
-          <td>Payment for shipment costs received</td>
+          <td class="tg-0lax">X40</td>
+          <td class="tg-0lax">Zending ontvangen op PostNL-punt</td>
+          <td class="tg-0lax">Shipment received at PostNL outlet</td>
+          <td class="tg-mmlj">02, Zending in ontvangst genomen</td>
         </tr>
         <tr>
-          <td>A22</td>
-          <td>Verzoek tot betaling geweigerd</td>
-          <td>Request for payment refused</td>
+          <td class="tg-0lax">B04</td>
+          <td class="tg-0lax">Zending is afgehaald door PostNL</td>
+          <td class="tg-0lax">Shipment collected by PostNL</td>
+          <td class="tg-mmlj">03, Zending afgehaald</td>
         </tr>
         <tr>
-          <td>A27</td>
-          <td>Keuze van ontvanger: Zending wordt afgeleverd bij Pakketautomaat</td>
-          <td>Shipment will be delivered to Parcel Locker</td>
+          <td class="tg-0lax">Z80</td>
+          <td class="tg-0lax">Yes! Je zending is opgehaald bij een ophaalpunt</td>
+          <td class="tg-0lax">Yes! Your shipment has been picked up at a collection point</td>
+          <td class="tg-mmlj">03, Zending afgehaald</td>
         </tr>
         <tr>
-          <td>A28</td>
-          <td>Keuze van ontvanger: Bezorgen bij afhaallocatie express</td>
-          <td>To be collected at PostNL location from 9:00am</td>
+          <td class="tg-0lax">D02</td>
+          <td class="tg-0lax">Zending niet afgehaald, adres onjuist</td>
+          <td class="tg-0lax">Shipment not collected; incorrect address</td>
+          <td class="tg-mmlj">04, Zending niet afgehaald</td>
         </tr>
         <tr>
-          <td>A29</td>
-          <td>Keuze van ontvanger: Bezorgen in de avond op een ander adres</td>
-          <td>Shipment will be delivered in the evening to another address</td>
+          <td class="tg-0lax">D03</td>
+          <td class="tg-0lax">Afhaalzending niet opgehaald, niemand op adres aanwezig</td>
+          <td class="tg-0lax">Collection shipment not collected, no one present at address</td>
+          <td class="tg-mmlj">04, Zending niet afgehaald</td>
         </tr>
         <tr>
-          <td>A31</td>
-          <td>Keuze van ontvanger: Bezorgen in de avond bij buren</td>
-          <td>Shipment will be delivered in the evening to a neighbour</td>
+          <td class="tg-0lax">D04</td>
+          <td class="tg-0lax">Zending niet opgehaald, onjuist adres</td>
+          <td class="tg-0lax">Shipment not collected; incorrect address</td>
+          <td class="tg-mmlj">04, Zending niet afgehaald</td>
         </tr>
         <tr>
-          <td>A32</td>
-          <td>Keuze van ontvanger: Bezorgen in de avond op andere dag</td>
-          <td>Shipment will be delivered in the evening on another day</td>
+          <td class="tg-0lax">D05</td>
+          <td class="tg-0lax">Er was geen zending om af te halen</td>
+          <td class="tg-0lax">There was no shipment to collect</td>
+          <td class="tg-mmlj">04, Zending niet afgehaald</td>
         </tr>
         <tr>
-          <td>A34</td>
-          <td>Keuze van ontvanger: Af te halen bij afhaallocatie Belgie.</td>
-          <td>Shipment will be delivered to PostNL location</td>
+          <td class="tg-0lax">D06</td>
+          <td class="tg-0lax">Afhaalzending niet opgehaald, zending geen (correct) label</td>
+          <td class="tg-0lax">Collection shipment not collected, shipment incorrectly/not labelled</td>
+          <td class="tg-mmlj">04, Zending niet afgehaald</td>
         </tr>
         <tr>
-          <td>A35</td>
-          <td>Keuze van ontvanger: Bezorgen op andere dag</td>
-          <td>Shipment will be delivered on another day</td>
+          <td class="tg-0lax">D07</td>
+          <td class="tg-0lax">Afhaalzending niet opgehaald, zending niet goed verpakt</td>
+          <td class="tg-0lax">Collection shipment not collected, shipment not properly packed</td>
+          <td class="tg-mmlj">04, Zending niet afgehaald</td>
         </tr>
         <tr>
-          <td>A41</td>
-          <td>Contact met ontvanger: Door CS Extra@Home</td>
-          <td>CS Extra@Home contacted recipient.</td>
+          <td class="tg-0lax">D09</td>
+          <td class="tg-0lax">Afhaalzending niet opgehaald, geen gehoor</td>
+          <td class="tg-0lax">Collection shipment not collected, no answer</td>
+          <td class="tg-mmlj">04, Zending niet afgehaald</td>
         </tr>
         <tr>
-          <td>A42</td>
-          <td>Contact met ontvanger: Bezorgen op andere dag.</td>
-          <td>Delivery date of shipment changed</td>
+          <td class="tg-0lax">D40</td>
+          <td class="tg-0lax">Afhaalzending niet opgehaald</td>
+          <td class="tg-0lax">Collection shipment not collected</td>
+          <td class="tg-mmlj">04, Zending niet afgehaald</td>
         </tr>
         <tr>
-          <td>A43</td>
-          <td>Contact met ontvanger: E-mail met uitnodiging 2de bezorgpoging.</td>
-          <td>E-mail with invitation for 2nd delivery attempt sent</td>
+          <td class="tg-0lax">D41</td>
+          <td class="tg-0lax">Afhaalopdracht geannuleerd</td>
+          <td class="tg-0lax">Pick-up order cancelled</td>
+          <td class="tg-mmlj">04, Zending niet afgehaald</td>
         </tr>
         <tr>
-          <td>A46</td>
-          <td>Keuze van ontvanger: Retour sturen door afhaallocatie</td>
-          <td>Recipient request for pick-up location to return shipment</td>
+          <td class="tg-0lax">H31</td>
+          <td class="tg-0lax">Verzender heeft de zendingsopdracht geannuleerd</td>
+          <td class="tg-0lax">Sender has cancelled the shipment order</td>
+          <td class="tg-mmlj">04, Zending niet afgehaald</td>
         </tr>
         <tr>
-          <td>A71</td>
-          <td>Zending is voorgemeld bij Spring</td>
-          <td>Shipment pre announced at Spring</td>
+          <td class="tg-0lax">X42</td>
+          <td class="tg-0lax">Zending geweigerd bij PostNL-punt, te groot/te zwaar</td>
+          <td class="tg-0lax">Shipment refused at PostNL outlet, too large/too heavy</td>
+          <td class="tg-mmlj">04, Zending niet afgehaald</td>
         </tr>
         <tr>
-          <td>A72</td>
-          <td>Zending is klaar voor transport naar Nederland</td>
-          <td>Shipment ready for transport to the Netherlands</td>
+          <td class="tg-0lax">X43</td>
+          <td class="tg-0lax">Zending geweigerd bij PostNL-punt, niet goed verpakt</td>
+          <td class="tg-0lax">Shipment refused at PostNL outlet, insufficient packaging</td>
+          <td class="tg-mmlj">04, Zending niet afgehaald</td>
         </tr>
         <tr>
-          <td>A73</td>
-          <td>Zending is gecollecteerd door transportpartner</td>
-          <td>Shipment collected by partner</td>
+          <td class="tg-0lax">Y80</td>
+          <td class="tg-0lax">We hebben je gemist, we komen nog een keer</td>
+          <td class="tg-0lax">We missed you; we’ll try again</td>
+          <td class="tg-mmlj">04, Zending niet afgehaald</td>
         </tr>
         <tr>
-          <td>A74</td>
-          <td>Zending is ontvangen door transportpartner in land van verzender</td>
-          <td>Shipment received by partner in country of origin</td>
+          <td class="tg-0lax">Y81</td>
+          <td class="tg-0lax">Afhaalopdracht mislukt, geen nieuwe poging</td>
+          <td class="tg-0lax">Pick-up order unsuccessful, no new attempt</td>
+          <td class="tg-mmlj">04, Zending niet afgehaald</td>
         </tr>
         <tr>
-          <td>A75</td>
-          <td>Zending is onderweg naar Nederland vanuit buitenland.</td>
-          <td>Shipment en route to the Netherlands</td>
+          <td class="tg-0lax">A08</td>
+          <td class="tg-0lax">Keuze van ontvanger: bezorgen bij buren</td>
+          <td class="tg-0lax">Recipient’s choice: deliver to neighbour</td>
+          <td class="tg-145f">05, Zending gesorteerd</td>
         </tr>
         <tr>
-          <td>A76</td>
-          <td>Zending is aangekomen in Nederland.</td>
-          <td>Shipment arrived in the Netherlands</td>
+          <td class="tg-0lax">A09</td>
+          <td class="tg-0lax">Keuze van ontvanger: bezorgen op afhaallocatie</td>
+          <td class="tg-0lax">Recipient’s choice: deliver to pick-up location</td>
+          <td class="tg-145f">05, Zending gesorteerd</td>
         </tr>
         <tr>
-          <td>A94</td>
-          <td>Zelf bezorging gewijzigd</td>
-          <td>Delivery changed by customer</td>
+          <td class="tg-0lax">A11</td>
+          <td class="tg-0lax">Keuze van ontvanger: bezorgen bij willekeurige buren</td>
+          <td class="tg-0lax">Recipient’s choice: deliver to random neighbour</td>
+          <td class="tg-145f">05, Zending gesorteerd</td>
         </tr>
         <tr>
-          <td>A99</td>
-          <td>Zending wordt bezorgd op afhaallocatie.</td>
-          <td>Shipment will be delivered to a Pick Up location</td>
+          <td class="tg-0lax">A12</td>
+          <td class="tg-0lax">Keuze van ontvanger: bezorgen op andere dag</td>
+          <td class="tg-0lax">Recipient’s choice: deliver on a different day</td>
+          <td class="tg-145f">05, Zending gesorteerd</td>
         </tr>
         <tr>
-          <td>B01</td>
-          <td>Zending geaccepteerd en gesorteerd</td>
-          <td>Shipment is at PostNL sorting</td>
+          <td class="tg-0lax">A13</td>
+          <td class="tg-0lax">Keuze van ontvanger: bezorgen in een ander dagdeel</td>
+          <td class="tg-0lax">Recipient’s choice: deliver on a different part of the day</td>
+          <td class="tg-145f">05, Zending gesorteerd</td>
         </tr>
         <tr>
-          <td>B06</td>
-          <td>Zending geaccepteerd door PostNL IMEC.</td>
-          <td>Zending geaccepteerd door PostNL IMEC.</td>
+          <td class="tg-0lax">A27</td>
+          <td class="tg-0lax">Zending wordt afgeleverd bij de pakketautomaat</td>
+          <td class="tg-0lax">Shipment will be delivered to the parcel locker</td>
+          <td class="tg-145f">05, Zending gesorteerd</td>
         </tr>
         <tr>
-          <td>C01</td>
-          <td>Zending afgehaald of omgeruild door PostNL.</td>
-          <td>Shipment collected by PostNL</td>
+          <td class="tg-0lax">A28</td>
+          <td class="tg-0lax">Vanaf 09.00 uur af te halen bij PostNL-punt</td>
+          <td class="tg-0lax">To be collected at PostNL outlet from 9:00am</td>
+          <td class="tg-145f">05, Zending gesorteerd</td>
         </tr>
         <tr>
-          <td>D02</td>
-          <td>Afhaalzending niet afgehaald, ontvanger onbekend op adres.</td>
-          <td>Shipment not collected</td>
+          <td class="tg-0lax">A29</td>
+          <td class="tg-0lax">Zending wordt afgeleverd in de avond op een ander adres</td>
+          <td class="tg-0lax">Shipment will be delivered in the evening to another address</td>
+          <td class="tg-145f">05, Zending gesorteerd</td>
         </tr>
         <tr>
-          <td>D03</td>
-          <td>Afhaalzending niet afgehaald, geen gehoor 2e afhaalpoging.</td>
-          <td>Not at home for second delivery attempt</td>
+          <td class="tg-0lax">A30</td>
+          <td class="tg-0lax">Zending wordt afgeleverd op een ander adres</td>
+          <td class="tg-0lax">Shipment will be delivered to a different address</td>
+          <td class="tg-145f">05, Zending gesorteerd</td>
         </tr>
         <tr>
-          <td>D04</td>
-          <td>Afhaalzending niet afgehaald, adres onbekend.</td>
-          <td>Shipment not collected</td>
+          <td class="tg-0lax">A31</td>
+          <td class="tg-0lax">Zending wordt afgeleverd in de avond bij buren</td>
+          <td class="tg-0lax">Shipment will be delivered in the evening to a neighbour</td>
+          <td class="tg-145f">05, Zending gesorteerd</td>
         </tr>
         <tr>
-          <td>D05</td>
-          <td>Afhaalzending niet afgehaald, geen afhaalzending aanwezig.</td>
-          <td>There was no parcel to collect</td>
+          <td class="tg-0lax">A32</td>
+          <td class="tg-0lax">Zending wordt bezorgd in de avond op een andere dag</td>
+          <td class="tg-0lax">Shipment will be delivered in the evening on another day</td>
+          <td class="tg-145f">05, Zending gesorteerd</td>
         </tr>
         <tr>
-          <td>D06</td>
-          <td>Afhaalzending niet afgehaald, geen of incorrect label.</td>
-          <td>Afhaalzending niet afgehaald, geen of incorrect label.</td>
+          <td class="tg-0lax">A34</td>
+          <td class="tg-0lax">Bezorging gewijzigd naar een PostNL-punt</td>
+          <td class="tg-0lax">Delivery changed to a PostNL outlet</td>
+          <td class="tg-145f">05, Zending gesorteerd</td>
         </tr>
         <tr>
-          <td>D07</td>
-          <td>Afhaalzending niet afgehaald, niet deugdelijk verpakt.</td>
-          <td>Afhaalzending niet afgehaald, niet deugdelijk verpakt.</td>
+          <td class="tg-0lax">A35</td>
+          <td class="tg-0lax">Bezorging gewijzigd naar een andere dag</td>
+          <td class="tg-0lax">Delivery changed to another day</td>
+          <td class="tg-145f">05, Zending gesorteerd</td>
         </tr>
         <tr>
-          <td>D08</td>
-          <td>Afhaalzending niet afgehaald, geen gehoor bij 1e afhaalpoging.</td>
-          <td>We missed you</td>
+          <td class="tg-0lax">A42</td>
+          <td class="tg-0lax">De bezorgdatum van de zending is aangepast</td>
+          <td class="tg-0lax">Delivery date of shipment changed</td>
+          <td class="tg-145f">05, Zending gesorteerd</td>
         </tr>
         <tr>
-          <td>D09</td>
-          <td>Afhaalzending niet opgehaald, niet thuis. Nieuwe poging volgt.</td>
-          <td>Afhaalzending niet opgehaald, niet thuis.</td>
+          <td class="tg-0lax">A43</td>
+          <td class="tg-0lax">E-mail is verzonden met uitnodiging voor 2de bezorgpoging</td>
+          <td class="tg-0lax">E-mail with invitation for 2nd delivery attempt sent</td>
+          <td class="tg-145f">05, Zending gesorteerd</td>
         </tr>
         <tr>
-          <td>D40</td>
-          <td>Afhaalzending niet afgehaald, niet thuis.</td>
-          <td>Collection shipment not collected</td>
+          <td class="tg-0lax">A99</td>
+          <td class="tg-0lax">Zending wordt bezorgd op PostNL-punt</td>
+          <td class="tg-0lax">Shipment will be delivered to a PostNL outlet</td>
+          <td class="tg-145f">05, Zending gesorteerd</td>
         </tr>
         <tr>
-          <td>D41</td>
-          <td>Afhaalopdracht geannuleerd</td>
-          <td>Pick-up order cancelled</td>
+          <td class="tg-0lax">J01</td>
+          <td class="tg-0lax">Zending is gesorteerd</td>
+          <td class="tg-0lax">Shipment has been sorted</td>
+          <td class="tg-145f">05, Zending gesorteerd</td>
         </tr>
         <tr>
-          <td>F01</td>
-          <td>Afhaalopdracht geaccepteerd door PostNL.</td>
-          <td>Pick-up shipment will be collected</td>
+          <td class="tg-0lax">J06</td>
+          <td class="tg-0lax">Zending gesorteerd in sorteercentrum</td>
+          <td class="tg-0lax">Shipment sorted in sorting centre</td>
+          <td class="tg-145f">05, Zending gesorteerd</td>
         </tr>
         <tr>
-          <td>F03</td>
-          <td>Afhaalopdracht afgekeurd: Ontbrekende verzendgegevens</td>
-          <td>Shipment not processed because of missing shipment details</td>
+          <td class="tg-0lax">J07</td>
+          <td class="tg-0lax">Gesloten: aflevering uitgesteld tot volgende werkdag</td>
+          <td class="tg-0lax">Closed: delivery postponed until the following working day</td>
+          <td class="tg-145f">05, Zending gesorteerd</td>
         </tr>
         <tr>
-          <td>F04</td>
-          <td>Afhaalopdracht afgekeurd:Combi klant,product,land,netwerkpartner</td>
-          <td>Shipment not processed because of missing shipment details</td>
+          <td class="tg-0lax">J09</td>
+          <td class="tg-0lax">Sorry, bezorgmoment is bijgewerkt</td>
+          <td class="tg-0lax">Sorry, delivery time has been updated</td>
+          <td class="tg-145f">05, Zending gesorteerd</td>
         </tr>
         <tr>
-          <td>F05</td>
-          <td>Afhaalopdracht afgekeurd: Klant is niet actief.</td>
-          <td>Shipment will not be processed. Pick-up contract is missing</td>
+          <td class="tg-0lax">J10</td>
+          <td class="tg-0lax">Zending is gesorteerd</td>
+          <td class="tg-0lax">Shipment has been sorted</td>
+          <td class="tg-145f">05, Zending gesorteerd</td>
         </tr>
         <tr>
-          <td>F06</td>
-          <td>Afhaalopdracht afgekeurd: Postcode afhaaladres bestaat niet.</td>
-          <td>Shipment not processed. Postcode at address unknown.</td>
+          <td class="tg-0lax">J14</td>
+          <td class="tg-0lax">Sorry, bezorgmoment is bijgewerkt</td>
+          <td class="tg-0lax">Sorry, delivery time has been updated</td>
+          <td class="tg-145f">05, Zending gesorteerd</td>
         </tr>
         <tr>
-          <td>F07</td>
-          <td>Afhaalopdracht afgekeurd: Postcode bezorgadres bestaat niet.</td>
-          <td>Shipment not processed. Postcode delivery address unknown.</td>
+          <td class="tg-0lax">J16</td>
+          <td class="tg-0lax">Bezorgadres onbereikbaar, nieuwe poging volgt</td>
+          <td class="tg-0lax">Delivery address inaccessible, new attempt to follow</td>
+          <td class="tg-145f">05, Zending gesorteerd</td>
         </tr>
         <tr>
-          <td>F08</td>
-          <td>Afhaalopdracht afgekeurd: Afhaaldatum ligt in het verleden.</td>
-          <td>Shipment not processed. Collection date is in the past</td>
+          <td class="tg-0lax">J17</td>
+          <td class="tg-0lax">Aflevering uitgesteld i.v.m. gesloten verklaring</td>
+          <td class="tg-0lax">Delivery postponed due to ‘closed’ notification</td>
+          <td class="tg-145f">05, Zending gesorteerd</td>
         </tr>
         <tr>
-          <td>F10</td>
-          <td>Afhaalopdracht afgekeurd: Afhaaldatum is geen werkdag.</td>
-          <td>Shipm will not be processed. Coll date is not a working day.</td>
+          <td class="tg-0lax">J22</td>
+          <td class="tg-0lax">Uitstel van aflevering vanwege incomplete multicollozending</td>
+          <td class="tg-0lax">Delivery postponed because of incomplete multi-parcel shipment</td>
+          <td class="tg-145f">05, Zending gesorteerd</td>
         </tr>
         <tr>
-          <td>G01</td>
-          <td>Zending niet aangetroffen in verwacht distributieproces.</td>
-          <td>Shipment not processed.</td>
+          <td class="tg-0lax">24</td>
+          <td class="tg-0lax">Sorry, bezorgmoment is bijgewerkt</td>
+          <td class="tg-0lax">Sorry, delivery time has been updated</td>
+          <td class="tg-145f">05, Zending gesorteerd</td>
         </tr>
         <tr>
-          <td>G02</td>
-          <td>Zending niet aangetroffen in verwachte shift.</td>
-          <td>Sorted, not encountered</td>
+          <td class="tg-0lax">J26</td>
+          <td class="tg-0lax">Aflevering uitgesteld tot volgende werkdag</td>
+          <td class="tg-0lax">Delivery postponed until the following working day</td>
+          <td class="tg-145f">05, Zending gesorteerd</td>
         </tr>
         <tr>
-          <td>G03</td>
-          <td>Zending aangeleverd door retail in ongesorteerde voorraad.</td>
-          <td>unsorted stock, deliverd by Retail</td>
+          <td class="tg-0lax">J27</td>
+          <td class="tg-0lax">Zending gesorteerd door depot</td>
+          <td class="tg-0lax">Shipment sorted by the depot</td>
+          <td class="tg-145f">05, Zending gesorteerd</td>
         </tr>
         <tr>
-          <td>H01</td>
-          <td>Zending geweigerd door de ontvanger. Retour afzender.</td>
-          <td>Refused at delivery</td>
+          <td class="tg-0lax">J28</td>
+          <td class="tg-0lax">Vanwege formaat wordt zending bezorgd door PostNL Extra@Home</td>
+          <td class="tg-0lax">Due to size, shipment will be delivered by PostNL Extra@Home</td>
+          <td class="tg-145f">05, Zending gesorteerd</td>
         </tr>
         <tr>
-          <td>H02</td>
-          <td>Zending onbestelbaar, adres onbekend. Retour afzender.</td>
-          <td>Incorrect address</td>
+          <td class="tg-0lax">J33</td>
+          <td class="tg-0lax">Herstelprocedure ivm onjuiste adressering</td>
+          <td class="tg-0lax">Recovery procedure for incorrect address</td>
+          <td class="tg-145f">05, Zending gesorteerd</td>
         </tr>
         <tr>
-          <td>H03</td>
-          <td>Zending niet afgehaald door ontvanger. Retour afzender.</td>
-          <td>Shipment not collected</td>
+          <td class="tg-0lax">J36</td>
+          <td class="tg-0lax">Sorry, bezorgmoment is bijgewerkt</td>
+          <td class="tg-0lax">Sorry, delivery time has been updated</td>
+          <td class="tg-145f">05, Zending gesorteerd</td>
         </tr>
         <tr>
-          <td>H04</td>
-          <td>Zending beschadigd. Retour afzender.</td>
-          <td>Shipment is damaged, return to sender</td>
+          <td class="tg-0lax">J61</td>
+          <td class="tg-0lax">Zending is gesorteerd</td>
+          <td class="tg-0lax">Shipment has been sorted</td>
+          <td class="tg-145f">05, Zending gesorteerd</td>
         </tr>
         <tr>
-          <td>H05</td>
-          <td>Zending niet afgeleverd, niet thuis. Retour afzender.</td>
-          <td>Shipment returned to sender</td>
+          <td class="tg-0lax">J90</td>
+          <td class="tg-0lax">Zending wordt geleverd op een aangegeven gewenste datum</td>
+          <td class="tg-0lax">Shipment will be delivered on an indicated desired date</td>
+          <td class="tg-145f">05, Zending gesorteerd</td>
         </tr>
         <tr>
-          <td>H07</td>
-          <td>Retourzending niet afgeleverd, onbestelbaar.</td>
-          <td>Shipment returned to sender</td>
+          <td class="tg-0lax">Q12</td>
+          <td class="tg-0lax">Pakket verzonden naar land van bestemming</td>
+          <td class="tg-0lax">Shipment sent to country of destination</td>
+          <td class="tg-145f">05, Zending gesorteerd</td>
         </tr>
         <tr>
-          <td>H08</td>
-          <td>Aflevercode of legitimatie onjuist, zending retour afzender.</td>
-          <td>Incorrect delivery code or ID, return shipment to sender</td>
+          <td class="tg-0lax">Q13</td>
+          <td class="tg-0lax">Pakket op transport gezet</td>
+          <td class="tg-0lax">Parcel placed on transport</td>
+          <td class="tg-145f">05, Zending gesorteerd</td>
         </tr>
         <tr>
-          <td>H09</td>
-          <td>Multicollozending niet compleet. Retour afzender.</td>
-          <td>Shipment incomplete, return to sender</td>
+          <td class="tg-0lax">R01</td>
+          <td class="tg-0lax">Zending is gesorteerd</td>
+          <td class="tg-0lax">Shipment has been sorted</td>
+          <td class="tg-145f">05, Zending gesorteerd</td>
         </tr>
         <tr>
-          <td>H10</td>
-          <td>Zending retour afzender. Inhoud niet toegestaan.</td>
-          <td>Return, content not permitted</td>
+          <td class="tg-0lax">R06</td>
+          <td class="tg-0lax">Zending is geannuleerd; neem contact op met de afzender</td>
+          <td class="tg-0lax">Shipment has been cancelled. Please contact the sender</td>
+          <td class="tg-145f">05, Zending gesorteerd</td>
         </tr>
         <tr>
-          <td>H12</td>
-          <td>Geadresseerde onbekend. Zending retour afzender.</td>
-          <td>Shipment undeliverable, return to sender</td>
+          <td class="tg-0lax">X01</td>
+          <td class="tg-0lax">Goed nieuws! Je zending is de grens over</td>
+          <td class="tg-0lax">Good news! Your parcel has crossed the border</td>
+          <td class="tg-145f">05, Zending gesorteerd</td>
         </tr>
         <tr>
-          <td>H15</td>
-          <td>Zending te groot of te zwaar, retour afzender</td>
-          <td>Shipment too large or too heavy, return to sender</td>
+          <td class="tg-0lax">X02</td>
+          <td class="tg-0lax">Yes! Je zending is aangekomen in het land van bestemming</td>
+          <td class="tg-0lax">Yes! Your shipment has arrived in the destination country</td>
+          <td class="tg-145f">05, Zending gesorteerd</td>
         </tr>
         <tr>
-          <td>H16</td>
-          <td>Zending niet afgeleverd, adres lang onbereikbaar. Retour.</td>
-          <td>Shipment not delivered, address long unavailable. Return</td>
+          <td class="tg-0lax">X07</td>
+          <td class="tg-0lax">Zending is gesorteerd in land van bestemming</td>
+          <td class="tg-0lax">Shipment sorted in country of destination</td>
+          <td class="tg-145f">05, Zending gesorteerd</td>
         </tr>
         <tr>
-          <td>H17</td>
-          <td>Waarde is hoger dan toegestaan door douane. Retour afzender.</td>
-          <td>Value exceeds maximum customs value. Return to sender.</td>
+          <td class="tg-0lax">X08</td>
+          <td class="tg-0lax">Je zending ligt op een sorteercentrum in land van bestemming</td>
+          <td class="tg-0lax">Your parcel's at a sorting centre in the destination country</td>
+          <td class="tg-145f">05, Zending gesorteerd</td>
         </tr>
         <tr>
-          <td>H18</td>
-          <td>Niet mogelijk om zending te bezorgen, retour afzender</td>
-          <td>Delivery failed, package goes back to sender</td>
+          <td class="tg-0lax">X11</td>
+          <td class="tg-0lax">Antwoord met informatie voor import aangifte ontvangen</td>
+          <td class="tg-0lax">Answer received with information for import declaration</td>
+          <td class="tg-145f">05, Zending gesorteerd</td>
         </tr>
         <tr>
-          <td>H20</td>
-          <td>Zending retour afzender zonder te scannen.</td>
-          <td>Return shipment to sender</td>
+          <td class="tg-0lax">X14</td>
+          <td class="tg-0lax">Zending in sorteercentrum in land van bestemming</td>
+          <td class="tg-0lax">Shipment in sorting centre in country of destination</td>
+          <td class="tg-145f">05, Zending gesorteerd</td>
         </tr>
         <tr>
-          <td>H22</td>
-          <td>Zending op verzoek van afzender retour gestuurd.</td>
-          <td>Shipment returned on request of Sender</td>
+          <td class="tg-0lax">X17</td>
+          <td class="tg-0lax">Zending gewogen en gewicht bepaald</td>
+          <td class="tg-0lax">Shipment weighed and weight determined at IMEC.</td>
+          <td class="tg-145f">05, Zending gesorteerd</td>
         </tr>
         <tr>
-          <td>H23</td>
-          <td>Zending geannuleerd, geen bezorgafspraak gemaakt.Retour afzender</td>
-          <td>Cancelled by PostNL, no delivery appointment could be made.</td>
+          <td class="tg-0lax">X20</td>
+          <td class="tg-0lax">Retourzending ontvangen in distributiecentrum buitenland</td>
+          <td class="tg-0lax">Return shipment received in distribution centre abroad</td>
+          <td class="tg-145f">05, Zending gesorteerd</td>
         </tr>
         <tr>
-          <td>H24</td>
-          <td>Keuze ontvanger: Zending retour afzender door afhaallocatie</td>
-          <td>Returned by pick-up location on recipient&rsquo;s request</td>
+          <td class="tg-0lax">X21</td>
+          <td class="tg-0lax">Retourzending ontvangen in distributiecentrum</td>
+          <td class="tg-0lax">Return shipment received in distribution centre</td>
+          <td class="tg-145f">05, Zending gesorteerd</td>
         </tr>
         <tr>
-          <td>H25</td>
-          <td>Zending niet afgeleverd, locatie lang onbereikbaar. Retour</td>
-          <td>Shipment not delivered, location long term unreachable</td>
+          <td class="tg-0lax">X22</td>
+          <td class="tg-0lax">Zending uit buitenland komt retour</td>
+          <td class="tg-0lax">International shipment returned</td>
+          <td class="tg-145f">05, Zending gesorteerd</td>
         </tr>
         <tr>
-          <td>H30</td>
-          <td>Opdracht geannuleerd na aanvang van de rit. Retour afzender</td>
-          <td>Sender has cancelled the shipment order</td>
+          <td class="tg-0lax">X50</td>
+          <td class="tg-0lax">Zending in sorteercentrum</td>
+          <td class="tg-0lax">Shipment in sorting centre</td>
+          <td class="tg-145f">05, Zending gesorteerd</td>
         </tr>
         <tr>
-          <td>H31</td>
-          <td>Opdracht geannuleerd voor aanvang van de rit. Retour afzender</td>
-          <td>Sender has cancelled the shipment order</td>
+          <td class="tg-0lax">X51</td>
+          <td class="tg-0lax">Zending is gesorteerd</td>
+          <td class="tg-0lax">Shipment has been sorted</td>
+          <td class="tg-145f">05, Zending gesorteerd</td>
         </tr>
         <tr>
-          <td>H32</td>
-          <td>Zending niet geleverd, past niet meer in distributiecapaciteit.</td>
-          <td>Delivery delayed</td>
+          <td class="tg-0lax">X68</td>
+          <td class="tg-0lax">Pakket weer terug in PostNL-proces</td>
+          <td class="tg-0lax">Parcel back in PostNL process</td>
+          <td class="tg-145f">05, Zending gesorteerd</td>
         </tr>
         <tr>
-          <td>H34</td>
-          <td>Zending niet afgeleverd. Contact met afzender.</td>
-          <td>Shipment not delivered</td>
+          <td class="tg-0lax">Y23</td>
+          <td class="tg-0lax">Adres is gecorrigeerd, nieuwe bezorgpoging volgt</td>
+          <td class="tg-0lax">Address corrected, new delivery attempt to follow</td>
+          <td class="tg-145f">05, Zending gesorteerd</td>
         </tr>
         <tr>
-          <td>H35</td>
-          <td>Zending beschadigd, retour afzender. Contact met afzender.</td>
-          <td>Shipment is damaged, return to sender</td>
+          <td class="tg-0lax">Y24</td>
+          <td class="tg-0lax">Adres is gecorrigeerd, nieuwe bezorgpoging volgt</td>
+          <td class="tg-0lax">Address corrected, new delivery attempt to follow</td>
+          <td class="tg-145f">05, Zending gesorteerd</td>
         </tr>
         <tr>
-          <td>H36</td>
-          <td>Zending niet afgeleverd, onbekend adres. Contact afzender.</td>
-          <td>Shipment not delivered</td>
+          <td class="tg-0lax">Y33</td>
+          <td class="tg-0lax">Aflevering uitgesteld tot volgende werkdag</td>
+          <td class="tg-0lax">Delivery postponed until the following working day</td>
+          <td class="tg-145f">05, Zending gesorteerd</td>
         </tr>
         <tr>
-          <td>H38</td>
-          <td>Zending geweigerd, verkeerde levering. Contact met afzender.</td>
-          <td>Refused at delivery</td>
+          <td class="tg-0lax">Y35</td>
+          <td class="tg-0lax">Sorry, bezorgmoment is bijgewerkt</td>
+          <td class="tg-0lax">Sorry, delivery time has been updated</td>
+          <td class="tg-145f">05, Zending gesorteerd</td>
         </tr>
         <tr>
-          <td>H51</td>
-          <td>Zending niet afgeleverd, geen brievenbus. Retour afzender.</td>
-          <td>Shipment not delivered, no mailbox. Return to sender</td>
+          <td class="tg-0lax">Y60</td>
+          <td class="tg-0lax">Sorry, bezorgmoment is bijgewerkt</td>
+          <td class="tg-0lax">Sorry, delivery time has been updated</td>
+          <td class="tg-145f">05, Zending gesorteerd</td>
         </tr>
         <tr>
-          <td>H52</td>
-          <td>Zending niet afgeleverd, past niet. Retour afzender.</td>
-          <td>Shipment not delivered, does not fit. Return to sender</td>
+          <td class="tg-0lax">Y61</td>
+          <td class="tg-0lax">Sorry, bezorgmoment is bijgewerkt</td>
+          <td class="tg-0lax">Sorry, delivery time has been updated</td>
+          <td class="tg-145f">05, Zending gesorteerd</td>
         </tr>
         <tr>
-          <td>I01</td>
-          <td>Zending afgeleverd, expliciet vastgelegd.</td>
-          <td>Shipment delivered</td>
+          <td class="tg-0lax">Y62</td>
+          <td class="tg-0lax">Sorry, bezorgmoment is bijgewerkt</td>
+          <td class="tg-0lax">Sorry, delivery time has been updated</td>
+          <td class="tg-145f">05, Zending gesorteerd</td>
         </tr>
         <tr>
-          <td>I02</td>
-          <td>Zending afgehaald bij afhaallocatie, expliciet vastgelegd.</td>
-          <td>Shipment collected at PostNL location</td>
+          <td class="tg-0lax">D08</td>
+          <td class="tg-0lax">We hebben je gemist, we komen nog een keer</td>
+          <td class="tg-0lax">We missed you; we’ll try again</td>
+          <td class="tg-145f">06, Zending niet gesorteerd</td>
         </tr>
         <tr>
-          <td>I03</td>
-          <td>Zending afgeleverd, impliciet vastgelegd.</td>
-          <td>Shipment delivered</td>
+          <td class="tg-0lax">H10</td>
+          <td class="tg-0lax">Retour, inhoud niet toegestaan</td>
+          <td class="tg-0lax">Return, content not permitted</td>
+          <td class="tg-145f">06, Zending niet gesorteerd</td>
         </tr>
         <tr>
-          <td>I05</td>
-          <td>Zending afgeleverd door postbezorger, impliciet vastgelegd.</td>
-          <td>Shipment delivered</td>
+          <td class="tg-0lax">K01</td>
+          <td class="tg-0lax">Sorry, bezorgmoment is bijgewerkt</td>
+          <td class="tg-0lax">Sorry, delivery time has been updated</td>
+          <td class="tg-145f">06, Zending niet gesorteerd</td>
         </tr>
         <tr>
-          <td>I06</td>
-          <td>Zending in bulk impliciet afgeleverd</td>
-          <td>Zending in bulk impliciet afgeleverd</td>
+          <td class="tg-0lax">K02</td>
+          <td class="tg-0lax">Ontvanger is verhuisd. Zending doorgestuurd naar nieuw adres</td>
+          <td class="tg-0lax">Recipient has moved. Shipment forwarded to new address</td>
+          <td class="tg-145f">06, Zending niet gesorteerd</td>
         </tr>
         <tr>
-          <td>I07</td>
-          <td>Retourzending afgeleverd, impliciet vastgelegd.</td>
-          <td>Return shipment transferred to sender</td>
+          <td class="tg-0lax">K03</td>
+          <td class="tg-0lax">Zending doorgestuurd naar door geadresseerde gekozen adres.</td>
+          <td class="tg-0lax">Shipment forwarded to address chosen by addressee.</td>
+          <td class="tg-145f">06, Zending niet gesorteerd</td>
         </tr>
         <tr>
-          <td>I09</td>
-          <td>Zending afgeleverd in Pakketkluis</td>
-          <td>Shipment delivered in Parcel Box</td>
+          <td class="tg-0lax">K30</td>
+          <td class="tg-0lax">Zending kan niet bezorgd worden; Neem contact op met klantenservice</td>
+          <td class="tg-0lax">Shipment cannot be delivered</td>
+          <td class="tg-145f">06, Zending niet gesorteerd</td>
         </tr>
         <tr>
-          <td>I10</td>
-          <td>Zending afgeleverd bij de buren.</td>
-          <td>Shipment delivered to neighbour</td>
+          <td class="tg-0lax">K92</td>
+          <td class="tg-0lax">Zending vernietigd</td>
+          <td class="tg-0lax">Shipment destroyed</td>
+          <td class="tg-145f">06, Zending niet gesorteerd</td>
         </tr>
         <tr>
-          <td>I11</td>
-          <td>Zending afgeleverd in brievenbus, expliciet vastgelegd.</td>
-          <td>Shipment in letterbox</td>
+          <td class="tg-0lax">V01</td>
+          <td class="tg-0lax">Sorry, bezorgmoment is bijgewerkt</td>
+          <td class="tg-0lax">Sorry, delivery time has been updated</td>
+          <td class="tg-145f">06, Zending niet gesorteerd</td>
         </tr>
         <tr>
-          <td>I12</td>
-          <td>Zending afgeleverd op safeplace.</td>
-          <td>Bezorgd op safeplace</td>
+          <td class="tg-0lax">V06</td>
+          <td class="tg-0lax">Wegens  drukte is je zending&nbsp;&nbsp;&nbsp;vertraagd. Deze zal zo snel mogelijk worden bezorgd</td>
+          <td class="tg-0lax">Your shipment has been delayed due to very high traffic. It will be&nbsp;&nbsp;&nbsp;delivered as soon as p</td>
+          <td class="tg-145f">06, Zending niet gesorteerd</td>
         </tr>
         <tr>
-          <td>I20</td>
-          <td>Zending beschikbaar bij postbuslocatie.</td>
-          <td>Shipment to be collected at PO Box</td>
+          <td class="tg-0lax">Y07</td>
+          <td class="tg-0lax">Sorry, bezorgmoment is bijgewerkt</td>
+          <td class="tg-0lax">Sorry, delivery time has been updated</td>
+          <td class="tg-145f">06, Zending niet gesorteerd</td>
         </tr>
         <tr>
-          <td>I22</td>
-          <td>Zending afgehaald bij afhaallocatie, impliciet vastgelegd</td>
-          <td>Shipment picked up from pick up location</td>
+          <td class="tg-0lax">H32</td>
+          <td class="tg-0lax">Sorry, bezorgmoment is bijgewerkt</td>
+          <td class="tg-0lax">Sorry, delivery time has been updated</td>
+          <td class="tg-8fdo">07, Zending in distributieproces</td>
         </tr>
         <tr>
-          <td>I23</td>
-          <td>Zending afgehaald bij afhaallocatie, impliciet vastgelegd.</td>
-          <td>Shipment has been handed over to recipient</td>
+          <td class="tg-0lax">H35</td>
+          <td class="tg-0lax">Zending is beschadigd, gaat retour afzender</td>
+          <td class="tg-0lax">Shipment is damaged, return to sender</td>
+          <td class="tg-8fdo">07, Zending in distributieproces</td>
         </tr>
         <tr>
-          <td>J01</td>
-          <td>Zending gesorteerd</td>
-          <td>Shipment sorted</td>
+          <td class="tg-0lax">J05</td>
+          <td class="tg-0lax">Bezorger is onderweg</td>
+          <td class="tg-0lax">Driver is en route</td>
+          <td class="tg-8fdo">07, Zending in distributieproces</td>
         </tr>
         <tr>
-          <td>J02</td>
-          <td>Zending naar huisadres beschikbaar bij afhaallocatie.</td>
-          <td>Shipment to be collected at PostNL location</td>
+          <td class="tg-0lax">J08</td>
+          <td class="tg-0lax">Bezorgen lukte niet, we proberen het nog een keer</td>
+          <td class="tg-0lax">Delivery unsuccessful, we’ll try again</td>
+          <td class="tg-8fdo">07, Zending in distributieproces</td>
         </tr>
         <tr>
-          <td>J05</td>
-          <td>Zending vrijgegeven en bezorger is onderweg.</td>
-          <td>Driver is en route</td>
+          <td class="tg-0lax">J29</td>
+          <td class="tg-0lax">Zending paste niet door brievenbus, we komen nog een keer</td>
+          <td class="tg-0lax">Shipment does not fit through letterbox, we’ll try again</td>
+          <td class="tg-8fdo">07, Zending in distributieproces</td>
         </tr>
         <tr>
-          <td>J06</td>
-          <td>Zending gesorteerd naar netwerkpartner</td>
-          <td>Shipment sorted in sorting centre</td>
+          <td class="tg-0lax">J39</td>
+          <td class="tg-0lax">Aflevering uitgesteld tot volgende werkdag  </td>
+          <td class="tg-0lax">Delivery postponed until the following working day  </td>
+          <td class="tg-8fdo">07, Zending in distributieproces</td>
         </tr>
         <tr>
-          <td>J07</td>
-          <td>Afleveradres gesloten, aflevering uitgesteld.</td>
-          <td>Closed: delivery postponed until the following working day</td>
+          <td class="tg-0lax">J41</td>
+          <td class="tg-0lax">Zending niet toegestaan in de pakketautomaat</td>
+          <td class="tg-0lax">Shipment not allowed in the parcel locker</td>
+          <td class="tg-8fdo">07, Zending in distributieproces</td>
         </tr>
         <tr>
-          <td>J08</td>
-          <td>Zending niet afgeleverd. Nieuwe afleverpoging volgt.</td>
-          <td>We missed you</td>
+          <td class="tg-0lax">J42</td>
+          <td class="tg-0lax">Zending past niet in de pakketautomaat</td>
+          <td class="tg-0lax">Insufficient space in the parcel locker</td>
+          <td class="tg-8fdo">07, Zending in distributieproces</td>
         </tr>
         <tr>
-          <td>J09</td>
-          <td>Zending in distributievoorraad, uitgesteld niet binnen SL.</td>
-          <td>Delivery delayed</td>
+          <td class="tg-0lax">J45</td>
+          <td class="tg-0lax">Op lijndienst naar distributie depot</td>
+          <td class="tg-0lax">On liner service to distribution depot</td>
+          <td class="tg-8fdo">07, Zending in distributieproces</td>
         </tr>
         <tr>
-          <td>J10</td>
-          <td>Zending handmatig gesorteerd op distributievestiging</td>
-          <td>Shipment sorted</td>
+          <td class="tg-0lax">J47</td>
+          <td class="tg-0lax">Zending niet opgehaald, gaat naar PostNL-punt</td>
+          <td class="tg-0lax">Pickup window closed; shipment moved to PostNL pickup point</td>
+          <td class="tg-8fdo">07, Zending in distributieproces</td>
         </tr>
         <tr>
-          <td>J12</td>
-          <td>Zending beschikbaar op afhaallocatie</td>
-          <td>Shipment to be collected at PostNL location</td>
+          <td class="tg-0lax">J48</td>
+          <td class="tg-0lax">Pakket te groot om te bezorgen in de pakketautomaat</td>
+          <td class="tg-0lax">Parcel too large for delivery in the parcel locker</td>
+          <td class="tg-8fdo">07, Zending in distributieproces</td>
         </tr>
         <tr>
-          <td>J14</td>
-          <td>Zending vertraagd, interne foutloper, in verkeerde shift.</td>
-          <td>Delivery delayed</td>
+          <td class="tg-0lax">J55</td>
+          <td class="tg-0lax">Bezorger is onderweg naar PostNL-punt</td>
+          <td class="tg-0lax">Driver is en route to PostNL outlet</td>
+          <td class="tg-8fdo">07, Zending in distributieproces</td>
         </tr>
         <tr>
-          <td>J16</td>
-          <td>Bezorgadres tijdelijk onbereikbaar, nieuwe poging volgt.</td>
-          <td>Delivery address inaccessible, new attempt to follow</td>
+          <td class="tg-0lax">J94</td>
+          <td class="tg-0lax">Vrachtzending niet afgeleverd, geadresseerde afwezig</td>
+          <td class="tg-0lax">Freight shipment not delivered; addressee absent</td>
+          <td class="tg-8fdo">07, Zending in distributieproces</td>
         </tr>
         <tr>
-          <td>J17</td>
-          <td>Zending automatisch uitgesteld i.v.m. gesloten verklaring.</td>
-          <td>Delivery postponed due to &lsquo;closed&rsquo; notification</td>
+          <td class="tg-0lax">J95</td>
+          <td class="tg-0lax">Uitgesteld, gescand op depot</td>
+          <td class="tg-0lax">Postponed, scanned at depot</td>
+          <td class="tg-8fdo">07, Zending in distributieproces</td>
         </tr>
         <tr>
-          <td>J22</td>
-          <td>Multicollozending incompleet.</td>
-          <td>Delivery postponed due to &lsquo;closed&rsquo; notification</td>
+          <td class="tg-0lax">K14</td>
+          <td class="tg-0lax">Wij hebben je gemist, we komen nog een keer</td>
+          <td class="tg-0lax">We missed you; we’ll try again</td>
+          <td class="tg-8fdo">07, Zending in distributieproces</td>
         </tr>
         <tr>
-          <td>J23</td>
-          <td>Zending beschikbaar bij pakketautomaat</td>
-          <td>Shipment can be collected at the Parcel Locker</td>
+          <td class="tg-0lax">K15</td>
+          <td class="tg-0lax">Fout bij bezorging zending. Nadere informatie volgt</td>
+          <td class="tg-0lax">Error during shipment delivery. More information to follow</td>
+          <td class="tg-8fdo">07, Zending in distributieproces</td>
         </tr>
         <tr>
-          <td>J24</td>
-          <td>Zending niet gesorteerd vanwege vertraagd transport.</td>
-          <td>Delivery postponed until the following working day</td>
+          <td class="tg-0lax">K70</td>
+          <td class="tg-0lax">Bezorgen lukte niet, zending gaat naar PostNL-punt</td>
+          <td class="tg-0lax">Delivery unsuccessful, shipment will go to PostNL outlet</td>
+          <td class="tg-8fdo">07, Zending in distributieproces</td>
         </tr>
         <tr>
-          <td>J26</td>
-          <td>Zending vertraagd vanwege verkeersomstandigheden.</td>
-          <td>Delivery postponed until the following working day</td>
+          <td class="tg-0lax">Q15</td>
+          <td class="tg-0lax">Zending is onderweg</td>
+          <td class="tg-0lax">Shipment is en route</td>
+          <td class="tg-8fdo">07, Zending in distributieproces</td>
         </tr>
         <tr>
-          <td>J27</td>
-          <td>Gesorteerd door depot</td>
-          <td>Shipment sorted by the depot</td>
+          <td class="tg-0lax">S05</td>
+          <td class="tg-0lax">Zending is onderweg</td>
+          <td class="tg-0lax">Shipment is en route</td>
+          <td class="tg-8fdo">07, Zending in distributieproces</td>
         </tr>
         <tr>
-          <td>J28</td>
-          <td>Zending geen pakket maar vracht.</td>
-          <td>Shipment via freight network due to weight/dimensions</td>
+          <td class="tg-0lax">T02</td>
+          <td class="tg-0lax">Sorry, bezorgmoment is bijgewerkt</td>
+          <td class="tg-0lax">Sorry, delivery time has been updated</td>
+          <td class="tg-8fdo">07, Zending in distributieproces</td>
         </tr>
         <tr>
-          <td>J29</td>
-          <td>Zending geen buspakje, maar pakket.</td>
-          <td>Shipment too large for letterbox, given to parcel deliverer</td>
+          <td class="tg-0lax">X04</td>
+          <td class="tg-0lax">De douane in het land van bestemming heeft je zending goedgekeurd</td>
+          <td class="tg-0lax">Customs in the destination country has approved your parcel</td>
+          <td class="tg-8fdo">07, Zending in distributieproces</td>
         </tr>
         <tr>
-          <td>J33</td>
-          <td>Herstelprocedure i.v.m. onjuiste adresherkenning op sorter.</td>
-          <td>Recovery procedure for incorrect address</td>
+          <td class="tg-0lax">X06</td>
+          <td class="tg-0lax">Je zending is onderweg naar de ontvanger</td>
+          <td class="tg-0lax">Your shipment is on its way to the recipient</td>
+          <td class="tg-8fdo">07, Zending in distributieproces</td>
         </tr>
         <tr>
-          <td>J36</td>
-          <td>Zending in distributievoorraad, uitgesteld Actie Pakket</td>
-          <td>Delivery delayed</td>
+          <td class="tg-0lax">X19</td>
+          <td class="tg-0lax">Zending verzonden naar land van bestemming</td>
+          <td class="tg-0lax">Shipment sent to country of destination</td>
+          <td class="tg-8fdo">07, Zending in distributieproces</td>
         </tr>
         <tr>
-          <td>J39</td>
-          <td>Vertraagd in aflevering naar (andere) afhaallocatie</td>
-          <td>Delayed in delivery to (other) pick-up location</td>
+          <td class="tg-0lax">X55</td>
+          <td class="tg-0lax">Bezorger is onderweg</td>
+          <td class="tg-0lax">Driver is en route</td>
+          <td class="tg-8fdo">07, Zending in distributieproces</td>
         </tr>
         <tr>
-          <td>J41</td>
-          <td>Zending niet toegestaan door operator</td>
-          <td>Shipment not permitted by operator</td>
+          <td class="tg-0lax">Y05</td>
+          <td class="tg-0lax">Je zending is onderweg naar de ontvanger</td>
+          <td class="tg-0lax">Your shipment is on its way to the recipient</td>
+          <td class="tg-8fdo">07, Zending in distributieproces</td>
         </tr>
         <tr>
-          <td>J42</td>
-          <td>Geen capaciteit voor zending in de Pakketautomaat</td>
-          <td>No capacity available in parcel machine</td>
+          <td class="tg-0lax">H01</td>
+          <td class="tg-0lax">Geweigerd bij bezorging, zending gaat retour afzender</td>
+          <td class="tg-0lax">Refused at delivery; return shipment to sender</td>
+          <td class="tg-8fdo">08, Zending niet afgeleverd</td>
         </tr>
         <tr>
-          <td>J45</td>
-          <td>Op lijndienst naar distributie depot</td>
-          <td>On liner service to distribution depot</td>
+          <td class="tg-0lax">H02</td>
+          <td class="tg-0lax">Adres onjuist, zending gaat retour afzender</td>
+          <td class="tg-0lax">Incorrect address; return shipment to sender</td>
+          <td class="tg-8fdo">08, Zending niet afgeleverd</td>
         </tr>
         <tr>
-          <td>J46</td>
-          <td>Afhaalzending door chauffeur opgehaald van pakketautomaat</td>
-          <td>Collect shipment removed from Parcel Locker by PostNL</td>
+          <td class="tg-0lax">H03</td>
+          <td class="tg-0lax">Zending niet afgehaald, gaat retour afzender</td>
+          <td class="tg-0lax">Shipment not collected, return to sender</td>
+          <td class="tg-8fdo">08, Zending niet afgeleverd</td>
         </tr>
         <tr>
-          <td>J47</td>
-          <td>Zending niet afgehaald door ontvanger. Zending naar afhaallocatie</td>
-          <td>Shipment not picked up. Shipment forwarded to Retail pick up point.</td>
+          <td class="tg-0lax">H04</td>
+          <td class="tg-0lax">Zending is beschadigd, gaat retour afzender</td>
+          <td class="tg-0lax">Shipment is damaged, return to sender</td>
+          <td class="tg-8fdo">08, Zending niet afgeleverd</td>
         </tr>
         <tr>
-          <td>J48</td>
-          <td>Zending te groot om te plaatsen</td>
-          <td>Shipment to big for placement in parcel machine</td>
+          <td class="tg-0lax">H05</td>
+          <td class="tg-0lax">We hebben je gemist, zending gaat retour afzender</td>
+          <td class="tg-0lax">We missed you; shipment returned to sender</td>
+          <td class="tg-8fdo">08, Zending niet afgeleverd</td>
         </tr>
         <tr>
-          <td>J52</td>
-          <td>Zending af te halen bij postbuslocatie.</td>
-          <td>Shipment to be collected at PO Box location</td>
+          <td class="tg-0lax">H07</td>
+          <td class="tg-0lax">We hebben je gemist, zending gaat retour afzender</td>
+          <td class="tg-0lax">We missed you; shipment returned to sender</td>
+          <td class="tg-8fdo">08, Zending niet afgeleverd</td>
         </tr>
         <tr>
-          <td>J55</td>
-          <td>Zending vrijgegeven en bezorger onderweg naar afhaallocatie</td>
-          <td>Driver is en route to PostNL location</td>
+          <td class="tg-0lax">H08</td>
+          <td class="tg-0lax">Aflevercode of legitimatie onjuist, zending retour afzender</td>
+          <td class="tg-0lax">Incorrect delivery code or ID, return shipment to sender</td>
+          <td class="tg-8fdo">08, Zending niet afgeleverd</td>
         </tr>
         <tr>
-          <td>J59</td>
-          <td>Zending overgedragen aan koerier.</td>
-          <td>Shipment handed over to courier</td>
+          <td class="tg-0lax">H09</td>
+          <td class="tg-0lax">Zending niet compleet, retour afzender</td>
+          <td class="tg-0lax">Shipment incomplete, return to sender</td>
+          <td class="tg-8fdo">08, Zending niet afgeleverd</td>
         </tr>
         <tr>
-          <td>J61</td>
-          <td>Zending gerelabeld</td>
-          <td>Shipment relabeled</td>
+          <td class="tg-0lax">H12</td>
+          <td class="tg-0lax">Zending retour afzender, geadresseerde onjuist</td>
+          <td class="tg-0lax">Shipment returned to sender, addressee incorrect</td>
+          <td class="tg-8fdo">08, Zending niet afgeleverd</td>
         </tr>
         <tr>
-          <td>J63</td>
-          <td>Zending aangekomen bij retourverwerking</td>
-          <td>Return shipment delivered</td>
+          <td class="tg-0lax">H20</td>
+          <td class="tg-0lax">Zending retour afzender</td>
+          <td class="tg-0lax">Shipment returned to sender</td>
+          <td class="tg-8fdo">08, Zending niet afgeleverd</td>
         </tr>
         <tr>
-          <td>J80</td>
-          <td>Tijdkritische zending niet afgeleverd op afgesproken tijdstip.</td>
-          <td>No delivery scan for this shipment yet</td>
+          <td class="tg-0lax">H22</td>
+          <td class="tg-0lax">Zending op verzoek van afzender retour gestuurd</td>
+          <td class="tg-0lax">Shipment returned on request of sender</td>
+          <td class="tg-8fdo">08, Zending niet afgeleverd</td>
         </tr>
         <tr>
-          <td>J90</td>
-          <td>Zending leveren op specifieke datum</td>
-          <td>Shipment will be delivered on an indicated desired date</td>
+          <td class="tg-0lax">H24</td>
+          <td class="tg-0lax">Retour gestuurd door afhaallocatie op verzoek van ontvanger</td>
+          <td class="tg-0lax">Returned by pick-up location on recipient’s request</td>
+          <td class="tg-8fdo">08, Zending niet afgeleverd</td>
         </tr>
         <tr>
-          <td>J91</td>
-          <td>Multicollozending, gedeeltelijk afgeleverd.</td>
-          <td>Shipment incomplete on handover</td>
+          <td class="tg-0lax">H34</td>
+          <td class="tg-0lax">Zending niet afgeleverd</td>
+          <td class="tg-0lax">Shipment not delivered</td>
+          <td class="tg-8fdo">08, Zending niet afgeleverd</td>
         </tr>
         <tr>
-          <td>J92</td>
-          <td>Zending niet geleverd, geen tijd</td>
-          <td>Delivery delayed</td>
+          <td class="tg-0lax">H36</td>
+          <td class="tg-0lax">Zending niet bezorgd, adres onjuist</td>
+          <td class="tg-0lax">Shipment not delivered; incorrect address</td>
+          <td class="tg-8fdo">08, Zending niet afgeleverd</td>
         </tr>
         <tr>
-          <td>J93</td>
-          <td>Multicollozending voorgemeld, zending gedeeltelijk niet aangetroffen.</td>
-          <td>Part of pre-alerted parcel encountered: partial shortage</td>
+          <td class="tg-0lax">H38</td>
+          <td class="tg-0lax">Geweigerd bij bezorging, zending gaat retour afzender</td>
+          <td class="tg-0lax">Refused at delivery; return shipment to sender</td>
+          <td class="tg-8fdo">08, Zending niet afgeleverd</td>
         </tr>
         <tr>
-          <td>J94</td>
-          <td>Vrachtzending niet afgeleverd</td>
-          <td>Cargo parcel not delivered: addressee not at home. Note left</td>
+          <td class="tg-0lax">H51</td>
+          <td class="tg-0lax">Zending niet afgeleverd, geen brievenbus. Retour afzender.</td>
+          <td class="tg-0lax">Shipment not delivered, no letterbox. Return to sender.</td>
+          <td class="tg-8fdo">08, Zending niet afgeleverd</td>
         </tr>
         <tr>
-          <td>J95</td>
-          <td>Zending uitgesteld, nog op Cargo-locatie aanwezig</td>
-          <td>Postponed, scanned at depot</td>
+          <td class="tg-0lax">H52</td>
+          <td class="tg-0lax">Zending niet afgeleverd, past niet. Retour afzender.</td>
+          <td class="tg-0lax">Shipment not delivered, does not fit. Return to sender.</td>
+          <td class="tg-8fdo">08, Zending niet afgeleverd</td>
         </tr>
         <tr>
-          <td>K01</td>
-          <td>Foutloper</td>
-          <td>Delivery delayed</td>
+          <td class="tg-0lax">J92</td>
+          <td class="tg-0lax">Sorry, bezorgmoment is bijgewerkt</td>
+          <td class="tg-0lax">Sorry, delivery time has been updated</td>
+          <td class="tg-8fdo">08, Zending niet afgeleverd</td>
         </tr>
         <tr>
-          <td>K02</td>
-          <td>Aangetekende zending doorgezonden, ontvanger verhuisd.</td>
-          <td>Recipient has moved to new address</td>
+          <td class="tg-0lax">K16</td>
+          <td class="tg-0lax">Bezorgadres onbereikbaar, nieuwe poging volgt</td>
+          <td class="tg-0lax">Shipment not delivered, address long term unreachable</td>
+          <td class="tg-8fdo">08, Zending niet afgeleverd</td>
         </tr>
         <tr>
-          <td>K03</td>
-          <td>Afzender failliet. Zending doorgestuurd naar curator.</td>
-          <td>Parcel sent to alternative address</td>
+          <td class="tg-0lax">K41</td>
+          <td class="tg-0lax">Rembours zend. niet afgeleverd, ontvanger kan niet betalen</td>
+          <td class="tg-0lax">Cash on Delivery shipment not delivered, recipient cannot pay</td>
+          <td class="tg-8fdo">08, Zending niet afgeleverd</td>
         </tr>
         <tr>
-          <td>K14</td>
-          <td>Zending niet afgeleverd, binnen tijdsvenster, niemand thuis.</td>
-          <td>We missed you</td>
+          <td class="tg-0lax">K43</td>
+          <td class="tg-0lax">Zending wordt geretourneerd</td>
+          <td class="tg-0lax">Shipment will be returned</td>
+          <td class="tg-8fdo">08, Zending niet afgeleverd</td>
         </tr>
         <tr>
-          <td>K15</td>
-          <td>Vermist in distributieproces</td>
-          <td>Error during shipment delivery. More information to follow</td>
+          <td class="tg-0lax">Y01</td>
+          <td class="tg-0lax">Zending niet bezorgd, adres incorrect</td>
+          <td class="tg-0lax">Shipment not delivered; incorrect address</td>
+          <td class="tg-8fdo">08, Zending niet afgeleverd</td>
         </tr>
         <tr>
-          <td>K16</td>
-          <td>Zending niet afgeleverd, bezorgadres lang onbereikbaar.</td>
-          <td>Shipment not delivered, address long term unreachable</td>
+          <td class="tg-0lax">Y02</td>
+          <td class="tg-0lax">We hebben je gemist, zending niet bezorgd</td>
+          <td class="tg-0lax">We missed you; shipment not delivered</td>
+          <td class="tg-8fdo">08, Zending niet afgeleverd</td>
         </tr>
         <tr>
-          <td>K30</td>
-          <td>In opslag afd. Onbestelbare Stukken</td>
-          <td>Shipment traceable but cannot be delivered</td>
+          <td class="tg-0lax">Y03</td>
+          <td class="tg-0lax">Zending geweigerd door geadresseerde</td>
+          <td class="tg-0lax">Shipment refused by addressee</td>
+          <td class="tg-8fdo">08, Zending niet afgeleverd</td>
         </tr>
         <tr>
-          <td>K41</td>
-          <td>Ontv. kan rembours bedrag niet voldoen. Zend. niet geleverd</td>
-          <td>COD shipment not delivered: receiver unable to pay</td>
+          <td class="tg-0lax">Y04</td>
+          <td class="tg-0lax">Zending beschadigd</td>
+          <td class="tg-0lax">Shipment damaged</td>
+          <td class="tg-8fdo">08, Zending niet afgeleverd</td>
         </tr>
         <tr>
-          <td>K43</td>
-          <td>Zending wordt geretourneerd</td>
-          <td>Shipment will be returned</td>
+          <td class="tg-0lax">Y08</td>
+          <td class="tg-0lax">Sorry, bezorgmoment is bijgewerkt</td>
+          <td class="tg-0lax">Sorry, delivery time has been updated</td>
+          <td class="tg-8fdo">08, Zending niet afgeleverd</td>
         </tr>
         <tr>
-          <td>K70</td>
-          <td>Zending niet afgeleverd, zending naar afhaallocatie.</td>
-          <td>We missed you</td>
+          <td class="tg-0lax">Y09</td>
+          <td class="tg-0lax">Contact met geadresseerde vanwege incorrect afleveradres</td>
+          <td class="tg-0lax">Contact addressee due to incorrect delivery address</td>
+          <td class="tg-8fdo">08, Zending niet afgeleverd</td>
         </tr>
         <tr>
-          <td>K71</td>
-          <td>Uitvoering aanvullende dienst niet mogelijk.</td>
-          <td>Additional service cannot be performed.</td>
+          <td class="tg-0lax">Y10</td>
+          <td class="tg-0lax">We hebben je gemist, we komen nog een keer</td>
+          <td class="tg-0lax">We missed you; we’ll try again</td>
+          <td class="tg-8fdo">08, Zending niet afgeleverd</td>
         </tr>
         <tr>
-          <td>K90</td>
-          <td>Status niet beschikbaar</td>
-          <td>Status as yet unknown. Try again later.</td>
+          <td class="tg-0lax">Y11</td>
+          <td class="tg-0lax">Zending beschadigd, contact gezocht met ontvanger</td>
+          <td class="tg-0lax">Shipment damaged, attempt made to contact recipient</td>
+          <td class="tg-8fdo">08, Zending niet afgeleverd</td>
         </tr>
         <tr>
-          <td>K91</td>
-          <td>In opslag i.v.m. gesloten retour adres - corona maatregel</td>
-          <td>In storage due to hazardous substances</td>
+          <td class="tg-0lax">Y12</td>
+          <td class="tg-0lax">Adres incorrect, PostNL neemt contact op met afzender</td>
+          <td class="tg-0lax">Address incorrect, PostNL will contact sender</td>
+          <td class="tg-8fdo">08, Zending niet afgeleverd</td>
         </tr>
         <tr>
-          <td>K92</td>
-          <td>Zending vernietigd</td>
-          <td>Shipment destroyed</td>
+          <td class="tg-0lax">Y13</td>
+          <td class="tg-0lax">Zending geweigerd, PostNL zoekt contact met afzender</td>
+          <td class="tg-0lax">Shipment refused, PostNL contacting sender</td>
+          <td class="tg-8fdo">08, Zending niet afgeleverd</td>
         </tr>
         <tr>
-          <td>M03</td>
-          <td>Geldigheidsduur retourlabel verstreken</td>
-          <td>Period of validity label expired</td>
+          <td class="tg-0lax">Y14</td>
+          <td class="tg-0lax">Zending beschadigd</td>
+          <td class="tg-0lax">Shipment damaged</td>
+          <td class="tg-8fdo">08, Zending niet afgeleverd</td>
         </tr>
         <tr>
-          <td>P20</td>
-          <td>Afgesproken plek is niet veilig, diefstalgevoelig.</td>
-          <td>Appointed place is not safe, prone to theft.</td>
+          <td class="tg-0lax">Y15</td>
+          <td class="tg-0lax">Zending niet bezorgd, contact met afzender</td>
+          <td class="tg-0lax">Shipment not delivered, sender contacted</td>
+          <td class="tg-8fdo">08, Zending niet afgeleverd</td>
         </tr>
         <tr>
-          <td>P21</td>
-          <td>Afgesproken plek is zichtbaar vanaf de straat, open gebied.</td>
-          <td>Appointed place is visible form the street, open area.</td>
+          <td class="tg-0lax">Y16</td>
+          <td class="tg-0lax">Adres incorrect, zending retour afzender</td>
+          <td class="tg-0lax">Address incorrect, return shipment to sender</td>
+          <td class="tg-8fdo">08, Zending niet afgeleverd</td>
         </tr>
         <tr>
-          <td>P22</td>
-          <td>Afgesproken plek is nat, niet overdekt.</td>
-          <td>Appointed place is wet, not covered.</td>
+          <td class="tg-0lax">Y17</td>
+          <td class="tg-0lax">Zending niet bezorgd, adres incorrect</td>
+          <td class="tg-0lax">Shipment not delivered; incorrect address</td>
+          <td class="tg-8fdo">08, Zending niet afgeleverd</td>
         </tr>
         <tr>
-          <td>P23</td>
-          <td>Afgesproken plek is niet toegankelijk/beschikbaar.</td>
-          <td>Appointed place is not accessible/available.</td>
+          <td class="tg-0lax">Y18</td>
+          <td class="tg-0lax">Zending is beschadigd, zending retour afzender</td>
+          <td class="tg-0lax">Shipment is damaged, return shipment to sender</td>
+          <td class="tg-8fdo">08, Zending niet afgeleverd</td>
         </tr>
         <tr>
-          <td>P24</td>
-          <td>Afgesproken plek volstaat niet, afmetingen pakket te groot.</td>
-          <td>Appointed place is not sufficient, package dimensions too large.</td>
+          <td class="tg-0lax">Y19</td>
+          <td class="tg-0lax">Zending bevat verboden artikel, zending retour afzender</td>
+          <td class="tg-0lax">Shipment contains prohibited item, return shipment to sender</td>
+          <td class="tg-8fdo">08, Zending niet afgeleverd</td>
         </tr>
         <tr>
-          <td>Q02</td>
-          <td>Zending op verzendlocatie geannuleerd door verzender.</td>
-          <td>Transaction cancelled by sender</td>
+          <td class="tg-0lax">Y20</td>
+          <td class="tg-0lax">Zending niet afgehaald, gaat retour afzender</td>
+          <td class="tg-0lax">Shipment not collected, return to sender</td>
+          <td class="tg-8fdo">08, Zending niet afgeleverd</td>
         </tr>
         <tr>
-          <td>Q03</td>
-          <td>Zending klaar voor transport</td>
-          <td>Shipment ready for transport</td>
+          <td class="tg-0lax">Y21</td>
+          <td class="tg-0lax">Zending retour afzender</td>
+          <td class="tg-0lax">Shipment returned to sender</td>
+          <td class="tg-8fdo">08, Zending niet afgeleverd</td>
         </tr>
         <tr>
-          <td>Q13</td>
-          <td>Pakket op transport gezet door netwerkpartner.</td>
-          <td>Parcel placed on transport</td>
+          <td class="tg-0lax">Y22</td>
+          <td class="tg-0lax">Zending niet afgeleverd, geadresseerde verhuisd</td>
+          <td class="tg-0lax">Shipment not delivered, addressee relocated</td>
+          <td class="tg-8fdo">08, Zending niet afgeleverd</td>
         </tr>
         <tr>
-          <td>Q14</td>
-          <td>Zending uit transport gehaald voor douanecontrole.</td>
-          <td>Parcel offloaded from transport for inspection.</td>
+          <td class="tg-0lax">Y30</td>
+          <td class="tg-0lax">Zending is niet afgeleverd i.v.m. onjuiste postcode</td>
+          <td class="tg-0lax">Shipment not delivered due to incorrect postcode</td>
+          <td class="tg-8fdo">08, Zending niet afgeleverd</td>
         </tr>
         <tr>
-          <td>Q15</td>
-          <td>Pakket op transport naar distributiepartner</td>
-          <td>Shipment is en route</td>
+          <td class="tg-0lax">Y31</td>
+          <td class="tg-0lax">Zending niet bezorgd, ontbrekende postcode</td>
+          <td class="tg-0lax">Shipment not delivered, missing postcode</td>
+          <td class="tg-8fdo">08, Zending niet afgeleverd</td>
         </tr>
         <tr>
-          <td>Q16</td>
-          <td>Zending onderweg, gescand in depot</td>
-          <td>Package in depot, goes enroute to country of destination</td>
+          <td class="tg-0lax">Y32</td>
+          <td class="tg-0lax">Zending niet bezorgd, onbekend adres</td>
+          <td class="tg-0lax">Shipment not delivered, address unknown</td>
+          <td class="tg-8fdo">08, Zending niet afgeleverd</td>
         </tr>
         <tr>
-          <td>Q17</td>
-          <td>Zending verzonden naar Europa</td>
-          <td>Shipment sent to Europe</td>
+          <td class="tg-0lax">Y36</td>
+          <td class="tg-0lax">Zending niet afgeleverd: identificatie ontvanger ontbreekt</td>
+          <td class="tg-0lax">Shipment not delivered: recipient identification missing</td>
+          <td class="tg-8fdo">08, Zending niet afgeleverd</td>
         </tr>
         <tr>
-          <td>Q18</td>
-          <td>Zending verzonden naar Nederland</td>
-          <td>Shipment sent to The Netherlands</td>
+          <td class="tg-0lax">Y38</td>
+          <td class="tg-0lax">Zending niet afgeleverd: pakket naar depot bestemmingsland</td>
+          <td class="tg-0lax">Shipment not delivered: parcel sent to depot in destination country</td>
+          <td class="tg-8fdo">08, Zending niet afgeleverd</td>
         </tr>
         <tr>
-          <td>Q19</td>
-          <td>Zending nog onderweg</td>
-          <td>Shipment still in transit</td>
+          <td class="tg-0lax">Y39</td>
+          <td class="tg-0lax">Contact met ontvanger om een afspraak te plannen. </td>
+          <td class="tg-0lax">Contact recipient to arrange an appointment. </td>
+          <td class="tg-8fdo">08, Zending niet afgeleverd</td>
         </tr>
         <tr>
-          <td>R01</td>
-          <td>Geaccepteerd, niet voorgemeld</td>
-          <td>Shipment sorted</td>
+          <td class="tg-0lax">Y40</td>
+          <td class="tg-0lax">We hebben je gemist, zending gaat retour afzender</td>
+          <td class="tg-0lax">We missed you; shipment returned to sender</td>
+          <td class="tg-8fdo">08, Zending niet afgeleverd</td>
         </tr>
         <tr>
-          <td>S05</td>
-          <td>Zending niet vooraangekondigd en gescand op distributierit.</td>
-          <td>Shipment is en route</td>
+          <td class="tg-0lax">Y41</td>
+          <td class="tg-0lax">Zending is niet afgeleverd. Toegangscode locatie ontbreekt</td>
+          <td class="tg-0lax">Shipment not delivered. Location access code is missing</td>
+          <td class="tg-8fdo">08, Zending niet afgeleverd</td>
         </tr>
         <tr>
-          <td>T02</td>
-          <td>Vertraging bij voorbereiden</td>
-          <td>Delayed pre distribution</td>
+          <td class="tg-0lax">Y42</td>
+          <td class="tg-0lax">Zending is niet afgeleverd, geadresseerde is onbereikbaar</td>
+          <td class="tg-0lax">Shipment not delivered, addressee unavailable</td>
+          <td class="tg-8fdo">08, Zending niet afgeleverd</td>
         </tr>
         <tr>
-          <td>V01</td>
-          <td>Zending in gesorteerde voorraad met batchkaart.</td>
-          <td>Shipment sorted</td>
+          <td class="tg-0lax">Y43</td>
+          <td class="tg-0lax">Zending vertraagd wegens gesloten locatie geadresseerde</td>
+          <td class="tg-0lax">Shipment delayed as addressee location is closed</td>
+          <td class="tg-8fdo">08, Zending niet afgeleverd</td>
         </tr>
         <tr>
-          <td>V02</td>
-          <td>Zending in ongesorteerde voorraad.</td>
-          <td>Received by PostNL</td>
+          <td class="tg-0lax">Y44</td>
+          <td class="tg-0lax">Zending door ontvanger geweigerd wegens beschadiging. </td>
+          <td class="tg-0lax">Shipment refused by recipient due to damage. </td>
+          <td class="tg-8fdo">08, Zending niet afgeleverd</td>
         </tr>
         <tr>
-          <td>V03</td>
-          <td>Zending in ongesorteerde voorraad, wel binnen SL.</td>
-          <td>Delivery delayed</td>
+          <td class="tg-0lax">Y50</td>
+          <td class="tg-0lax">Zending geweigerd; onvolledig</td>
+          <td class="tg-0lax">Shipment refused, incomplete</td>
+          <td class="tg-8fdo">08, Zending niet afgeleverd</td>
         </tr>
         <tr>
-          <td>V04</td>
-          <td>Zending in ongesorteerde voorraad BFC, binnen SL.</td>
-          <td>Delivery delayed</td>
+          <td class="tg-0lax">Y71</td>
+          <td class="tg-0lax">Zending is vermist</td>
+          <td class="tg-0lax">Shipment missing</td>
+          <td class="tg-8fdo">08, Zending niet afgeleverd</td>
         </tr>
         <tr>
-          <td>V06</td>
-          <td>Zending in ongesorteerde voorraad, bezorging vertraagd.</td>
-          <td>Delivery delayed</td>
+          <td class="tg-0lax">J59</td>
+          <td class="tg-0lax">Pakket wordt vandaag toch nog via een koerier bij je bezorgd</td>
+          <td class="tg-0lax">Parcel will be delivered to you today by courier</td>
+          <td class="tg-8fdo">09, Zending bij douane</td>
         </tr>
         <tr>
-          <td>V11</td>
-          <td>Zending in gesorteerde voorraad NMG.</td>
-          <td>Delivery delayed</td>
+          <td class="tg-0lax">X30</td>
+          <td class="tg-0lax">Zending vertraagd in land van bestemming door aanvullend onderzoek bij&nbsp;&nbsp;&nbsp;inklaring</td>
+          <td class="tg-0lax">Shipment delayed in destination country due to additional investigation&nbsp;&nbsp;&nbsp;at customs clea</td>
+          <td class="tg-8fdo">09, Zending bij douane</td>
         </tr>
         <tr>
-          <td>V12</td>
-          <td>Zending in ongesorteerde voorraad NMG.</td>
-          <td>Received by PostNL</td>
+          <td class="tg-0lax">X60</td>
+          <td class="tg-0lax">Invoeraangifte ingediend door PostNL</td>
+          <td class="tg-0lax">Import declaration submitted by PostNL</td>
+          <td class="tg-8fdo">09, Zending bij douane</td>
         </tr>
         <tr>
-          <td>V13</td>
-          <td>Zending in ongesorteerde voorraad NMG, wel binnen SL.</td>
-          <td>Received by PostNL</td>
+          <td class="tg-0lax">X61</td>
+          <td class="tg-0lax">Invoeraangifte succesvol afgerond</td>
+          <td class="tg-0lax">Import declaration completed successfully</td>
+          <td class="tg-8fdo">09, Zending bij douane</td>
         </tr>
         <tr>
-          <td>V21</td>
-          <td>Zending in gesorteerde voorraad AGT.</td>
-          <td>Delivery delayed</td>
+          <td class="tg-0lax">X62</td>
+          <td class="tg-0lax">Aanvullende aangifte is ingediend</td>
+          <td class="tg-0lax">Additional declaration has been submitted</td>
+          <td class="tg-8fdo">09, Zending bij douane</td>
         </tr>
         <tr>
-          <td>V22</td>
-          <td>Zending in ongesorteerde voorraad AGT.</td>
-          <td>Shipment is at PostNL</td>
+          <td class="tg-0lax">X63</td>
+          <td class="tg-0lax">Zending vertraagd vanwege steekproefcontrole bij inklaring</td>
+          <td class="tg-0lax">Shipment delayed due to sample check at customs clearance</td>
+          <td class="tg-8fdo">09, Zending bij douane</td>
         </tr>
         <tr>
-          <td>V23</td>
-          <td>Zending in ongesorteerde voorraad AGT 48uur.</td>
-          <td>Received by PostNL</td>
+          <td class="tg-0lax">X64</td>
+          <td class="tg-0lax">Zending vertraagd vanwege steekproefcontrole bij inklaring</td>
+          <td class="tg-0lax">Shipment delayed due to sample check at customs clearance</td>
+          <td class="tg-8fdo">09, Zending bij douane</td>
         </tr>
         <tr>
-          <td>V31</td>
-          <td>Zending in gesorteerde voorraad voor export.</td>
-          <td>Received by PostNL, delayed</td>
+          <td class="tg-0lax">X65</td>
+          <td class="tg-0lax">Aanvullende aangifte succesvol afgerond bij douane</td>
+          <td class="tg-0lax">Additional customs declaration completed successfully</td>
+          <td class="tg-8fdo">09, Zending bij douane</td>
         </tr>
         <tr>
-          <td>V50</td>
-          <td>Zending in gesorteerde voorraad zonder batchkaart.</td>
-          <td>Shipment in sorted stock</td>
+          <td class="tg-0lax">X66</td>
+          <td class="tg-0lax">Het aangifteproces  van de&nbsp;&nbsp;&nbsp;zending is stopgezet</td>
+          <td class="tg-0lax">Shipment declaration process has been stopped</td>
+          <td class="tg-8fdo">09, Zending bij douane</td>
         </tr>
         <tr>
-          <td>X01</td>
-          <td>Zending gekoppeld aan receptacle/bag</td>
-          <td>Shipment ready to send&nbsp;to country of destination</td>
+          <td class="tg-0lax">Y25</td>
+          <td class="tg-0lax">De zending ligt bij de douane in het land van bestemming voor verdere&nbsp;&nbsp;&nbsp;afhandeling</td>
+          <td class="tg-0lax">The shipment is with the customs authorities in the destination country&nbsp;&nbsp;&nbsp;for further proc</td>
+          <td class="tg-8fdo">e09, Zending bij douane</td>
         </tr>
         <tr>
-          <td>X02</td>
-          <td>Zending ontvangen.</td>
-          <td>Shipment in sorting centre abroad</td>
+          <td class="tg-0lax">Y29</td>
+          <td class="tg-0lax">De zending is vernietigd namens de douane in land van bestemming</td>
+          <td class="tg-0lax">The shipment has been destroyed on behalf of customs in the destination&nbsp;&nbsp;&nbsp;country</td>
+          <td class="tg-8fdo">09, Zending bij douane</td>
         </tr>
         <tr>
-          <td>X05</td>
-          <td>Zending beschikbaar op afhaallocatie</td>
-          <td>Shipment available at pick-up location</td>
+          <td class="tg-0lax">I01</td>
+          <td class="tg-0lax">Zending is bezorgd</td>
+          <td class="tg-0lax">Shipment delivered</td>
+          <td class="tg-4c9j">11, Zending afgeleverd</td>
         </tr>
         <tr>
-          <td>X06</td>
-          <td>Zending in afleverroute</td>
-          <td>Shipment on delivery route</td>
+          <td class="tg-0lax">I03</td>
+          <td class="tg-0lax">Zending is bezorgd</td>
+          <td class="tg-0lax">Shipment delivered</td>
+          <td class="tg-4c9j">11, Zending afgeleverd</td>
         </tr>
         <tr>
-          <td>X07</td>
-          <td>Zending gesorteerd</td>
-          <td>Shipment sorted</td>
+          <td class="tg-0lax">I05</td>
+          <td class="tg-0lax">Zending is bezorgd in de brievenbus</td>
+          <td class="tg-0lax">Shipment in letterbox</td>
+          <td class="tg-4c9j">11, Zending afgeleverd</td>
         </tr>
         <tr>
-          <td>X08</td>
-          <td>Zending in depot</td>
-          <td>Shipment ready for transporter abroad</td>
+          <td class="tg-0lax">I06</td>
+          <td class="tg-0lax">Zending gesorteerd, wordt overgedragen aan geadresseerde</td>
+          <td class="tg-0lax">Shipment sorted, will be transferred to addressee</td>
+          <td class="tg-4c9j">11, Zending afgeleverd</td>
         </tr>
         <tr>
-          <td>X10</td>
-          <td>Zending behoeft extra informatie. Verzoek verstuurd.</td>
-          <td>Customs clearance not concluded. Info request to customer</td>
+          <td class="tg-0lax">I07</td>
+          <td class="tg-0lax">Retourzending gesorteerd, wordt overgedragen aan afzender</td>
+          <td class="tg-0lax">Return shipment sorted, will be transferred to sender</td>
+          <td class="tg-4c9j">11, Zending afgeleverd</td>
         </tr>
         <tr>
-          <td>X11</td>
-          <td>Zending heeft antwoord met extra informatie ontvangen.</td>
-          <td>Answer received with information for import declaration</td>
+          <td class="tg-0lax">I09</td>
+          <td class="tg-0lax">Zending afgeleverd in pakketkluis</td>
+          <td class="tg-0lax">Shipment delivered in personal parcel locker</td>
+          <td class="tg-4c9j">11, Zending afgeleverd</td>
         </tr>
         <tr>
-          <td>X14</td>
-          <td>Zending voorgemeld door PostNL en gesorteerd.</td>
-          <td>Receive shipment at Network partners sorting center</td>
+          <td class="tg-0lax">I10</td>
+          <td class="tg-0lax">Zending is bezorgd bij de buren</td>
+          <td class="tg-0lax">Shipment delivered to neighbour</td>
+          <td class="tg-4c9j">11, Zending afgeleverd</td>
         </tr>
         <tr>
-          <td>X15</td>
-          <td>Zending gesorteerd op IMEC op land van bestemming.</td>
-          <td>Zending gesorteerd op IMEC op land van bestemming.</td>
+          <td class="tg-0lax">I11</td>
+          <td class="tg-0lax">Zending is bezorgd in de brievenbus</td>
+          <td class="tg-0lax">Shipment in letterbox</td>
+          <td class="tg-4c9j">11, Zending afgeleverd</td>
         </tr>
         <tr>
-          <td>X16</td>
-          <td>Zending voorgemeld door PostNL en gesorteerd op IMEC.</td>
-          <td>Zending voorgemeld door PostNL en gesorteerd op IMEC.</td>
+          <td class="tg-0lax">I12</td>
+          <td class="tg-0lax">Zending is bezorgd op de afgesproken plek</td>
+          <td class="tg-0lax">Shipment delivered to indicated location</td>
+          <td class="tg-4c9j">11, Zending afgeleverd</td>
         </tr>
         <tr>
-          <td>X17</td>
-          <td>Zending gewogen en gewicht bepaald op IMEC.</td>
-          <td>Zending gewogen en gewicht bepaald op IMEC.</td>
+          <td class="tg-0lax">I22</td>
+          <td class="tg-0lax">Zending is afgehaald bij PostNL-punt</td>
+          <td class="tg-0lax">Shipment collected at PostNL outlet</td>
+          <td class="tg-4c9j">11, Zending afgeleverd</td>
         </tr>
         <tr>
-          <td>X19</td>
-          <td>Afsluiten van de consignment.</td>
-          <td>Shipment sent to country of destination</td>
+          <td class="tg-0lax">I23</td>
+          <td class="tg-0lax">Zending is overhandigd aan ontvanger</td>
+          <td class="tg-0lax">Shipment has been handed over to recipient</td>
+          <td class="tg-4c9j">11, Zending afgeleverd</td>
         </tr>
         <tr>
-          <td>X20</td>
-          <td>Retourzending ontvangen in buitenlandse hub</td>
-          <td>Return shipment received in distribution centre abroad</td>
+          <td class="tg-0lax">J23</td>
+          <td class="tg-0lax">Zending kan worden afgehaald bij de pakketautomaat</td>
+          <td class="tg-0lax">Shipment can be collected at the parcel locker</td>
+          <td class="tg-4c9j">11, Zending afgeleverd</td>
         </tr>
         <tr>
-          <td>X21</td>
-          <td>Retourzending doorgestuurd naar centrale hub</td>
-          <td>Return shipment received in distribution centre</td>
+          <td class="tg-0lax">J63</td>
+          <td class="tg-0lax">Retourzending afgeleverd</td>
+          <td class="tg-0lax">Return shipment delivered</td>
+          <td class="tg-4c9j">11, Zending afgeleverd</td>
         </tr>
         <tr>
-          <td>X22</td>
-          <td>Retourzending doorgestuurd naar PostNL.</td>
-          <td>International shipment returned</td>
+          <td class="tg-0lax">J91</td>
+          <td class="tg-0lax">Gedeeltelijk manco aangeleverde zending afgeleverd</td>
+          <td class="tg-0lax">Partially-defective shipment delivered</td>
+          <td class="tg-4c9j">11, Zending afgeleverd</td>
         </tr>
         <tr>
-          <td>X24</td>
-          <td>Zending gesorteerd op IMEC, retour naar zakelijke postbushouder in het buitenland.</td>
-          <td>Zending gesorteerd op IMEC, retour naar zakelijke postbushouder in het buitenland.</td>
+          <td class="tg-0lax">K91</td>
+          <td class="tg-0lax">In opslag i.v.m. calamiteit tot nader order</td>
+          <td class="tg-0lax">In storage because of closed return address – coronavirus measure</td>
+          <td class="tg-4c9j">11, Zending afgeleverd</td>
         </tr>
         <tr>
-          <td>X30</td>
-          <td>Zending wacht op vrijgave douane in land van bestemming</td>
-          <td>Received in country of destination</td>
+          <td class="tg-0lax">X24</td>
+          <td class="tg-0lax">Zending retour gestuurd naar zakelijke postbushouder in het buitenland.</td>
+          <td class="tg-0lax">Shipment returned to business PO Box holder abroad</td>
+          <td class="tg-4c9j">11, Zending afgeleverd</td>
         </tr>
         <tr>
-          <td>X40</td>
-          <td>Zending aangenomen door afhaallocatie</td>
-          <td>Received at PostNL Service Point</td>
+          <td class="tg-0lax">Y26</td>
+          <td class="tg-0lax">Zending af te halen bij postbus</td>
+          <td class="tg-0lax">Shipment to be collected at PO Box</td>
+          <td class="tg-4c9j">11, Zending afgeleverd</td>
         </tr>
         <tr>
-          <td>X42</td>
-          <td>Zending geweigerd bij retailpunt, te groot / te zwaar</td>
-          <td>Parcel refused on arrival at retail point, too large/heavy</td>
+          <td class="tg-0lax">Z01</td>
+          <td class="tg-0lax">Yes! Je zending is bezorgd bij de ontvanger</td>
+          <td class="tg-0lax">Yes! Your shipment has been delivered to the recipient</td>
+          <td class="tg-4c9j">11, Zending afgeleverd</td>
         </tr>
         <tr>
-          <td>X43</td>
-          <td>Zending geweigerd bij retailpunt, niet goed verpakt</td>
-          <td>Parcel refused at retail point, insufficient packaging</td>
+          <td class="tg-0lax">Z02</td>
+          <td class="tg-0lax">Yes! Je zending is bezorgd bij de ontvanger</td>
+          <td class="tg-0lax">Yes! Your shipment has been delivered to the recipient</td>
+          <td class="tg-4c9j">11, Zending afgeleverd</td>
         </tr>
         <tr>
-          <td>X50</td>
-          <td>Zending ontvangen op depot van partner.</td>
-          <td>Shipment in depot</td>
+          <td class="tg-0lax">Z03</td>
+          <td class="tg-0lax">Yes! Je zending is bezorgd bij de ontvanger</td>
+          <td class="tg-0lax">Yes! Your shipment has been delivered to the recipient</td>
+          <td class="tg-4c9j">11, Zending afgeleverd</td>
         </tr>
         <tr>
-          <td>X51</td>
-          <td>Zending gesorteerd op depot van partner.</td>
-          <td>Shipment sorted</td>
+          <td class="tg-0lax">Z04</td>
+          <td class="tg-0lax">Yes! Je zending is bezorgd bij de ontvanger</td>
+          <td class="tg-0lax">Yes! Your shipment has been delivered to the recipient</td>
+          <td class="tg-4c9j">11, Zending afgeleverd</td>
         </tr>
         <tr>
-          <td>X52</td>
-          <td>Zending wacht op bezorging in land van bestemming.</td>
-          <td>Your shipment awaits delivery in the country of destination.</td>
+          <td class="tg-0lax">Z05</td>
+          <td class="tg-0lax">Je zending is bezorgd bij buren in het land van bestemming</td>
+          <td class="tg-0lax">Parcel was delivered to neighbours in destination country</td>
+          <td class="tg-4c9j">11, Zending afgeleverd</td>
         </tr>
         <tr>
-          <td>X55</td>
-          <td>Zending onderweg naar afhaallocatie</td>
-          <td>Driver is en route to PostNL location</td>
+          <td class="tg-0lax">Z06</td>
+          <td class="tg-0lax">Yes! Je zending is opgehaald bij een ophaalpunt</td>
+          <td class="tg-0lax">Yes! Your shipment has been picked up at a collection point</td>
+          <td class="tg-4c9j">11, Zending afgeleverd</td>
         </tr>
         <tr>
-          <td>X60</td>
-          <td>Invoeraangifte ingediend door PostNL</td>
-          <td>Declaration submitted to Customs</td>
+          <td class="tg-0lax">Z08</td>
+          <td class="tg-0lax">Yes! Je zending is bezorgd bij de ontvanger</td>
+          <td class="tg-0lax">Yes! Your shipment has been delivered to the recipient</td>
+          <td class="tg-4c9j">11, Zending afgeleverd</td>
         </tr>
         <tr>
-          <td>X61</td>
-          <td>Invoeraangifte succesvol afgerond</td>
-          <td>Declaration completed successfully</td>
+          <td class="tg-0lax">Z09</td>
+          <td class="tg-0lax">Je zending is bezorgd op de veilige locatie van je ontvanger</td>
+          <td class="tg-0lax">Your parcel has been delivered to recipient's safe location</td>
+          <td class="tg-4c9j">11, Zending afgeleverd</td>
         </tr>
         <tr>
-          <td>X62</td>
-          <td>Aanvullende aangifte ingediend bij Douane</td>
-          <td>Additional declaration submitted to Customs</td>
+          <td class="tg-0lax">I08</td>
+          <td class="tg-0lax">Zending beschikbaar op PostNL-punt</td>
+          <td class="tg-0lax">Shipment available at PostNL outlet</td>
+          <td class="tg-4c9j">12, Zending beschikbaar op afhaallocatie</td>
         </tr>
         <tr>
-          <td>X63</td>
-          <td>Zending geselecteerd voor steekproef</td>
-          <td>Selected for spot check by Customs</td>
+          <td class="tg-0lax">J02</td>
+          <td class="tg-0lax">Pakket ligt voor je klaar op PostNL-punt </td>
+          <td class="tg-0lax">Shipment to be collected at PostNL outlet</td>
+          <td class="tg-4c9j">12, Zending beschikbaar op afhaallocatie</td>
         </tr>
         <tr>
-          <td>X64</td>
-          <td>Geselecteerd voor dossieronderzoek (steekproef) door Douane</td>
-          <td>Selected for dossier research (spot check) by Customs</td>
+          <td class="tg-0lax">J12</td>
+          <td class="tg-0lax">Pakket ligt voor je klaar op PostNL-punt </td>
+          <td class="tg-0lax">Shipment to be collected at PostNL outlet</td>
+          <td class="tg-4c9j">12, Zending beschikbaar op afhaallocatie</td>
         </tr>
         <tr>
-          <td>X65</td>
-          <td>Aanvullende aangifte succesvol afgerond</td>
-          <td>Additional declaration completed successfully</td>
+          <td class="tg-0lax">J52</td>
+          <td class="tg-0lax">Zending af te halen bij postbus-locatie</td>
+          <td class="tg-0lax">Shipment to be collected at PO Box location</td>
+          <td class="tg-4c9j">12, Zending beschikbaar op afhaallocatie</td>
         </tr>
         <tr>
-          <td>X66</td>
-          <td>Aangifteproces stopgezet</td>
-          <td>Declaration process halted</td>
+          <td class="tg-0lax">X05</td>
+          <td class="tg-0lax">Zending af te halen bij afhaallocatie</td>
+          <td class="tg-0lax">Shipment to be collected at pick-up location</td>
+          <td class="tg-4c9j">12, Zending beschikbaar op afhaallocatie</td>
         </tr>
         <tr>
-          <td>X67</td>
-          <td>Wacht op betaling inklaringskosten</td>
-          <td>Awaiting payment of Customs clearance costs</td>
+          <td class="tg-0lax">A20</td>
+          <td class="tg-0lax">Verzoek tot betaling kosten voor zending verstuurd</td>
+          <td class="tg-0lax">Request for payment of shipment costs sent</td>
+          <td class="tg-mmlj">13, Voorgemeld: nog niet aangenomen</td>
         </tr>
         <tr>
-          <td>X68</td>
-          <td>Zending na onderzoek weer terug in proces</td>
-          <td>Zending na onderzoek weer terug in proces</td>
+          <td class="tg-0lax">A21</td>
+          <td class="tg-0lax">Je hebt betaald, we maken je pakket klaar voor bezorging</td>
+          <td class="tg-0lax">Payment for shipment costs received</td>
+          <td class="tg-mmlj">13, Voorgemeld: nog niet aangenomen</td>
         </tr>
         <tr>
-          <td>X80</td>
-          <td>Afhaalopdracht ontvangen</td>
-          <td>Collection order received</td>
+          <td class="tg-0lax">A22</td>
+          <td class="tg-0lax">Verzoek tot betaling geweigerd</td>
+          <td class="tg-0lax">Request for payment refused</td>
+          <td class="tg-mmlj">13, Voorgemeld: nog niet aangenomen</td>
         </tr>
         <tr>
-          <td>X81</td>
-          <td>Retourzending ontvangen in land van bestemming</td>
-          <td>Returned shipment received at post office</td>
+          <td class="tg-0lax">Q02</td>
+          <td class="tg-0lax">Transactie op PostNL-punt geannuleerd</td>
+          <td class="tg-0lax">Transaction cancelled at PostNL outlet</td>
+          <td class="tg-mmlj">13, Voorgemeld: nog niet aangenomen</td>
         </tr>
         <tr>
-          <td>Y01</td>
-          <td>Zending niet afgeleverd, adres incorrect.</td>
-          <td>Shipment not delivered. Address incorrect</td>
+          <td class="tg-0lax">X03</td>
+          <td class="tg-0lax">De douane in het land van bestemming checkt je zending</td>
+          <td class="tg-0lax">Customs in the destination country is checking your shipment</td>
+          <td class="tg-mmlj">13, Voorgemeld: nog niet aangenomen</td>
         </tr>
         <tr>
-          <td>Y02</td>
-          <td>Zending niet afgeleverd, ontvanger niet thuis.</td>
-          <td>Shipment not delivered. Addressee not present</td>
+          <td class="tg-0lax">M01</td>
+          <td class="tg-0lax">Pakket niet fysiek aangeboden aan PostNL</td>
+          <td class="tg-0lax">Shipment not physically presented to PostNL</td>
+          <td class="tg-mmlj">14, Voorgemeld: definitief niet aangenomen</td>
         </tr>
         <tr>
-          <td>Y03</td>
-          <td>Zending niet afgeleverd, geweigerd door ontvanger.</td>
-          <td>Shipment refused by addressee</td>
+          <td class="tg-0lax">G03</td>
+          <td class="tg-0lax">Door grote drukte duurt het wat langer dan normaal. We doen er alles&nbsp;&nbsp;&nbsp;aan om je pakket zo snel mogelijk te </td>
+          <td class="tg-0lax">Sorry, delivery time has been updated</td>
+          <td class="tg-mmlj">15, Manco collectie</td>
         </tr>
         <tr>
-          <td>Y04</td>
-          <td>Zending niet afgeleverd, zending beschadigd.</td>
-          <td>Shipment was not delivered due to damage</td>
+          <td class="tg-0lax">G01</td>
+          <td class="tg-0lax">Sorry, bezorgmoment is bijgewerkt</td>
+          <td class="tg-0lax">Sorry, delivery time has been updated</td>
+          <td class="tg-145f">16, Manco sortering</td>
         </tr>
         <tr>
-          <td>Y05</td>
-          <td>Bezorger is onderweg met zending.</td>
-          <td>Driver is en route</td>
+          <td class="tg-0lax">G02</td>
+          <td class="tg-0lax">Sorry, bezorgmoment is bijgewerkt</td>
+          <td class="tg-0lax">Sorry, delivery time has been updated</td>
+          <td class="tg-145f">16, Manco sortering</td>
         </tr>
         <tr>
-          <td>Y07</td>
-          <td>Zending onjuist gesorteerd</td>
-          <td>Delivery delayed</td>
+          <td class="tg-0lax">G05</td>
+          <td class="tg-0lax">Sorry, bezorgmoment is bijgewerkt</td>
+          <td class="tg-0lax">Sorry, delivery time has been updated</td>
+          <td class="tg-145f">16, Manco sortering</td>
         </tr>
         <tr>
-          <td>Y08</td>
-          <td>Zending niet afgeleverd i.v.m. feestdag.</td>
-          <td>Delivery delayed</td>
+          <td class="tg-0lax">H23</td>
+          <td class="tg-0lax">Geannuleerd door PostNL, geen bezorgafspraak kunnen maken.</td>
+          <td class="tg-0lax">Cancelled by PostNL, no delivery appointment could be made.</td>
+          <td class="tg-8fdo">17, Manco distributie</td>
         </tr>
         <tr>
-          <td>Y09</td>
-          <td>Zending niet afgeleverd, foutief adres.Contact met ontvanger</td>
-          <td>Contact addressee due to incorrect delivery address</td>
+          <td class="tg-0lax">K90</td>
+          <td class="tg-0lax">Nog geen status bekend. Probeer later opnieuw.</td>
+          <td class="tg-0lax">Status as yet unknown. Try again later.</td>
+          <td class="tg-8fdo">17, Manco distributie</td>
         </tr>
         <tr>
-          <td>Y10</td>
-          <td>Zending niet afgeleverd, tweede bezorgpoging volgt.</td>
-          <td>1st delivery attempt failed. 2nd delivery attempt scheduled</td>
+          <td class="tg-0lax">F03</td>
+          <td class="tg-0lax">Zending niet verwerkt vanwege ontbrekende verzendgegevens</td>
+          <td class="tg-0lax">Shipment not processed because of missing shipment details</td>
+          <td class="tg-mmlj">19, Zending afgekeurd</td>
         </tr>
         <tr>
-          <td>Y11</td>
-          <td>Zending beschadigd, contact met ontvanger.</td>
-          <td>Shipment is damaged</td>
+          <td class="tg-0lax">F04</td>
+          <td class="tg-0lax">Zending niet verwerkt vanwege ontbrekende verzendgegevens</td>
+          <td class="tg-0lax">Shipment not processed because of missing shipment details</td>
+          <td class="tg-mmlj">19, Zending afgekeurd</td>
         </tr>
         <tr>
-          <td>Y12</td>
-          <td>Zending niet afgeleverd, adres onbekend. Contact met verzender.</td>
-          <td>Contact sender because of incorrect delivery address</td>
+          <td class="tg-0lax">F05</td>
+          <td class="tg-0lax">Zending wordt niet verwerkt. Afhaalcontract ontbreekt</td>
+          <td class="tg-0lax">Shipment will not be processed. Collection contract missing</td>
+          <td class="tg-mmlj">19, Zending afgekeurd</td>
         </tr>
         <tr>
-          <td>Y13</td>
-          <td>Zending niet afgeleverd, geweigerd.Contact met verzender.</td>
-          <td>Refused by addressee. Contact with sender</td>
+          <td class="tg-0lax">F06</td>
+          <td class="tg-0lax">Zending wordt niet verwerkt. Postcode afhaaladres onbekend.</td>
+          <td class="tg-0lax">Shipment will not be processed. Collection address post code unknown.</td>
+          <td class="tg-mmlj">19, Zending afgekeurd</td>
         </tr>
         <tr>
-          <td>Y14</td>
-          <td>Zending beschadigd, contact met verzender</td>
-          <td>Shipment is damaged. PostNL will get in contact</td>
+          <td class="tg-0lax">F07</td>
+          <td class="tg-0lax">Zending wordt niet verwerkt. Postcode bezorgadres onbekend.</td>
+          <td class="tg-0lax">Shipment will not be processed. Delivery address post code unknown.</td>
+          <td class="tg-mmlj">19, Zending afgekeurd</td>
         </tr>
         <tr>
-          <td>Y15</td>
-          <td>Zending niet afgeleverd, contact met verzender.</td>
-          <td>Shipment not delivered. Contact with sender</td>
+          <td class="tg-0lax">F08</td>
+          <td class="tg-0lax">Zending niet verwerkt. Afhaaldatum ligt in het verleden.</td>
+          <td class="tg-0lax">Shipment not processed. Collection date is in the past.</td>
+          <td class="tg-mmlj">19, Zending afgekeurd</td>
         </tr>
         <tr>
-          <td>Y16</td>
-          <td>Zending retour afzender, incorrect adres.</td>
-          <td>Incorrect address</td>
+          <td class="tg-0lax">F10</td>
+          <td class="tg-0lax">Zending wordt niet verwerkt. Afhaaldatum is geen werkdag.</td>
+          <td class="tg-0lax">Shipment will not be processed. Collection date is not a working day.</td>
+          <td class="tg-mmlj">19, Zending afgekeurd</td>
         </tr>
         <tr>
-          <td>Y17</td>
-          <td>Zending niet afgeleverd, ontvanger onbekend.</td>
-          <td>Addressee is not known at this address</td>
+          <td class="tg-0lax">A76</td>
+          <td class="tg-0lax">Zending aangekomen in Nederland</td>
+          <td class="tg-0lax">Shipment arrived in the Netherlands</td>
+          <td class="tg-8fdo">20, Zending in inklaringsproces</td>
         </tr>
         <tr>
-          <td>Y18</td>
-          <td>Zending beschadigd, retour afzender.</td>
-          <td>Shipment is damaged. Shipment returned to sender</td>
+          <td class="tg-0lax">X10</td>
+          <td class="tg-0lax">Er ontbreken pakket gegevens. Je ontvangt van ons een informatieverzoek</td>
+          <td class="tg-0lax">Parcel details missing. You will receive an information request from us</td>
+          <td class="tg-8fdo">20, Zending in inklaringsproces</td>
         </tr>
         <tr>
-          <td>Y19</td>
-          <td>Zending verboden, retour afzender.</td>
-          <td>Return to sender, forbidden item</td>
+          <td class="tg-0lax">X67</td>
+          <td class="tg-0lax">Wacht op betaling importkosten</td>
+          <td class="tg-0lax">Awaiting payment of import costs</td>
+          <td class="tg-8fdo">20, Zending in inklaringsproces</td>
         </tr>
         <tr>
-          <td>Y20</td>
-          <td>Zending niet afgehaald, retour afzender.</td>
-          <td>Shipment not picked-up at PostNL location. Return to sender</td>
+          <td class="tg-0lax">V02</td>
+          <td class="tg-0lax">Sorry, bezorgmoment is bijgewerkt</td>
+          <td class="tg-0lax">Sorry, delivery time has been updated</td>
+          <td class="tg-145f">21, Zending in voorraad</td>
         </tr>
         <tr>
-          <td>Y21</td>
-          <td>Zending retour afzender.</td>
-          <td>Return to sender</td>
+          <td class="tg-0lax">V03</td>
+          <td class="tg-0lax">Sorry, bezorgmoment is bijgewerkt</td>
+          <td class="tg-0lax">Sorry, delivery time has been updated</td>
+          <td class="tg-145f">21, Zending in voorraad</td>
         </tr>
         <tr>
-          <td>Y22</td>
-          <td>Zending niet afgeleverd, ontvanger verhuisd.</td>
-          <td>Shipment not delivered, addressee relocated.</td>
+          <td class="tg-0lax">V04</td>
+          <td class="tg-0lax">Bezorging is vertraagd, te laat aangeleverd bij PostNL</td>
+          <td class="tg-0lax">Delivery delayed due to late delivery to PostNL</td>
+          <td class="tg-145f">21, Zending in voorraad</td>
         </tr>
         <tr>
-          <td>Y23</td>
-          <td>Herstelprocedure i.v.m. onjuiste adressering.</td>
-          <td>Address corrected. New delivery attempt to follow</td>
+          <td class="tg-0lax">V11</td>
+          <td class="tg-0lax">Sorry, bezorgmoment is bijgewerkt</td>
+          <td class="tg-0lax">Sorry, delivery time has been updated</td>
+          <td class="tg-145f">21, Zending in voorraad</td>
         </tr>
         <tr>
-          <td>Y24</td>
-          <td>Zending doorgezonden, adres is gecorrigeerd van ontvanger.</td>
-          <td>Address corrected. New delivery attempt to follow</td>
+          <td class="tg-0lax">V12</td>
+          <td class="tg-0lax">Ontvangen door PostNL</td>
+          <td class="tg-0lax">Received by PostNL</td>
+          <td class="tg-145f">21, Zending in voorraad</td>
         </tr>
         <tr>
-          <td>Y25</td>
-          <td>Zending in beslag genomen door douane i.v.m. inhoud.</td>
-          <td>Shipment is at Customs for further processing</td>
+          <td class="tg-0lax">V13</td>
+          <td class="tg-0lax">Ontvangen door PostNL</td>
+          <td class="tg-0lax">Received by PostNL</td>
+          <td class="tg-145f">21, Zending in voorraad</td>
         </tr>
         <tr>
-          <td>Y26</td>
-          <td>Zending afgeleverd in postbus.</td>
-          <td>Shipment to be collected at PO Box</td>
+          <td class="tg-0lax">V21</td>
+          <td class="tg-0lax">Sorry, bezorgmoment is bijgewerkt</td>
+          <td class="tg-0lax">Sorry, delivery time has been updated</td>
+          <td class="tg-145f">21, Zending in voorraad</td>
         </tr>
         <tr>
-          <td>Y29</td>
-          <td>Vernietigd op last van douane</td>
-          <td>Destroyed by Customs</td>
+          <td class="tg-0lax">V22</td>
+          <td class="tg-0lax">Zending is bij PostNL</td>
+          <td class="tg-0lax">Shipment is at PostNL</td>
+          <td class="tg-145f">21, Zending in voorraad</td>
         </tr>
         <tr>
-          <td>Y30</td>
-          <td>Zending niet afgeleverd, onjuiste postcode bezorgadres.</td>
-          <td>Shipment not delivered due to incorrect postcode.</td>
+          <td class="tg-0lax">V23</td>
+          <td class="tg-0lax">Ontvangen door PostNL</td>
+          <td class="tg-0lax">Received by PostNL</td>
+          <td class="tg-145f">21, Zending in voorraad</td>
         </tr>
         <tr>
-          <td>Y31</td>
-          <td>Poging aflevering,postcode onbekend</td>
-          <td>Shipment not delivered. Postcode missing.</td>
+          <td class="tg-0lax">V31</td>
+          <td class="tg-0lax">Ontvangen door PostNL, vertraagd</td>
+          <td class="tg-0lax">Received by PostNL, delayed</td>
+          <td class="tg-145f">21, Zending in voorraad</td>
         </tr>
         <tr>
-          <td>Y32</td>
-          <td>Zending niet afgeleverd, adres onbekend.</td>
-          <td>Shipment not delivered. Address unknown</td>
+          <td class="tg-0lax">V50</td>
+          <td class="tg-0lax">Ontvangen door PostNL</td>
+          <td class="tg-0lax">Received by PostNL</td>
+          <td class="tg-145f">21, Zending in voorraad</td>
         </tr>
         <tr>
-          <td>Y33</td>
-          <td>Aflevering uitgesteld</td>
-          <td>Delivery postponed until the following working day</td>
+          <td class="tg-0lax">I02</td>
+          <td class="tg-0lax">Zending is afgehaald bij PostNL-punt</td>
+          <td class="tg-0lax">Shipment collected at PostNL outlet</td>
+          <td class="tg-4c9j">22, Zending afgehaald van Postkantoor</td>
         </tr>
         <tr>
-          <td>Y35</td>
-          <td>Zending vertraagd, nog in sorteerproces.</td>
-          <td>Delivery delayed</td>
+          <td class="tg-0lax">C01</td>
+          <td class="tg-0lax">Zending is afgehaald door PostNL</td>
+          <td class="tg-0lax">Shipment collected by PostNL</td>
+          <td class="tg-4c9j">23, Afhaalopdracht gecollecteerd</td>
         </tr>
         <tr>
-          <td>Y36</td>
-          <td>Zending niet afgeleverd: identificatie ontbreekt</td>
-          <td>Zending niet afgeleverd: identificatie ontbreekt</td>
+          <td class="tg-0lax">H16</td>
+          <td class="tg-0lax">Bezorging niet gelukt, pakket gaat terug naar de afzender</td>
+          <td class="tg-0lax">Shipment not delivered, address long unavailable. Return</td>
+          <td class="tg-eb4o">27, Retour Onbestelbaar</td>
         </tr>
         <tr>
-          <td>Y37</td>
-          <td>Zending niet afgeleverd: contact locale bezorger</td>
-          <td>Zending niet afgeleverd: contact locale bezorger</td>
+          <td class="tg-0lax">H25</td>
+          <td class="tg-0lax">Bezorging niet mogelijk, pakket gaat terug naar afzender </td>
+          <td class="tg-0lax">Shipment not delivered, location long term unreachable</td>
+          <td class="tg-eb4o">27, Retour Onbestelbaar</td>
         </tr>
         <tr>
-          <td>Y38</td>
-          <td>Zending niet afgeleverd: pakket naar depot bestemmingsland</td>
-          <td>Zending niet afgeleverd: pakket naar depot bestemmingsland</td>
+          <td class="tg-0lax">Y37</td>
+          <td class="tg-0lax">Zending niet afgeleverd: neem contact op met locale bezorger</td>
+          <td class="tg-0lax">Shipment not delivered: contact local deliverer</td>
+          <td class="tg-eb4o">28, Retour Foutieve aflevercode</td>
         </tr>
         <tr>
-          <td>Y39</td>
-          <td>Contact met ontvanger om een afspraak te plannen.&nbsp;</td>
-          <td>Contact met ontvanger om een afspraak te plannen.</td>
+          <td class="tg-0lax">A72</td>
+          <td class="tg-0lax">Zending is klaar voor transport naar Nederland</td>
+          <td class="tg-0lax">Shipment is ready for transport to the Netherlands</td>
+          <td class="tg-0lax">31, Zending klaar voor transport naar land van bestemming</td>
         </tr>
         <tr>
-          <td>Y40</td>
-          <td>Zending niet afgeleverd, ontvanger afwezig. Retour afzender.</td>
-          <td>Final delivery attempt unsuccessful. Return to sender</td>
+          <td class="tg-0lax">A74</td>
+          <td class="tg-0lax">Zending is ontvangen door partner in land van verzending</td>
+          <td class="tg-0lax">Shipment received by partner in country of shipment</td>
+          <td class="tg-0lax">31, Zending klaar voor transport naar land van bestemming</td>
         </tr>
         <tr>
-          <td>Y41</td>
-          <td>Zending niet afgeleverd, aflevercode ontbreekt.</td>
-          <td>Shipment not delivered. Location access code is missing</td>
+          <td class="tg-0lax">A75</td>
+          <td class="tg-0lax">Zending is onderweg naar Nederland</td>
+          <td class="tg-0lax">Shipment is en route to the Netherlands</td>
+          <td class="tg-0lax">31, Zending klaar voor transport naar land van bestemming</td>
         </tr>
         <tr>
-          <td>Y42</td>
-          <td>Zending niet afgeleverd. Ontvanger is onbereikbaar.</td>
-          <td>Shipment not delivered. Addressee is unavailable.</td>
+          <td class="tg-0lax">X15</td>
+          <td class="tg-0lax">Zending gesorteerd in land van bestemming</td>
+          <td class="tg-0lax">Shipment sorted at IMEC in destination country.</td>
+          <td class="tg-0lax">31, Zending klaar voor transport naar land van bestemming</td>
         </tr>
         <tr>
-          <td>Y43</td>
-          <td>Afleverlocatie gesloten</td>
-          <td>Shipment not delivered. Addressee location closed.</td>
+          <td class="tg-0lax">A41</td>
+          <td class="tg-0lax">Klantenservice Extra@Home heeft contact gehad</td>
+          <td class="tg-0lax">Extra@Home Customer Service has made contact</td>
+          <td class="tg-0lax">99, Niet van toepassing</td>
         </tr>
         <tr>
-          <td>Y44</td>
-          <td>Zending geweigerd wegens beschadiging.&nbsp;</td>
-          <td>Shipment refused, damaged.</td>
+          <td class="tg-0lax">A46</td>
+          <td class="tg-0lax">Verzoek van ontvanger tot retour sturen door afhaallocatie</td>
+          <td class="tg-0lax">Recipient request for pick-up location to return shipment</td>
+          <td class="tg-0lax">99, Niet van toepassing</td>
         </tr>
         <tr>
-          <td>Y45</td>
-          <td>Zending in beslag genomen door politie i.v.m. inhoud.</td>
-          <td>Shipment confiscated by Police due to content</td>
+          <td class="tg-0lax">A73</td>
+          <td class="tg-0lax">Zending is gecollecteerd door partner</td>
+          <td class="tg-0lax">Shipment has been collected by partner</td>
+          <td class="tg-0lax">99, Niet van toepassing</td>
         </tr>
         <tr>
-          <td>Y46</td>
-          <td>Zending vertraagd, overschrijdt cumulatieve douanewaarde</td>
-          <td>Parcel exceeds customs value, transport is postponed</td>
+          <td class="tg-0lax">A94</td>
+          <td class="tg-0lax">Zelf bezorging gewijzigd</td>
+          <td class="tg-0lax">Delivery changed by customer</td>
+          <td class="tg-0lax">99, Niet van toepassing</td>
         </tr>
         <tr>
-          <td>Y47</td>
-          <td>Ontbrekend/onjuist douaneformulier, retour afzender</td>
-          <td>Missing/incorrect customs form, return to sender</td>
+          <td class="tg-0lax">B06</td>
+          <td class="tg-0lax">Zending geaccepteerd door PostNL</td>
+          <td class="tg-0lax">Shipment accepted by PostNL IMEC.</td>
+          <td class="tg-0lax">99, Niet van toepassing</td>
         </tr>
         <tr>
-          <td>Y48</td>
-          <td>Zending 2x onbestelbaar, naar OBS</td>
-          <td>Shipment 2x undeliverable, to OBS</td>
+          <td class="tg-0lax">H15</td>
+          <td class="tg-0lax">Zending te groot of te zwaar, retour afzender</td>
+          <td class="tg-0lax">Shipment too large or too heavy, return to sender</td>
+          <td class="tg-0lax">99, Niet van toepassing</td>
         </tr>
         <tr>
-          <td>Y50</td>
-          <td>Multicollozending geweigerd, onvolledige zending.</td>
-          <td>Shipment refused, incomplete</td>
+          <td class="tg-0lax">H17</td>
+          <td class="tg-0lax">Waarde is hoger dan toegestaan door douane. Retour afzender.</td>
+          <td class="tg-0lax">Value exceeds maximum customs value. Return to sender.</td>
+          <td class="tg-0lax">99, Niet van toepassing</td>
         </tr>
         <tr>
-          <td>Y60</td>
-          <td>Zending vertraagd door verkeersomstandigheden</td>
-          <td>Shipment delayed by conditions</td>
+          <td class="tg-0lax">H18</td>
+          <td class="tg-0lax">Bezorging niet gelukt, pakket gaat terug naar de afzender</td>
+          <td class="tg-0lax">Delivery failed, package goes back to sender</td>
+          <td class="tg-0lax">99, Niet van toepassing</td>
         </tr>
         <tr>
-          <td>Y61</td>
-          <td>Zending vertraagd door weersomstandigheden</td>
-          <td>Shipment delayed due to weather conditions</td>
+          <td class="tg-0lax">H30</td>
+          <td class="tg-0lax">Verzender heeft de zendingsopdracht geannuleerd</td>
+          <td class="tg-0lax">Sender has cancelled the shipment order</td>
+          <td class="tg-0lax">99, Niet van toepassing</td>
         </tr>
         <tr>
-          <td>Y62</td>
-          <td>Zending vertraagd door transportproblemen</td>
-          <td>Delay due to transport and/or traffic problems</td>
+          <td class="tg-0lax">J56</td>
+          <td class="tg-0lax">We zijn onderweg om je zending af te halen</td>
+          <td class="tg-0lax">We are en route to pickup address</td>
+          <td class="tg-0lax">99, Niet van toepassing</td>
         </tr>
         <tr>
-          <td>Y71</td>
-          <td>Zending vermist</td>
-          <td>Shipment missing</td>
+          <td class="tg-0lax">J80</td>
+          <td class="tg-0lax">Deze zending heeft nog geen afleverscan gekregen</td>
+          <td class="tg-0lax">No delivery scan for this shipment yet</td>
+          <td class="tg-0lax">99, Niet van toepassing</td>
         </tr>
         <tr>
-          <td>Y80</td>
-          <td>Afhaalpoging mislukt</td>
-          <td>We missed you</td>
+          <td class="tg-0lax">K25</td>
+          <td class="tg-0lax">Zending vertraagd, locatie onbereikbaar voor verwerking</td>
+          <td class="tg-0lax">Shipment delayed, location unreachable for processing</td>
+          <td class="tg-0lax">99, Niet van toepassing</td>
         </tr>
         <tr>
-          <td>Y81</td>
-          <td>Afhaalopdracht mislukt, geen nieuwe poging</td>
-          <td>Pick-up order unsuccessful, no new attempt</td>
+          <td class="tg-0lax">K71</td>
+          <td class="tg-0lax">Bezorgen lukte niet, zending gaat naar PostNL-punt</td>
+          <td class="tg-0lax">We missed you, shipment sent to PostNL retail point</td>
+          <td class="tg-0lax">99, Niet van toepassing</td>
         </tr>
         <tr>
-          <td>Z01</td>
-          <td>Zending afgeleverd, expliciet vastgelegd.</td>
-          <td>Shipment delivered</td>
+          <td class="tg-0lax">P20</td>
+          <td class="tg-0lax">Afgesproken plek is niet veilig, diefstalgevoelig</td>
+          <td class="tg-0lax">Appointed place is not safe, prone to theft</td>
+          <td class="tg-0lax">99, Niet van toepassing</td>
         </tr>
         <tr>
-          <td>Z02</td>
-          <td>Zending afgeleverd, handtekening digitaal</td>
-          <td>Shipment delivered</td>
+          <td class="tg-0lax">P21</td>
+          <td class="tg-0lax">Afgesproken plek is zichtbaar vanaf de straat, open gebied</td>
+          <td class="tg-0lax">Appointed place is visible form the street, open area</td>
+          <td class="tg-0lax">99, Niet van toepassing</td>
         </tr>
         <tr>
-          <td>Z03</td>
-          <td>Zending afgeleverd, handtekening op papier</td>
-          <td>Shipment delivered</td>
+          <td class="tg-0lax">P22</td>
+          <td class="tg-0lax">Afgesproken plek is nat, niet overdekt</td>
+          <td class="tg-0lax">Appointed place is wet, not covered</td>
+          <td class="tg-0lax">99, Niet van toepassing</td>
         </tr>
         <tr>
-          <td>Z04</td>
-          <td>Zending afgeleverd, geen handtekening</td>
-          <td>Shipment delivered</td>
+          <td class="tg-0lax">P23</td>
+          <td class="tg-0lax">Afgesproken plek is niet toegankelijk/beschikbaar</td>
+          <td class="tg-0lax">Appointed place is not accessible/available</td>
+          <td class="tg-0lax">99, Niet van toepassing</td>
         </tr>
         <tr>
-          <td>Z05</td>
-          <td>Zending afgeleverd bij buren.</td>
-          <td>Shipment delivered to neighbour</td>
+          <td class="tg-0lax">P24</td>
+          <td class="tg-0lax">Afgesproken plek volstaat niet, afmetingen pakket te groot</td>
+          <td class="tg-0lax">Appointed place is not sufficient, package dimensions too large</td>
+          <td class="tg-0lax">99, Niet van toepassing</td>
         </tr>
         <tr>
-          <td>Z06</td>
-          <td>Zending opgehaald op afhaallocatie.</td>
-          <td>Shipment collected at PostNL location</td>
+          <td class="tg-0lax">Q14</td>
+          <td class="tg-0lax">Zending uit transport gehaald voor controle</td>
+          <td class="tg-0lax">Shipment removed from transport for inspection</td>
+          <td class="tg-0lax">99, Niet van toepassing</td>
         </tr>
         <tr>
-          <td>Z08</td>
-          <td>Zending afgeleverd, impliciet vastgelegd.</td>
-          <td>Shipment implicitly delivered</td>
+          <td class="tg-0lax">Q16</td>
+          <td class="tg-0lax">Pakket in depot, gaat onderweg naar land van bestemming</td>
+          <td class="tg-0lax">Package in depot, goes enroute to country of destination</td>
+          <td class="tg-0lax">99, Niet van toepassing</td>
         </tr>
         <tr>
-          <td>Z09</td>
-          <td>Zending afgeleverd op een veilige lokatie van de ontvanger</td>
-          <td>Shipment delivered at the receiver's safe place</td>
+          <td class="tg-0lax">Q17</td>
+          <td class="tg-0lax">Je pakket is klaar voor verzending naar Europa</td>
+          <td class="tg-0lax">Your parcel is ready for shipment to Europe</td>
+          <td class="tg-0lax">99, Niet van toepassing</td>
         </tr>
         <tr>
-          <td>Z80</td>
-          <td>Afhaalzending afgehaald</td>
-          <td>Collection attempt successful</td>
+          <td class="tg-0lax">Q18</td>
+          <td class="tg-0lax">Je pakket is klaar voor verzending naar Nederland</td>
+          <td class="tg-0lax">Your parcel is ready for shipment to The Netherlands</td>
+          <td class="tg-0lax">99, Niet van toepassing</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">Q19</td>
+          <td class="tg-0lax">Je pakket is onderweg, het is nog niet ontvangen door PostNL</td>
+          <td class="tg-0lax">Shipment still in transit</td>
+          <td class="tg-0lax">99, Niet van toepassing</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">X16</td>
+          <td class="tg-0lax">Zending voorgemeld en gesorteerd door PostNL</td>
+          <td class="tg-0lax">Shipment pre-alerted by PostNL and sorted at IMEC.</td>
+          <td class="tg-0lax">99, Niet van toepassing</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">X52</td>
+          <td class="tg-0lax">Je zending wacht op bezorging in het land van bestemming</td>
+          <td class="tg-0lax">Your parcel is awaiting delivery in the destination country</td>
+          <td class="tg-0lax">99, Niet van toepassing</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">Y45</td>
+          <td class="tg-0lax">Pakket definitief uit proces gehaald i.v.m. verboden inhoud.</td>
+          <td class="tg-0lax">Parcel permanently removed from process due to prohibited contents.</td>
+          <td class="tg-0lax">99, Niet van toepassing</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">Y46</td>
+          <td class="tg-0lax">Pakket overschrijdt douanewaarde, transport is uitgesteld</td>
+          <td class="tg-0lax">Parcel exceeds customs value, transport is postponed</td>
+          <td class="tg-0lax">99, Niet van toepassing</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">Y47</td>
+          <td class="tg-0lax">Retour afzender: ontbrekend/onjuist exportformulier</td>
+          <td class="tg-0lax">Return to sender because of a missing/incorrect export form</td>
+          <td class="tg-0lax">99, Niet van toepassing</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">Y48</td>
+          <td class="tg-0lax">Pakket onbestelbaar: fout exportformulier &amp; geen retouradres</td>
+          <td class="tg-0lax">Parcel is undeliverable: incorrect export form and  missing return adress</td>
+          <td class="tg-0lax">99, Niet van toepassing</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">Y64</td>
+          <td class="tg-0lax">Vertraging  door&nbsp;&nbsp;&nbsp;importcontrole  in land van bestemming</td>
+          <td class="tg-0lax">Sorry, delay due to import controls in destination country</td>
+          <td class="tg-0lax">99, Niet van toepassing</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">Y65</td>
+          <td class="tg-0lax">Je zending is vertraagd door extreme weersomstandigheden</td>
+          <td class="tg-0lax">Sorry, shipment delayed due to extreme weather conditions</td>
+          <td class="tg-0lax">99, Niet van toepassing</td>
+        </tr>
+        <tr>
+          <td class="tg-0lax">Y66</td>
+          <td class="tg-0lax">Sorry, je zending is vertraagd door IT-problemen</td>
+          <td class="tg-0lax">Sorry, your shipment has been delayed due to IT issues</td>
+          <td class="tg-0lax">99, Niet van toepassing</td>
         </tr>
       </tbody>
     </table>
+    
+- name: Additional codes
+  description: |
+    # Sustainability codes
+    
+    <table>
+      <thead>
+        <tr>
+          <th>Code</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>00</td>
+          <td>Sustainability score not available</td>
+        </tr>
+        <tr>
+          <td>01</td>
+          <td>Sustainable delivery</td>
+        </tr>
+        <tr>
+          <td>02</td>
+          <td>Sustainable option</td>
+        </tr>
+        <tr>
+          <td>03</td>
+          <td>Sustainable delivery + sustainable option</td>
+        </tr>
+      </tbody>
+    </table>
+    
+    # Address types
+    
+    # Contact types
+    
+    # ID types
+    
+    # Amount types
     
 paths:
   '/shipment/checkout/v1/postalcodecheck':
