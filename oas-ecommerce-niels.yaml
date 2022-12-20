@@ -29,7 +29,7 @@ x-tagGroups:
     - Error codes
     - Product codes
     - T&T status codes
-    - Additional codes
+    - Reference codes
 tags:
 - name: Postalcode check
   description: | 
@@ -750,6 +750,7 @@ tags:
         </tr>
       </tbody>
     </table>
+    
 - name: Confirming
   description: |
     ### Summary
@@ -11645,9 +11646,279 @@ tags:
       </tbody>
     </table>
     
-- name: Additional codes
+- name: Reference codes
   description: |
+    # Printer types
+    
+    GraphicFile|GIF 200, 300 and 600 dpi
+    
+    GraphicFile|JPG 200,300 and 600 dpi
+    
+    GraphicFile|PDF
+    
+    GraphicFile|PDF|MergeA, MergeB, MergeC and MergeD 
+    
+    Zebra|Generic ZPL II 200, 300 and 600 dpi*
+    
+    \* It is not recommended to send .pdf files/labels directly to a Zebra printer If you want to send it directly to your Zebra printer, please use .gif files or the native (generic) zpl printer type.
+    
+    # Label types
+    
+    The Label type helps you to determine what document will be returned. In most cases, only a Label is returned. The following label types are possible:
+    
+    <table>
+      <thead>
+        <tr>
+          <th>Labeltype</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Labeltype</td>
+          <td>Description</td>
+        </tr>
+        <tr>
+          <td>Label (A6)</td>
+          <td>normal shipping label for all shipments except for Parcels Non-EU</td>
+        </tr>
+        <tr>
+          <td>BusPakjeExtra (A6)</td>
+          <td>shipping label for parcels that fit in a mailbox</td>
+        </tr>
+        <tr>
+          <td>CODcard (Kabinet (21 x 10,16 cm)</td>
+          <td>COD card as required for Dutch domestic COD shipments</td>
+        </tr>
+        <tr>
+          <td>CN23 form (A5)</td>
+          <td>customs form for Parcels Non-EU shipments</td>
+        </tr>
+        <tr>
+          <td>CP71 form (A5)</td>
+          <td>customs form for Parcels Non-EU shipments</td>
+        </tr>
+        <tr>
+          <td>Commercialinvoice (A4)</td>
+          <td>commercial invoice for Parcels Non-EU shipments</td>
+        </tr>
+        <tr>
+          <td>Return Label (A6)</td>
+          <td>normal shipping label for reverse logistics</td>
+        </tr>
+      </tbody>
+    </table>
+    
+    # Address types
+    
+    PostNL internal applications validate the receiver address. In case the spelling of addresses should be different according to our PostNL information, the address details will be corrected. This can be noticed in Track & Trace.
+    
+    The API will not add address details. Street and City fields will only be printed when they are in the call towards the Shipping or Labelling API.
+    
+    The element Address type is a code in the request. Possible values are:
+    
+    <table>
+      <thead>
+        <tr>
+          <th>Code</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>01</td>
+          <td>Receiver</td>
+        </tr>
+        <tr>
+          <td>02</td>
+          <td>Sender</td>
+        </tr>
+        <tr>
+          <td>03</td>
+          <td>Alternative sender address</td>
+        </tr>
+        <tr>
+          <td>04</td>
+          <td>Collection address</td>
+        </tr>
+        <tr>
+          <td>08</td>
+          <td>Return address*</td>
+        </tr>
+        <tr>
+          <td>09</td>
+          <td>Delivery address (for use with Pick up at PostNL location)</td>
+        </tr>
+      </tbody>
+    </table>
+    
+    \* When using the ‘label in the box return label’, it is mandatory to use an Antwoordnummer in AddressType 08. This cannot be a regular address. 
+    
+    # Contact types
+    
+    Contact type has the elements Email, SMSNr and TelNr. These fields have a dependency with each other. At least one of these three fields must be filled mandatory for certain products/ product codes (e.g. Evening/Sameday delivery, Pickup at PostNL location). Two or three can be filled as well.
+    
+    <table>
+      <thead>
+        <tr>
+          <th>Code</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>01</td>
+          <td>Receiver</td>
+        </tr>
+        <tr>
+          <td>02</td>
+          <td>Sender</td>
+        </tr>
+      </tbody>
+    </table>
+    
+    Remark: Please add the e-mail address of the receiver to improve the Mijn PostNL experience of your customer.
+    
+    # Amount types
+    
+    <table>
+      <thead>
+        <tr>
+          <th>Code</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>01</td>
+          <td>Cash on Delivery (COD)</td>
+        </tr>
+        <tr>
+          <td>02</td>
+          <td>Insurance amount</td>
+        </tr>
+      </tbody>
+    </table>
+    
+    # Group types
+    
+    <table>
+      <thead>
+        <tr>
+          <th>Code</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>01</td>
+          <td>Collection request</td>
+        </tr>
+        <tr>
+          <td>03</td>
+          <td>Multiple parcels in one shipment (multicollo) </td>
+        </tr>
+        <tr>
+          <td>04</td>
+          <td>Single parcel in one shipment</td>
+        </tr>
+      </tbody>
+    </table>
+    
+    # Transaction codes
+    
+    <table>
+      <thead>
+        <tr>
+          <th>Transaction Code</th>
+          <th>Transaction Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>11</td>
+          <td>Sale of goods</td>
+        </tr>
+        <tr>
+          <td>21</td>
+          <td>Returned goods</td>
+        </tr>
+        <tr>
+          <td>31</td>
+          <td>Gift</td>
+        </tr>
+        <tr>
+          <td>32</td>
+          <td>Commercial sample</td>
+        </tr>
+        <tr>
+          <td>91</td>
+          <td>Documents</td>
+        </tr>
+      </tbody>
+     </table>
+    
+    # Delivery options
+    
+    It is possible to specify which delivery options should be considered. The possible values are:
+    
+    <table>
+      <thead>
+        <tr>
+          <th>Option</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Daytime</td>
+          <td>Daytime delivery</td>
+        </tr>
+        <tr>
+          <td>Evening</td>
+          <td>Evening delivery</td>
+        </tr>
+        <tr>
+          <td>Sunday</td>
+          <td>Sunday delivery</td>
+        </tr>
+        <tr>
+          <td>Today</td>
+          <td>Delivery on day of handover to PostNL</td>
+        </tr>
+        <tr>
+          <td>Sameday</td>
+          <td>Sameday delivery</td>
+        </tr>
+        <tr>
+          <td>08:00-09:00</td>
+          <td>Guaranteed delivery between the timeframe specified</td>
+        </tr>
+        <tr>
+          <td>08:00-10:00</td>
+          <td>Guaranteed delivery between the timeframe specified</td>
+        </tr>
+        <tr>
+          <td>08:00-12:00</td>
+          <td>Guaranteed delivery between the timeframe specified</td>
+        </tr>
+        <tr>
+          <td>08:00-17:00</td>
+          <td>Guaranteed delivery between the timeframe specified</td>
+        </tr>
+        <tr>
+          <td>Pickup</td>
+          <td>Pickup at PostNL location</td>
+        </tr>
+      </tbody>
+    </table>
+    
+    All the above delivery options can be used in the request of the Checkout API. PostNL will charge an additional amount for delivery of the parcels with the options Evening, Morning, (After)Noon, Sameday, Delivery on demand, Guaranteed delivery, Sunday and Today. For specific costs and the activation of this delivery options, it is recommended to consult your PostNL Pakketten account manager. For Sunday, Sameday and Today delivery it is even mandatory to consult your account manager.
+    \* The Today delivery option will be returned on any given day (Mon – Sun), but will only be on the first following business day.
+    
     # Sustainability codes
+    
+    You can show customers when their parcel can be delivered sustainably. In the response of the API the follow sustainability codes be distinguished:
     
     <table>
       <thead>
@@ -11676,13 +11947,13 @@ tags:
       </tbody>
     </table>
     
-    # Address types
+    You can build in the corresponding communication messages in your checkout; 
     
-    # Contact types
+    Sustainably delivery;  “Duurzaam bezorgd”
     
-    # ID types
+    Sustainable option;  “Duurzame optie”
     
-    # Amount types
+    Not available: Not a sustainable option (yet).
     
 paths:
   '/shipment/checkout/v1/postalcodecheck':
