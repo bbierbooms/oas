@@ -6249,7 +6249,7 @@ tags:
     
     ## Standard Dutch domestic
     
-    We distinguish three common products:
+    We distinguish these common products:
     
     <table>
       <thead>
@@ -6290,15 +6290,17 @@ tags:
       </tbody>
     </table>
     
-    **Business rules (for all products)**
-    *	Receiver address fields required:<br>
+    **Business rules (__for all products__)**
+    
+    * Receiver address fields required:<br>
       * Home number (only mandatory for Benelux shipments)<br>
       * Postcode (only mandatory for Benelux shipments)<br>
       * City<br>
       * Country code<br>
       * Street<br>
-      * Last name/ Company name (at least one is required)<br>
-    *	Barcode requirements (not mandatory for Parcels non-EU labels):<br>
+      * Last name/ Company name (at least one is required)
+      
+    * Barcode requirements (not mandatory for Parcels non-EU labels):<br>
       * Type must be 3S<br>
       * Range must be 1-4 letter string<br>
       * Serie must be 7-12 digits<br>
@@ -6381,21 +6383,22 @@ tags:
     
     ## Pickup points
     
-    With the delivery option Pickup Points your customers can choose a pick up point (in Dutch: Ophalen bij PostNL-punt to pick up their parcels.
+    With the delivery option Pickup, your customers can choose a pickup point to pick up their parcels.
     
-    More than 4000 pick up points available in supermarkets, bookstores etc.
+    More than 4000 pickup points available in supermarkets, bookstores etc.
     
-    It is mandatory to use a frontend solution of PostNL to let your customers choose a pick up point. This frontend solution will return the correct information about the pick up point, which you will have to use in the Shipping, Labelling and/or Confirming API. Please check the specific documentation for more specific information.
+    It is mandatory to use the Checkout or the Locartion API to show he nearest PostNL Pickup points based on the postal code or coordinates of the customers. 
     
+    This frontend solution will return the correct information about the pickup point, which you will have to use in the Shipping, Labelling and/or Confirming API. Please check the specific documentation for more specific information.
+        
     Note:<br>
-    It is also possible to let your customers choose pick up points in Belgium.
-    Please contact your PostNL accountmanager if you consider this option. For more information see the paragraph Pickup at PostNL Location Belgium.
+    It is also possible to let your customers choose pickup points in Belgium. Please contact your PostNL accountmanager if you consider this option. For more information see the paragraph Pickup at PostNL Location Belgium.
     
     Furthermore, in the Shipping, Labelling and/or Confirming API you will need to provide us with:
     * the complete address of your customer
     * the complete address of the pick up point
     
-    Confirming is essential for Pick up Points shipments. Without a confirming on time, it is not possible to process these parcels.
+    Confirming is essential for Pickup points shipments. Without an confirming on time, it is not possible to process these parcels.
     
     <table>
       <thead>
@@ -6410,7 +6413,7 @@ tags:
             <p>3533</p>
           </td>
           <td>
-            <p>Ophalen bij PostNL locatie + Signature on Delivery</p>
+            <p>Pickup + Signature on Delivery</p>
           </td>
         </tr>
         <tr>
@@ -6418,7 +6421,7 @@ tags:
             <p>3534</p>
           </td>
           <td>
-            <p>Ophalen bij PostNL locatie + Extra Cover</p>
+            <p>Pickup + Extra Cover</p>
           </td>
         </tr>
         <tr>
@@ -6426,7 +6429,7 @@ tags:
             <p>3543 *</p>
           </td>
           <td>
-            <p>Ophalen bij PostNL locatie + Signature on Delivery + Notification</p>
+            <p>Pickup + Signature on Delivery + Notification</p>
           </td>
         </tr>
         <tr>
@@ -6434,13 +6437,13 @@ tags:
             <p>3544 *</p>
           </td>
           <td>
-            <p>Ophalen bij PostNL locatie + Extra Cover + Notification</p>
+            <p>Pickup + Extra Cover + Notification</p>
           </td>
         </tr>
       </tbody>
     </table>
     
-    \*These products can only be used after consulting your PostNL Pakketten account manager.
+    \*These products can only be used after consulting your PostNL Parcels account manager.
     
     **Business rules**
     * Receiver address fields required:
@@ -6449,7 +6452,7 @@ tags:
       * Home number
       * Postcode
       * City
-    * Ophalen bij PostNL locatie address fields required:
+    * Pickup point location address fields required:
       * Company name
       * Street
       * Home number
@@ -6606,7 +6609,7 @@ tags:
     
     **Pickup Points (ID check)**
     
-    It is also possbile to send the parcels to PostNL Pickup Points. You can use the below product codes. Please note that you also have to use the product options and business rules as described above.
+    It is also possible to send the parcels to PostNL Pickup Points. Please note that you also must use the product options and business rules as described in the Pickup points paragraph. 
     
     <table>
       <thead>
@@ -6618,24 +6621,24 @@ tags:
       <tbody>
         <tr>
           <td>3571</td>
-          <td>Ophalen bij PostNL locatie + Age Check&nbsp;</td>
+          <td>Pickup + Age Check</td>
         </tr>
         <tr>
           <td>3574</td>
-          <td>Ophalen bij PostNL locatie + Age Check + Notification</td>
+          <td>Pickup + Age Check + Notification</td>
         </tr>
         <tr>
           <td>3581</td>
-          <td>Ophalen bij PostNL locatie + Extra Cover + Age Check</td>
+          <td>Pickup + Extra Cover + Age Check</td>
         </tr>
         <tr>
           <td>3584</td>
-          <td>Ophalen bij PostNL locatie + Extra Cover + Age Check + Notification</td>
+          <td>Pickup + Extra Cover + Age Check + Notification</td>
         </tr>
       </tbody>
     </table>
     
-    \*These products can only be used after consulting your PostNL Pakketten account manager.
+    \*These products can only be used after consulting your PostNL Parcels account manager.
     
     ID Check products must be used in combination with a specific product option:
     
@@ -6706,110 +6709,6 @@ tags:
     
     * Product option and Characteristic are required. 
     * Field Reference must be filled with ADR/LQ (possibly followed by your own customer reference)
-    
-    ## Return label
-    
-    **Label in the box**<br>
-    PostNL offers the possibility of sending return labels along with parcels. We call this the ‘Label in the box return label’. The receivers can use this labels to return the shipments free of charge via a PostNL location. The return labels must always be addressed to a Business reply number (Antwoordnummer) and can only be used for Dutch Domestic products.
-    
-    You can apply for an Antwoordnummer at PostNL for receiving prepaid parcel shipments at a PostNL Location.
-    
-    The barcode of the return label is linked to the barcode of the outbound shipment label. These are the benefits: 
-    
-    * A receiver can use the return label to return a shipment via a PostNL location free of charge. 
-    * Track & Trace your Antwoordnummer shipments. 
-    * In the information, the return label is linked to the outbound shipment label, which provides more insight into your Antwoordnummer shipments. 
-    * The consumer has a return label at his disposal and does not need to address the shipment himself, thus optimizing operational quality. 
-    * The scans of the outbound and return flows are shown in the confirmations of PostNL Parcels.
-    
-    At the Labelling webservice Documentation page you can find more information about the ‘label in the box return label’.
-    
-    **Single label variant**<br>
-    PostNL Parcels also offers the possibility of providing a single return label, which allows consumers to send parcels to your Business reply number (Antwoordnummer).
-    
-    <table>
-      <thead>
-        <tr>
-          <th>Product code **</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            <p>- *</p>
-          </td>
-          <td>
-            <p>Label in the box</p>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p>2285</p>
-          </td>
-          <td>
-            <p>Single label variant</p>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    
-    \*No separate product code, created your return label at the same moment as you create the shipment label.
-    \*\*These product codes can only be used after consulting your PostNL Pakketten account manager.
-    
-    **Return labels Belgium**<br>
-    PostNL also offers the possibility to create return labels for Belgium. See paragraph Return labels Belgium.
-    
-    ## Smart returns
-    
-    PostNL offers the possibility of printing the Return label at a PostNL location. This offers additional convenience for the consumer. By adding the provided product options (see below) in the API call of a return parcel, PostNL will provide an additional barcode in the response. The additional barcode is connected to the return parcel. This barcode can be used by the consumer in the following way:
-    
-    * You share the barcode with the consumer, e.g. as part of your webshop checkout where a return parcel is announced
-    * The consumer shows the barcode at the PostNL location on his/her smartphone
-    * This barcode will be scanned and the return label will be printed
-    
-    The Smart Returns service is available for the following product: 
-    
-    <table>
-      <thead>
-        <tr>
-          <th>Product code *</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            <p>2285**</p>
-          </td>
-          <td>
-            <p>Business reply number (Antwoordnummer)</p>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    
-    \*This product can only be used after consulting your PostNL Pakketten account manager.
-    
-    \*\*It is mandatory to use a combination of product code and a product option. 
-    
-    Combine this product code with the following product option: 
-    
-    * Product option: characteristic 152, option 025
-    
-    **Business rules**<br>
-    * Receiver contact fields required (contacttype 02): Email address\*
-    
-    \*To receive a digital confirmation of handing over the parcel to PostNL. 
-    
-    **Recommendation**<br>
-    When creating the additional barcode: We strongly recommend you to create a Code 128 barcode instead of the default code 39 barcode. Please be aware: this only holds for the additional barcode that you can provide to the consumer for scanning via smartphone. The code 128 barcode provide the maximum reading rate for the scan devices at the PostNL locations. 
-    
-    *File type*: we recommend creating a .PNG or .JPEG file for your customer which you can communicate via;
-    
-    * In your native Android or iOS app
-    * In a HTML (responsive) email which shows the barcode
-    * Via a link in an email to a (responsive) website where the barcode is showed
     
     ## Pickup service
     
@@ -6972,11 +6871,11 @@ tags:
     
     ## Evening delivery
     
-    PostNL Pakketten will deliver parcels on working days between 5.00 – 10.00 pm. It is mandatory to use a frontend solution of PostNL to let your customers choose a evening for the delivery. This frontend solution (timeframe webservice) will return the correct information about the delivery, which you will have to use in the confirming and / or labelling service. For example: for evening delivery you will need product options. Please check the specific confirming and / of labelling documentation for more information.
+    PostNL will deliver parcels on working days between 5.30 – 10.00 pm. It is mandatory to use the Checkout or delivery options API('s) of PostNL to let your customers choose an evening for the delivery. This frontend solution (Timeframe API) will return the correct information about the delivery, which you will have to use in the confirming and / or labelling service. For example: for evening delivery you will need product options. Please check the specific confirming and / or labelling documentation for more information.
     
-    You will need to provide us with the delivery date of the parcel. This delivery date will be checked in our database. We cannot provide evening delivery for all addresses in the Netherlands. Therefore it is important to check if the stated delivery date and postal code are known in our database.
+    You will need to provide us with the delivery date of the parcel. This delivery date will be checked in our database. We cannot provide evening delivery for all addresses in the Netherlands. Therefore, it is important to check if the stated delivery date and postal code are known in our database.
     
-    For evening delivery, confirming is essential. Without a confirming on time, it is not possible to process these parcels. Therefore, we advise strongly to use the method ‘generate label’ in the labelling service. Furthermore, you will need to hand over the parcels one day before the delivery date. If you hand over the evening parcels too soon or too late, they will be delivered the next evening.
+    For evening delivery, confirming is essential. Without a confirming on time, it is not possible to process these parcels. Therefore, we strongly advise to use the method ‘generate label’ in the labelling service. Furthermore, you need to hand over the parcels one day before the delivery date. If you hand over the evening parcels too soon or too late, they will be delivered the next evening.
     
     <table>
       <thead>
@@ -7077,7 +6976,9 @@ tags:
     
     ## Sunday delivery
     
-    PostNL Pakketten will deliver parcels on sundays between 12:00 -18:00 pm. All postal codes (except P.O boxes) in the Netherlands are being served. Only the Wadden Islands are exclude from this service for the time being.
+    PostNL will deliver parcels on Sundays between 10:00 -20:00 pm.
+    
+    You will need to provide us with the delivery date of the parcel. This delivery date will be checked in our database. We cannot provide Sunday delivery for all addresses in the Netherlands. Therefore, it is important to check if the stated delivery date and postal code are known in our database. 
     
     <table>
       <thead>
@@ -7159,7 +7060,7 @@ tags:
     
     ## Today delivery
     
-    PostNL Parcels offers the possibility to hand over parcels to PostNL on working days between 05.00 and 11.00 AM. These parcels will be delivered on the same evening (note: only working days Monday to Friday) between 5.30PM and 10.00 PM. It is mandatory to retrieve availability of a given address for Today delivery using a front-end solution (webservice). Please consult the documentation and business rules for more information.  
+    PostNL Parcels offers the possibility to hand over parcels to PostNL on working days between 05.00 and 11.00 AM. These parcels will be delivered on the same evening (note: only working days Monday to Friday) between 5.30 PM and 10.00 PM. It is mandatory to retrieve availability of a given address for Today delivery using the Checkout or delivery options API('s).  a front-end solution (webservice). Please consult the documentation and business rules for more information about the front-end solutions.   
     
     Confirming the Today delivery is essential. When using the PostNL Shipping or Labelling API to confirm shipments, a shipment is confirmed by default. In the situation that you override this setting with confirm=false in the URL (I.e. only requesting a label), confirming the shipment separately via the PostNL Confirming API is necessary. 
      
@@ -7263,7 +7164,7 @@ tags:
     
     ## Sameday delivery
     
-    PostNL Parcels offers the possibility to deliver parcels on the same day if customers order before lunchtime*. This product is available on Monday till Friday and will be delivered in the evening between 6.00 – 10.00 pm. We cannot provide same day delivery for all addresses in the Netherlands, therefore it is important to check if the postal codes are known in our database and allow evening/ same day delivery. This can be done by using the Timeframe WebService.
+    PostNL Parcels offers the possibility to deliver parcels on the same day if customer order before lunchtime*. PostNL will deliver parcels on working days between 5.30 – 10.00 pm. We cannot provide same day delivery for all addresses in the Netherlands; therefore, it is important to check if the postal codes are known in our database and allow evening/ same day delivery. This can be done by using the Timeframe API.
     
     \*This is a indicative time; for the exact time please contact your PostNL Pakketten account manager.
     
@@ -7366,9 +7267,16 @@ tags:
     
     ## Guaranteed / morning delivery
     
-    If your customer needs the parcel the next day as soon as possible and/or guaranteed, then you can use the product guaranteed delivery. There are four options: (1) on working days before 09:00 2) on working days before 10:00 (3) on working days before 12:00 (4) and on working days before 17:00. If the service has not been carried out according to our promises, you can request a reimbursement of the surcharge. Ideal for recipients who need certainty on their shipment.
+    If your customer needs the parcel the next day as soon as possible and/or guaranteed, then you can use the product guaranteed delivery. 
     
-    This service is available for the whole Netherlands, excluding the Wadden Islands. There is no guaranteed distribution on Saturday and Sunday. To be able to use guaranteed delivery, please contact your PostNL Pakketten account manager for more information.
+    There are four options: 
+    
+    * Early morning. On working days before 09:00. 
+    * Morning. On working days before 10:00. 
+    * Noon. On working days before 12:00.
+    * Afternoon. On working days before 17:00. 
+    
+    If the service has not been carried out according to our promises, you can request a reimbursement of the surcharge. Ideal for recipients who need certainty on their shipment. 
     
     <table>
       <thead>
@@ -7601,7 +7509,7 @@ tags:
       </tbody>
     </table>
     
-    \*Can only be used after consulting your PostNL Pakketten account manager.
+    \* Can only be used after consulting your PostNL Parcels account manager. 
     
     ## Pickup at PostNL location Belgium
     
@@ -7696,9 +7604,11 @@ tags:
       </tbody>
     </table>
     
-    \*Can only be used after consulting your PostNL Pakketten account manager.
-    \*\*It is possible to let your customers choose pick up points in Belgium. It is mandatory to use a frontend solution to let your customer choose a pick up point. See for more information the paragraph Pickup Points (Dutch domestic products).
-    \*\*\*Business rules Insurance amount (type 02) is required and cannot exceed the maximum allowed amount (€ 5000,-)
+    \* Can only be used after consulting your PostNL Parcels account manager. 
+    
+    \*\* It is possible to let your customers choose pickup points in Belgium. It is mandatory to use a front-end solution to let your customer choose a pickup point. See for more information the paragraph Pickup Points (Dutch domestic products).
+    
+    \*\*\* Business rules Insurance amount (type 02) is required and cannot exceed the maximum allowed amount (€ 5000,-)
     
     ## Return label
     
@@ -7932,7 +7842,7 @@ tags:
     
     With this product you give your customers abroad the opportunity to return a shipment free of charge. This can be done through a local post office in 23 European countries. Parcels are then fully traceable. 
     
-    Check the [PostNL site](https://www.postnl.nl/zakelijke-oplossingen/pakket-versturen/retouren/internationale-retouren/) for more information and the countries where this service can be used.
+    Check the <a href="https://www.postnl.nl/zakelijke-oplossingen/pakket-versturen/retouren/internationale-retouren/" target="_blank" rel="noopener noreferrer">PostNL site</a> for more information and the countries where this service can be used.
     
     <table>
       <thead>
@@ -7959,7 +7869,7 @@ tags:
     
     # Destination Rest Of World
     
-    ## Parcels non-EU
+    ## Parcels Non-EU
     
     <table>
       <tbody>
@@ -8527,7 +8437,7 @@ tags:
     
     The product codes above are the standard PostNL products. It is possible that you received other product codes for tailored solutions.
     
-    **Note:** You have to use the latest version of the Labelling API (2.2).
+    **Note:** You must use the Shipment v1 or the latest version of the Labelling API (2.2). 
     
     # Cargo
     
@@ -9498,6 +9408,322 @@ tags:
     
     * Customer number is required.
     
+    # Returns
+    
+    ## Returns to a Business reply number (Antwoordnummer)
+    
+    At PostNL we offer multiple return solutions. See below which solution fits the best and find out the implementation specifications.
+    
+    <table>
+      <thead>
+        <tr>
+          <th>Product code *</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>2285</td>
+          <td>Single label</td>
+        </tr>
+        <tr>
+          <td>2285</td>
+          <td>Smart returns</td>
+        </tr>
+        <tr>
+          <td>2285</td>
+          <td>Label for electronic appliances (e-waste)</td>
+        </tr>
+        <tr>
+          <td>- **</td>
+          <td>Label in the box</td>
+        </tr>
+        <tr>
+          <td>- **</td>
+          <td>Shipping & Return label</td>
+        </tr>
+      </tbody>
+    </table>
+    
+    \* These product codescan only be used after consulting your PostNL Pakketten account manager. 
+    
+    \** No separate product code, create your return label at the same moment as you create the outbound shipment label.
+    
+    Product should be combined with at least one or more return services.
+    
+    <table>
+      <thead>
+        <tr>
+          <th>Product option (characteristic/option)</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>152/025</td>
+          <td>Smart returns</td>
+        </tr>
+        <tr>
+          <td>152/026</td>
+          <td>Shipping & Return label</td>
+        </tr>
+        <tr>
+          <td>152/027</td>
+          <td>Single label</td>
+        </tr>
+        <tr>
+          <td>152/028</td>
+          <td>Label in the box</td>
+        </tr>
+        <tr>
+          <td>191/001</td>
+          <td>Return term 35 days</td>
+        </tr>
+      </tbody>
+    </table>
+    
+    The standard return term after pre-announcement is 20 days. Research has shown that most consumers return within this time frame and therefore this standard is set. An additional product option of 100 days return term is available upon request, please contact your account manager.     
+    
+    __Smart Returns__
+    
+    PostNL offers the possibility of printing the Return label with a business reply number return address at a PostNL location. This is convenient for the returning consumer because it is a label free solution. By adding the provided product options in the API call PostNL will provide an additional barcode in the response. The barcode is shared digitally from the webshop to the returning consumer and is scanned at handover to PostNL.
+    
+    Return labels require some specific fields to be used:
+    
+    * Address of receiver: Shipment/Address/AddressType 01, always a business reply number 
+    * Address of sender: Customer/Address/AddressType 02
+    * Product code: 2285
+    * Product option: characteristic: 152 and option: 025 and if necessary, characteristic: 191 and option: 001
+    * Sender contact information required: contacttype 02, with emailaddress of consumer. Consumer is sender, fill in the emailaddress to make sure consumer is informed.
+    * Return barcode: Shipment/Barcode
+    
+    __Shipping & return label__
+    
+    PostNL offers the possibility of returning your parcel with the same label as is used for the outbound parcel. The receivers can use this label option to return the shipments free of charge via a PostNL location or at the door when a PostNL driver comes to deliver another parcel. 
+    
+    Available from Q4 (2022) upon request, please contact your account manager.
+    
+    Return labels require some specific fields to be used:
+    
+    * Address of receiver: Shipment/Address/AddressType 01
+    * Address of sender: Customer/Address/AddressType 02
+    * Return address: Shipment/Address/AddressType 08, always a business reply number
+    * Product code of outbound shipment (eg 3085)
+    * Product option: characteristic: 152 and option: 026 and characteristic: 191 and option: 001 
+    * Return barcode: Shipment/ReturnBarcode 
+    * Required contact information: contacttype 01, with email address of consumer. Fill in the email address to make sure consumer is informed.
+    
+    __Single Label__
+    
+    PostNL Parcels offers the possibility of providing a single return label that allows consumers to send parcels to yourBusinessreply number. The return label is provided from the webshop to the returning consumer and is printed and applied to the parcel by the consumer.  The consumer can use this label to return the shipments free of charge via a PostNL location or return at the door when a PostNL driver comes to deliver another parcel. 
+    
+    Return labels require some specific fields to be used: 
+    
+    * Address of receiver: Shipment/Address/AddressType 01. Always a business reply number 
+    * Address of sender: Customer/Address/AddressType 02 
+    * Product code: 2285 
+    * Product option: characteristic: 152 and option: 027 and if necessary, characteristic: 191 and option: 001 
+    * Sender contact information required: contacttype 02, with emailaddress of consumer. Consumer is sender, fill in the emailaddress to make sure consumer is informed.
+    * Return barcode: Shipment/Barcode
+    
+    __Label in the box__
+    
+    PostNL offers the possibility of sending return labels along with parcels. We call this the ‘Label in the box return label’. The receivers can usethis label to return the shipments free of charge via a PostNL location or return at the door when a PostNL driver comes to deliver another parcel. 
+    
+    The barcode of the return label is linked to the barcode of the outbound shipment label.
+    
+    Return labels require some specific fields to be used:
+    
+    * Address of receiver: Shipment/Address/AddressType 01
+    * Address of sender: Customer/Address/AddressType 02 
+    * Return address: Shipment/Address/AddressType 08, always a business reply number 
+    * Product code of outbound shipment (for example: 3085) 
+    * Product option: characteristic: 152 and option: 028 and characteristic: 191 and option: 001 
+    * Return barcode: Shipment/ReturnBarcode 
+    * Required contact information: contacttype 01, with emailaddress of consumer. Fill in the emailaddress to make sure consumer is informed.
+    
+    __Returns to an e-waste Business reply number (Antwoordnummer)__
+    
+    PostNL offers the possibility to create a personalized Businessreply number that is connected to our recycling partner for e-waste. Our partner will process the e-waste returned by the consumer. The same implementation is applied here as to business reply numbers in general. The e-waste business reply number is only available in combination with single label and smart returns.  
+    
+    *Single label*
+    
+    PostNL Parcels offers the possibility of providing a single return label that allows consumers to send parcels to yourBusinessreply number. The return label is provided from the webshop to the consumer  and should be printed by the consumer.   The consumer can use this label to return the shipments free of charge via a PostNL location or at the door when a PostNL driver comes to deliver another parcel. 
+    
+    Return labels require some specific fields to be used:
+    
+    * Address of receiver: Shipment/Address/AddressType 01. Always a business reply number 
+    * Address of sender: Customer/Address/AddressType 02 
+    * Product code: 2285 
+    * Product option: characteristic: 152 and option: 027 and if necessary, characteristic: 191 and option: 001 
+    * Sender contact information required: contacttype 02, with email address of consumer. Consumer is sender, fill in the email address to make sure consumer is informed.
+    * Return barcode: Shipment/Barcode
+    
+    *Smart Returns*
+    
+    PostNL offers the possibility of printing the Return label with a business reply number return address at a PostNL location. This is convenient for the returning customer because it is a label free solution. By adding the provided product options in the API call PostNL will provide an additional barcode in the response. The barcode is shared digitally from the webshop to the returning customer and is scanned at handover to PostNL.
+    
+    Return labels require some specific fields to be used:
+    
+    * Address of receiver: Shipment/Address/AddressType 01, always a business reply number 
+    * Address of sender: Customer/Address/AddressType 02 
+    * Product code: 2285 
+    * Product option: characteristic: 152 and option: 025 and if necessary, characteristic: 191 and option: 001 
+    * Sender contact information required: contacttype 02, with emailaddress of consumer. Consumer is sender, fill in the email address to make sure consumer is informed.  
+    * Return barcode: Shipment/Barcode
+    
+    ## Returns to a home address
+    
+    <table>
+      <thead>
+        <tr>
+          <th>Product code *</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>3285</td>
+          <td>Single return label to home address</td>
+        </tr>
+        <tr>
+          <td>3285</td>
+          <td>Smart return label to home address</td>
+        </tr>
+        <tr>
+          <td>- **</td>
+          <td>Label in the box</td>
+        </tr>
+        <tr>
+          <td>- **</td>
+          <td>Shipping & Return label</td>
+        </tr>
+      </tbody>
+    </table>
+    
+    \* These product codescan only be used after consulting your PostNL Pakketten account manager.
+    
+    \** No separate product code, create your return label at the same moment as you create the outbound shipment label.
+    
+    *Services*
+    
+    Product should be combined with at least one or more return services (product options):
+    
+    <table>
+      <thead>
+        <tr>
+          <th>Product option (characteristic/option)</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>152/025</td>
+          <td>Smart returns</td>
+        </tr>
+        <tr>
+          <td>152/026</td>
+          <td>Shipping & Return label</td>
+        </tr>
+        <tr>
+          <td>152/027</td>
+          <td>Single label</td>
+        </tr>
+        <tr>
+          <td>152/028</td>
+          <td>Label in the box</td>
+        </tr>
+        <tr>
+          <td>191/001</td>
+          <td>Return term 35 days</td>
+        </tr>
+      </tbody>
+    </table>
+    
+    The standard return term after pre-announcement is 20 days. Research has shown that most consumers return within this time frame and therefore this standard is set. An additional product option of 100 days return term is available upon request, please contact your account manager.
+    
+    **Smart Returns**
+    
+    PostNL offers the possibility of printing the Return label with a home address for returns at a PostNL location. This is convenient for the returning customer because it is a label free solution.  By adding the provided product options (see below) in the API call , PostNL will provide an additional barcode in the response.  The barcode is shared digitally from the webshop to the returning customer and is scanned at handover to PostNL. 
+    
+    Return labels require some specific fields to be used: 
+    
+    * Address of receiver: Shipment/Address/AddressType 01. Always a home address 
+    * Address of sender: Customer/Address/AddressType 02 
+    * Product code: 3285 
+    * Product option: characteristic: 152 and option: 025 and if necessary, characteristic: 191 and option: 001
+    * Sender contact information required: contacttype 02, with emailaddress of consumer. Consumer is sender, fill in the emailaddress to make sure consumer is informed.
+    * Return barcode: Shipment/Barcode
+    
+    **Shipping & Return label**
+    
+    PostNL offers the possibility of returning your parcel with the same label as is used for the outbound parcel. The receivers can use this label option to return the shipments free of charge via a PostNL location or at the door when a PostNL driver comes to deliver another parcel. 
+    
+    Available from Q4 (2022) upon request, please contact your account manager.
+    
+    Return labels require some specific fields to be used:
+    
+    * Address of receiver: Shipment/Address/AddressType 01
+    * Address of sender: Customer/Address/AddressType 02
+    * Return address: Shipment/Address/AddressType 08, always a home address 
+    * Product code of outbound shipment (eg 3085) 
+    * Product option: characteristic: 152 and option: 026 and characteristic: 191 and option: 001 
+    * Return barcode: Shipment/ReturnBarcode 
+    * Required contact information: contacttype 01, with emailaddress of consumer. Fill in the emailaddress to make sure consumer is informed. 
+    
+    **Single Label**
+    
+    PostNL Parcels  offers the possibility of providing a single return label, that allows customers to send parcels to a home address for returns.    The return label is provided from the webshop to the consumer and should be printed by the consumer. The consumer can use this label to return the shipments free of charge via a PostNL location or at the door when a PostNL driver comes to deliver another parcel. 
+    
+    Return labels require some specific fields to be used: 
+    
+    * Address of receiver: Shipment/Address/AddressType 01. Always a home address 
+    * Address of sender: Customer/Address/AddressType 02
+    * Product code: 3285 
+    * Product option: characteristic: 152 and option: 027 and if necessary, characteristic: 191 and option: 001 
+    * Sender contact information required: contacttype 02, with emailaddress of consumer. Consumer is sender, fill in the emailaddress to make sure consumer is informed.  
+    * Return barcode: Shipment/Barcode
+    
+    **Label in the Box**
+    
+    PostNL offers the possibility of sending return labels along with parcels. We call this the ‘Label in the box return label’. The receivers can use this label to return the shipments free of charge via a PostNL location or at the door when a PostNL driver comes to deliver another parcel.     
+    
+    The barcode of the return label is linked to the barcode of the outbound shipment label. 
+    
+    Return labels require some specific fields to be used:
+    
+    * Address of receiver: Shipment/Address/AddressType 01 
+    * Address of sender: Customer/Address/AddressType 02 
+    * Return address: Shipment/Address/AddressType 08, always a home address  
+    * Product code of outbound shipment (eg 3085) 
+    * Product option: characteristic: 152 and option: 028 and characteristic: 191 and option: 001  
+    * Return barcode: Shipment/ReturnBarcode 
+    * Required contact information: contacttype 01, with emailaddress of consumer. Fill in the emailaddress to make sure consumer is informed.
+    
+    ## Digital notification
+    
+    Consumers prefer to receive a digital notification instead of paper notifications. By providing the e-mail address of the consumer in the pre-announcement PostNL can share real-time information of the return parcel status. By implementing this, consumers will receive a digital notification and can easily track their return parcel in the PostNL app causing less customer calls.  
+    
+    Implementation: 
+    
+    **Shipping & return label, Label in the Box**
+    
+    * Contacttype is 01. The consumer starts as the receiver of the outbound parcel. During the return journey PostNL will make sure that the contact information of the consumer is placed correctly. The consumer  can now also follow its parcel as a return parcel in track & trace and will receive digital proof of handover. 
+    
+    Step 1 – fill in contact type ‘01’<br>
+    Step 2 – enter the e-mail address of the consumer at  ‘receiver@gmail.com’<br>
+    Step 3 – Enter telephone number of the consumer (optional)
+    
+    **Smart returns, single label**
+    
+    Implementation:
+    
+    * Contact type is 02. The consumer is now the sender of the parcel. The consumer will receive digital  proof of handover and can follow its return parcel in Track & Trace.
+    
+    Step 1 – fill in contact type ‘02’<br>
+    Step 2 – enter the e-mail address of the consumer at  ‘receiver@gmail.com’<br>
+    Step 3 – Enter telephone number of the consumer (optional)
+    
     # Extra @ Home
     
     ## Standard Extra @ Home products
@@ -9748,6 +9974,7 @@ tags:
         </tr>
       </tbody>
     </table>
+    
 - name: T&T status codes
   description: |
     # Status codes
