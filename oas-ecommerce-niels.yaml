@@ -9673,7 +9673,7 @@ tags:
     
     **Single Label**
     
-    PostNL Parcels  offers the possibility of providing a single return label, that allows customers to send parcels to a home address for returns.    The return label is provided from the webshop to the consumer and should be printed by the consumer. The consumer can use this label to return the shipments free of charge via a PostNL location or at the door when a PostNL driver comes to deliver another parcel. 
+    PostNL Parcels  offers the possibility of providing a single return label, that allows customers to send parcels to a home address for returns. The return label is provided from the webshop to the consumer and should be printed by the consumer. The consumer can use this label to return the shipments free of charge via a PostNL location or at the door when a PostNL driver comes to deliver another parcel. 
     
     Return labels require some specific fields to be used: 
     
@@ -9686,9 +9686,9 @@ tags:
     
     **Label in the Box**
     
-    PostNL offers the possibility of sending return labels along with parcels. We call this the ‘Label in the box return label’. The receivers can use this label to return the shipments free of charge via a PostNL location or at the door when a PostNL driver comes to deliver another parcel.     
+    PostNL offers the possibility of sending return labels along with parcels. We call this the ‘Label in the box return label’. The receivers can usethis labelto return the shipments free of charge via a PostNL location or at the door when a PostNL driver comes to deliver another parcel. 
     
-    The barcode of the return label is linked to the barcode of the outbound shipment label. 
+    The barcode of the return label is linked to the barcode of the outbound shipment label.
     
     Return labels require some specific fields to be used:
     
