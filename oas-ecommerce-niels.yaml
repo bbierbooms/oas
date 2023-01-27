@@ -1,9 +1,9 @@
 openapi: 3.0.1
 info:
   title: PostNL Ecommerce APIs
+  version: ""
   description: |
     Collection of PostNL API's for ecommerce processes
-  version: v1
   x-logo:
     url: https://github.com/bbierbooms/oas/blob/master/logo.png?raw=true
 servers:
@@ -29,7 +29,10 @@ x-tagGroups:
     - Error codes
     - Product codes
     - T&T status codes
-    - Reference codes
+    - Reference codes  
+  - name: 'Support'
+    tags:
+    - FAQ
 tags:
 - name: Postalcode check
   description: | 
@@ -296,7 +299,6 @@ tags:
     
     * The Location Type has been extended with PartnerLocationCodes (ResponseLocationCode).
     * If applicable, sustainability scores are now returned for each option
-    
 - name: Timeframes
   description: |
     ### Summary
@@ -701,7 +703,6 @@ tags:
     
     A Codingtext have been added to the labels for mailbox parcels (brievenbuspakje)
     * Shipment.CodingText (response)
-    
 - name: Barcode
   description: |
     ### Summary
@@ -750,7 +751,6 @@ tags:
         </tr>
       </tbody>
     </table>
-    
 - name: Confirming
   description: |
     ### Summary
@@ -1005,7 +1005,6 @@ tags:
         The following fields have been added to the interface;  
         * maxDays
         * language
-    
 - name: Error codes
   description: |
     
@@ -2192,7 +2191,7 @@ tags:
       </tbody>
     </table>
     
-    # Checkout & Delivery
+    # Checkout & Delivery Options
     
     **Location API**
     
@@ -2357,7 +2356,6 @@ tags:
         </tr>
       </tbody>
     </table>
-    
 - name: Product codes
   description: |
     
@@ -2507,7 +2505,7 @@ tags:
     
     More than 4000 pickup points available in supermarkets, bookstores etc.
     
-    It is mandatory to use the Checkout or the Locartion API to show he nearest PostNL Pickup points based on the postal code or coordinates of the customers. 
+    It is mandatory to use the Checkout or the Location API to show he nearest PostNL Pickup points based on the postal code or coordinates of the customers. 
     
     This frontend solution will return the correct information about the pickup point, which you will have to use in the Shipping, Labelling and/or Confirming API. Please check the specific documentation for more specific information.
         
@@ -3746,11 +3744,11 @@ tags:
     **Label in the box**<br>
     For the label in the box variant, you adjust your regular shipping label API call with some extra parameters. This results in an output of two labels, one initial shipping label and one return label.Label in the box return labels require some specific fields to be used:
     
-    * address of receiver: Shipment/Address/AddressType 01
-    * address of sender: Customer/Address/AddressType 02
-    * return address: Shipment/Address/AddressType 08
-    *  product code: regular product codes
-    *  return barcode: Shipment/ReturnBarcode
+    * Address of receiver: Shipment/Address/AddressType 01
+    * Address of sender: Customer/Address/AddressType 02
+    * Return address: Shipment/Address/AddressType 08
+    * Product code: regular product codes
+    * Return barcode: Shipment/ReturnBarcode
     
     For the return process in Belgium, a printed label on the box is required. Labels can not be printed within the PostNL pick-up points.
     
@@ -3804,146 +3802,90 @@ tags:
     <table>
       <thead>
         <tr>
-          <th>Product code</th>
-          <th>Combilabel *</th>
-          <th>Description</th>
+          <th>Product and service</th>
+          <th>Product code delivery</th>
+          <th>Characteristic & Option I</th>
+          <th>Characteristic & Option II</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>4940</td>
-          <td>4950</td>
-          <td>Parcels EU to Business (Delivery to neighbour +&nbsp; Signature on delivery + Standard Cover **)</td>
+          <td>Parcel EU 2C Track & Trace</td>
+          <td>4907</td>
+          <td>005-025</td>
+          <td>101-012</td>
         </tr>
         <tr>
-          <td>4944</td>
-          <td>4952</td>
-          <td>Parcels EU to Consumer (Delivery to neighbour +&nbsp; Signature on delivery + Standard Cover **)</td>
+          <td>Parcel EU 2C Track & Trace Insured</td>
+          <td>4907</td>
+          <td>004-015</td>
+          <td>101-012</td>
         </tr>
         <tr>
-          <td>n/a</td>
+          <td>Parcel EU 2C Track & Trace Insured Plus</td>
+          <td>4907</td>
+          <td>004-016</td>
+          <td>101-012</td>
+        </tr>
+        <tr>
+          <td>Parcel EU 2B Track & Trace</td>
+          <td>4907</td>
+          <td>005-025</td>
+          <td>101-013</td>
+        </tr>
+        <tr>
+          <td>Parcel EU 2B Track & Trace Insured</td>
+          <td>4907</td>
+          <td>004-015</td>
+          <td>101-013</td>
+        </tr>
+        <tr>
+          <td>Parcel EU 2B Track & Trace Insured Plus</td>
+          <td>4907</td>
+          <td>004-016</td>
+          <td>101-013</td>
+        </tr>
+        <tr>
+          <td>Parcel EU Standard*</td>
           <td>4999</td>
-          <td>Parcels EU Standard ***</td>
+          <td></td>
+          <td></td>
         </tr>
       </tbody>
     </table>
     
-    \*Please contact your PostNL Pakketten accountmanager if you want to use combi-label to FR or GB.
-    \*\*Standard Cover amount of €500.
-    \*\*\*These product codes can only be used after consulting your PostNL Pakketten account manager. Only available for France.
+    Product codes 4940, 4944, 4950 and 4952 can still be used for the Parcel EU product until further notice.
     
-    The barcode type for the above barcodes is 3S and the barcode length contains 13 characters.
+    \* This product code is only available for destination France and can only be used after consulting your PostNL account manager. 
     
-    For Parcels EU it is recommended to use the combilabel product codes to ensure a fast process. These labels contain a 3S barcode (also used for domestic shipments) and a partner barcode that is accepted in the country of destination. The combilabels are available for the following EU countries: AT, DE, ES, FI, FR*, IT, LU, SE. A standard Parcels EU label is a “single label” print with only one barcode, that requires an additional label in PostNL’s operations.
+    Per  the 1st of January 2023 we renewed our International Parcel portfolio . In order to profit from our new international services, we ask you to adjust the way of pre-alerting. Instructions are available here.
     
-    The single labels are printed in landscape mode, the combilabels in portrait mode. If the combilabel creation fails for some reason, automatically a standard Parcels EU single label is created. Track and trace and billing for all parcel shipments are based on the 3S barcode.
+    Parcel EU shipments are available ‘2C’ recipient is a consumer or ‘2B’ recipient is a business. Next to this there are three services available:
     
-    ** *Country codes* **
+    *	A Parcel Track & trace is a parcel with track & trace. 
+    *	A Parcel Track & trace insured is a parcel with track & trace, proof of delivery and insured up to €50,-
+    *	A Parcel Track & Trace Insured Plus is a parcel with track & trace, proof of delivery and insured up to €500,-. 
     
-    <table>
-      <thead>
-        <tr>
-          <th>Destination</th>
-          <th>Country code ISO2</th>
-          <th>Destination</th>
-          <th>Country code ISO2</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Austria</td>
-          <td>AT</td>
-          <td>Belgium</td>
-          <td>BE</td>
-        </tr>
-        <tr>
-          <td>Bulgaria</td>
-          <td>BG</td>
-          <td>Croatia</td>
-          <td>HR</td>
-        </tr>
-        <tr>
-          <td>Cyprus</td>
-          <td>CY</td>
-          <td>Czech Republic</td>
-          <td>CZ</td>
-        </tr>
-        <tr>
-          <td>Denmark (1)</td>
-          <td>DK</td>
-          <td>Estonia</td>
-          <td>EE</td>
-        </tr>
-        <tr>
-          <td>Finland</td>
-          <td>FI</td>
-          <td>France (2)</td>
-          <td>FR</td>
-        </tr>
-        <tr>
-          <td>Germany</td>
-          <td>DE</td>
-          <td>Greece</td>
-          <td>GR</td>
-        </tr>
-        <tr>
-          <td>Hungary</td>
-          <td>HU</td>
-          <td>Ireland</td>
-          <td>IE</td>
-        </tr>
-        <tr>
-          <td>Italy (3)</td>
-          <td>IT</td>
-          <td>Latvia</td>
-          <td>LV</td>
-        </tr>
-        <tr>
-          <td>Lithuania</td>
-          <td>LT</td>
-          <td>Luxembourg</td>
-          <td>LU</td>
-        </tr>
-        <tr>
-          <td>Netherlands</td>
-          <td>NL</td>
-          <td>Poland</td>
-          <td>PL</td>
-        </tr>
-        <tr>
-          <td>Portugal (4)</td>
-          <td>PT</td>
-          <td>Romania</td>
-          <td>RO</td>
-        </tr>
-        <tr>
-          <td>Slovakia</td>
-          <td>SK</td>
-          <td>Slovenia</td>
-          <td>SI</td>
-        </tr>
-        <tr>
-          <td>Spain (5)</td>
-          <td>ES</td>
-          <td>Sweden</td>
-          <td>SE</td>
-        </tr>
-      </tbody>
-    </table>
+    Read more about our <a href="https://www.postnl.nl/zakelijke-oplossingen/pakket-versturen/pakket-buitenland/" target="_blank" rel="noopener noreferrer">international parcel solutions</a>.
     
-    1. Excluding Faroe Islands and Greenland 
-    2. Including Monaco and Corsica. Excluding Andorra 
-    3. Excluding San Marino and Vatican City 
-    4. Including Azores and Madeira 
-    5. Including Balearic Islands. Excluding Canary Islands, Melilla and Ceuta
+    For an example API message of this product, view our example messages in the postman collection.
     
-    To recognize the Canary Islands (5):<br>
+    The barcode type for the above barcodes is 3S and the barcode length contains 13 characters. PostNL automatically provides you with the correct shipping label. Track & trace and billing for all parcel EU shipments are based on the 3S barcode.
+    
+    Parcel EU is available to the following destinations: AT, BG, HR, CY, DK (1), EE, FI, FR (2), DE, SI, GR, HU, IE, IT (3), LV, LT, LU, MT, CZ, PL, PT (4), RO, SK, ES (5), SE
+    
+    1.	Excluding Faroe Islands and Greenland 
+    2.	Including Monaco and Corsica. Excluding Andorra 
+    3.	Excluding San Marino and Vatican City 
+    4.	Including Azores and Madeira 
+    5.	Including Balearic Islands. Excluding Canary Islands, Melilla and Ceuta
+    
+    To recognize the Canary Islands (5):
+    
     Las Palmas has country code IC and zip codes start with 35. Santa Cruz has country code IC and zip codes start with 38. Melilla has country code IC and zip code starts with 52.
     
     Parcels to the Channel Islands, the Canary Islands can only be sent with the Parcels non-EU product: Ask your account manager about the available options.
-    
-    As of May 18th Malta (MT) is a Parcel EU country as well.
-    
+
     **Business rules**
     
     * Barcode requirements
@@ -3951,12 +3893,11 @@ tags:
       * Range must be 1-4 letter string 
       * Serie must be 7-12 digits 
       * Barcode must be 13 characters long
-    * Receiver country must be an Parcels EU country 
+    * Receiver country must be a Parcels EU country 
     * Receiver address fields required
       * Company name or last name 
       * City 
-      * Country code 
-    * Door code is not allowed for countries other than FR, IE and SE
+      * Country code
     
     ## Easy Return Service (ERS)
     
@@ -3992,66 +3933,57 @@ tags:
     ## Parcels Non-EU
     
     <table>
-      <tbody>
-        <tr>
-          <td>
-            <strong>Product code *</strong>
-          </td>
-          <td>
-            <strong>Description</strong>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p>4945</p>
-          </td>
-          <td>
-            <p>Parcels Non-EU</p>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    
-    *Shipments to destinations outside the EU can be send via the product ‘Parcels non EU’’, productcode 4945. The label contains a single Internationally recognized S10 barcode. The S10 barcode is sufficient for requesting tracking, labels and the use of shippingstatus webservice. The labels are printed on A5 paper (two or three forms, depending on the type of goods shipped).
-    
-    *Country codes*
-    
-    Parcels non-EU covers all countries except for the countries as mentioned in previous and Dutch/Belgium domestic sections. Please be aware of the specific exceptions as mentioned in the Parcels EU section.
-    
-    *Barcode type*
-    
-    <table>
       <thead>
         <tr>
-          <th>Product code</th>
-          <th>Barcode type</th>
-          <th>Barcode length</th>
-          <th>In field</th>
+          <th>Product and service</th>
+          <th>Product code delivery</th>
+          <th>Characteristic & Option</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>
-            <p>4945</p>
-          </td>
-          <td>
-            <p>S10</p>
-          </td>
-          <td>
-            <p>13</p>
-          </td>
-          <td>
-            <p>Shipment / Barcode</p>
-          </td>
+          <td>Parcel Non EU Track & Trace</td>
+          <td>4909</td>
+          <td>005-025</td>
+        </tr>
+        <tr>
+          <td>Parcel Non EU Track & Trace Insured</td>
+          <td>4909</td>
+          <td>004-015</td>
+        </tr>
+        <tr>
+          <td>Parcel Non EU Track & Trace</td>
+          <td>4909</td>
+          <td>004-016</td>
         </tr>
       </tbody>
     </table>
     
-    Parcels non-EU barcodes can only be generated via the API, using the Barcode method. Details are mentioned in the Barcode Webservice documentation.
+    Product codes 4945 and 4947 can still be used for the Parcel Non-EU product until further notice.  Please note for destination UK (DDP) and US (DDU) we also have specific solutions.
+    
+    Per  the 1st of January 2023 we renewed our International Parcel portfolio . In order to profit from our new international services, we ask you to adjust the way of pre-alerting. Instructions are available <a href="https://developer.postnl.nl/internationalservices/" target="_blank" rel="noopener noreferrer">here</a>.
+    
+    For Parcel Non-EU there are three services available:
+    
+    *	A Parcel Track & trace is a parcel with track & trace. 
+    *	A Parcel Track & trace insured is a parcel with track & trace, proof of delivery and insured up to €50,-. 
+    *	A Parcel Track & Trace Insured Plus is a parcel with track & trace, proof of delivery and insured up to €500,-.
+    
+    Read more about our <a href="https://www.postnl.nl/zakelijke-oplossingen/pakket-versturen/pakket-buitenland/" target="_blank" rel="noopener noreferrer">international parcel solutions</a>.
+    
+    For an example API message of this product, view our example messages in the Postman collection.
+    
+    The barcode type for the above products is a single internationally recognized S10 barcode and the barcode length contains 13 characters. Parcels non-EU S10 barcodes can only be generated via the API, using the Barcode method. Details are mentioned in the Barcode Webservice documentation.
+    
+    PostNL automatically provides you with the correct shipping label. Track & trace and billing for all parcel Non EU shipments are based on the S10 barcode. The labels are printed on A5 paper (two or three forms A4, depending on the type of goods shipped).
+    
+    **Country codes**
+    
+    Parcels non-EU covers all countries except for the countries as mentioned in previous and Dutch/Belgium domestic sections. Please be aware of the specific exceptions as mentioned in the Parcels EU section.
     
     **Business rules**
     
-    * Receiver address fields require
+    * Receiver address fields required
       * Company name or last name 
       * City 
       * Country code
@@ -4082,15 +4014,9 @@ tags:
       </thead>
       <tbody>
         <tr>
-          <td>
-            <p>4905*</p>
-          </td>
-          <td>
-            <p>Yes</p>
-          </td>
-          <td>
-            <p>DDU Delivery Duty Unpaid</p>
-          </td>
+          <td>4905*</td>
+          <td>Yes</td>
+          <td>DDU Delivery Duty Unpaid</td>
         </tr>
       </tbody>
     </table>
@@ -4136,95 +4062,48 @@ tags:
       </thead>
       <tbody>
         <tr>
-          <td>
-            <p>TelNr</p>
-          </td>
-          <td>
-            <p>15</p>
-          </td>
+          <td>TelNr</td>
+          <td>15</td>
         </tr>
         <tr>
-          <td>
-            <p>SMSNr</p>
-          </td>
-          <td>
-            <p>15</p>
-          </td>
+          <td>SMSNr</td>
+          <td>15</td>
         </tr>
         <tr>
-          <td>
-            <p>Email</p>
-          </td>
-          <td>
-            <p>35</p>
-          </td>
+          <td>Email</td>
+          <td>35</td>
         </tr>
         <tr>
-          <td>
-            <p>Reference</p>
-          </td>
-          <td>
-            <p>35</p>
-          </td>
+          <td>Reference</td>
+          <td>35</td>
         </tr>
         <tr>
-          <td>
-            <p>Remark</p>
-          </td>
-          <td>
-            <p>35</p>
-          </td>
+          <td>Remark</td>
+          <td>35</td>
         </tr>
         <tr>
-          <td>
-            <p>Name/CompanyName</p>
-            <p>(only use one)</p>
-          </td>
-          <td>
-            <p>35</p>
-          </td>
+          <td>Name/CompanyName</p>(only use one)</td>
+          <td>35</td>
         </tr>
         <tr>
-          <td>
-            <p>Street + HouseNr + HouseNrExt</p>
-            <p>(all together mustn&rsquo;t exceed the limit)</p>
-          </td>
-          <td>
-            <p>35</p>
-          </td>
+          <td>Street + HouseNr + HouseNrExt</p>(all together mustn&rsquo;t exceed the limit)</td>
+          <td>35</td>
         </tr>
         <tr>
-          <td>
-            <p>Buildingname + Department</p>
-            <p>(all together mustn&rsquo;t exceed the limit)</p>
-          </td>
-          <td>
-            <p>35</p>
-          </td>
+          <td>Buildingname + Department</p>(all together mustn&rsquo;t exceed the limit)</td>
+          <td>35</td>
         </tr>
         <tr>
-          <td>
-            <p>City</p>
-          </td>
-          <td>
-            <p>30</p>
-          </td>
+          <td>City</td>
+          <td>30</td>
         </tr>
         <tr>
-          <td>
-            <p>Zipcode</p>
-          </td>
-          <td>
-            <p>9</p>
-          </td>
+          <td>Zipcode</td>
+          <td>9</td>
         </tr>
         <tr>
-          <td>
-            <p>HSTariffNr</p>
-          </td>
-          <td>
-            <p>Min 6 - Max 10</p>
-          </td>
+          <td>HSTariffNr</td>
+          <td>Min 6 - Max 10</td>
         </tr>
       </tbody>
     </table>
@@ -4312,148 +4191,76 @@ tags:
       </thead>
       <tbody>
         <tr>
-          <td>
-            <p>TelNr</p>
-          </td>
-          <td>
-            <p>15</p>
-          </td>
+          <td>TelNr</td>
+          <td>15</td>
         </tr>
         <tr>
-          <td>
-            <p>TelNr</p>
-          </td>
-          <td>
-            <p>15</p>
-          </td>
+          <td>TelNr</td>
+          <td>15</td>
         </tr>
         <tr>
-          <td>
-            <p>SMSNr</p>
-          </td>
-          <td>
-            <p>15</p>
-          </td>
+          <td>SMSNr</td>
+          <td>15</td>
         </tr>
         <tr>
-          <td>
-            <p>Email</p>
-          </td>
-          <td>
-            <p>80</p>
-          </td>
+          <td>Email</td>
+          <td>80</td>
         </tr>
         <tr>
-          <td>
-            <p>Reference</p>
-          </td>
-          <td>
-            <p>20</p>
-          </td>
+          <td>Reference</td>
+          <td>20</td>
         </tr>
         <tr>
-          <td>
-            <p>Remark</p>
-          </td>
-          <td>
-            <p>20</p>
-          </td>
+          <td>Remark</td>
+          <td>20</td>
         </tr>
         <tr>
-          <td>
-            <p>FirstName</p>
-          </td>
-          <td>
-            <p>50</p>
-          </td>
+          <td>FirstName</td>
+          <td>50</td>
         </tr>
         <tr>
-          <td>
-            <p>Name</p>
-          </td>
-          <td>
-            <p>50</p>
-          </td>
+          <td>Name</td>
+          <td>50</td>
         </tr>
         <tr>
-          <td>
-            <p>HouseNr + HouseNrExt</p>
-          </td>
-          <td>
-            <p>10</p>
-          </td>
+          <td>HouseNr + HouseNrExt</td>
+          <td>10</td>
         </tr>
         <tr>
-          <td>
-            <p>Buildingname</p>
-          </td>
-          <td>
-            <p>32</p>
-          </td>
+          <td>Buildingname</td>
+          <td>32</td>
         </tr>
         <tr>
-          <td>
-            <p>Street</p>
-          </td>
-          <td>
-            <p>50</p>
-          </td>
+          <td>Street</td>
+          <td>50</td>
         </tr>
         <tr>
-          <td>
-            <p>CompanyName + Department</p>
-          </td>
-          <td>
-            <p>50</p>
-          </td>
+          <td>CompanyName + Department</td>
+          <td>50</td>
         </tr>
         <tr>
-          <td>
-            <p>Floor</p>
-          </td>
-          <td>
-            <p>50</p>
-          </td>
+          <td>Floor</td>
+          <td>50</td>
         </tr>
         <tr>
-          <td>
-            <p>Area</p>
-          </td>
-          <td>
-            <p>50</p>
-          </td>
+          <td>Area</td>
+          <td>50</td>
         </tr>
         <tr>
-          <td>
-            <p>City</p>
-          </td>
-          <td>
-            <p>32</p>
-          </td>
+          <td>City</td>
+          <td>32</td>
         </tr>
         <tr>
-          <td>
-            <p>Region</p>
-          </td>
-          <td>
-            <p>32</p>
-          </td>
+          <td>Region</td>
+          <td>32</td>
         </tr>
         <tr>
-          <td>
-            <p>Zipcode</p>
-          </td>
-          <td>
-            <p>10</p>
-          </td>
+          <td>Zipcode</td>
+          <td>10</td>
         </tr>
         <tr>
-          <td>
-            <p>CountryCode</p>
-          </td>
-          <td>
-            <p>2</p>
-          </td>
+          <td>CountryCode</td>
+          <td>2</td>
         </tr>
       </tbody>
     </table>
@@ -4474,50 +4281,62 @@ tags:
       <tbody>
         <tr>
           <td>Untracked</td>
-          <td>6905*</td>
-          <td>Priority Packet Bulk</td>
-          <td>UE</td>
-        </tr>
-        <tr>
-          <td>Untracked</td>
           <td>6440</td>
-          <td>Priority Letterbox Packet</td>
+          <td>Boxable Untracked</td>
           <td>UE</td>
         </tr>
         <tr>
           <td>Untracked</td>
           <td>6405</td>
-          <td>Priority Packet</td>
+          <td>Packet Untracked</td>
           <td>UE</td>
         </tr>
         <tr>
           <td>Untracked</td>
           <td>6945*</td>
-          <td>Priority Packet Bulk Boxable</td>
+          <td>Boxable Untracked (contract)</td>
+          <td>UE</td>
+        </tr>
+        <tr>
+          <td>Untracked</td>
+          <td>6905*</td>
+          <td>Packet Untracked (contract)</td>
           <td>UE</td>
         </tr>
         <tr>
           <td>Tracked</td>
-          <td>6350</td>
-          <td>Priority Packet Tracked</td>
+          <td>6972</td>
+          <td>Boxable Track & Trace</td>
           <td>LA</td>
         </tr>
         <tr>
           <td>Tracked</td>
-          <td>6550*</td>
-          <td>Priority Packet Tracked Bulk</td>
+          <td>6350</td>
+          <td>Packet Track & Trace</td>
           <td>LA</td>
         </tr>
         <tr>
           <td>Tracked</td>
           <td>6942*</td>
-          <td>Priority Packet Tracked Bulk Boxable</td>
+          <td>Boxable Track & Trace (contract)</td>
+          <td>LA</td>
+        </tr>
+        <tr>
+          <td>Tracked</td>
+          <td>6550*</td>
+          <td>Packet Track & Trace (contract)</td>
           <td>LA</td>
         </tr>
         <tr>
           <td>Registered</td>
           <td>6906</td>
-          <td>Priority Packet Extra</td>
+          <td>Packet Track & Trace insured</td>
+          <td>RI</td>
+        </tr>
+        <tr>
+          <td>Registered</td>
+          <td>6908*</td>
+          <td>Packet Track & Trace insured (contract)</td>
           <td>RI</td>
         </tr>
         <tr>
@@ -4532,32 +4351,29 @@ tags:
           <td>Registered Bulk Mail</td>
           <td>RI</td>
         </tr>
-        <tr>
-          <td>Registered</td>
-          <td>6908*</td>
-          <td>Priority Packet Extra Bulk</td>
-          <td>RI</td>
-        </tr>
-        <tr>
-          <td>Registered</td>
-          <td>6040*</td>
-          <td>Registered Book</td>
-          <td>RI</td>
-        </tr>
-        <tr>
-          <td>Registered</td>
-          <td>6027*</td>
-          <td>Registered BVO</td>
-          <td>RI</td>
-        </tr>
       </tbody>
     </table>
     
-    \*These product codes can only be used after consulting your PostNL International account manager.
+    \* These product codes can only be used after consulting your PostNL account manager.
     
-    The product codes above are the standard PostNL products. It is possible that you received other product codes for tailored solutions.
+    Per  the 1st of January 2023 we renewed our International portfolio . 
     
-    **Note:** You must use the Shipment v1 or the latest version of the Labelling API (2.2). 
+    For (letterbox)packets three services are available:
+    
+    *	A (letterbox)packet Basic is a packet without extra services  
+    *	A (letterbox)packet Track & trace is a packet with Track&Trace.
+    *	A Packet Track & Trace Insured is a packet with track&trace, proof of delivery and insured up to €50,-.
+    
+    Read more about our <a href="https://www.postnl.nl/zakelijke-oplossingen/pakket-versturen/pakket-buitenland/pakjes-buitenland/" target="_blank" rel="noopener noreferrer">international parcel solutions</a>.
+    
+    For an example API message of this product, view our example messages in the postman collection.
+    
+    The barcode type for the above products is a single internationally recognized S10 barcode and the barcode length contains 13 characters. S10 barcodes can only be generated via the API, using the Barcode method. Details are mentioned in the Barcode Webservice documentation.
+    
+    PostNL automatically provides you with the correct shipmentlabel. Track & trace and billing for all shipments are based on the S10 barcode. 
+    
+    Note: You have to use the latest version of the Labelling API (2.2) or Shipping API (V1).
+
     
     # Cargo
     
@@ -4590,7 +4406,7 @@ tags:
             <p>3606</p>
           </td>
           <td>
-            <p>AVG Pallet Pharma&amp;Care 2-8 C</p>
+            <p>AVG Pallet Pharma&Care 2-8 C</p>
           </td>
         </tr>
         <tr>
@@ -4598,7 +4414,7 @@ tags:
             <p>3607</p>
           </td>
           <td>
-            <p>AVG Pallet Pharma&amp;Care 15-25 C</p>
+            <p>AVG Pallet Pharma&Care 15-25 C</p>
           </td>
         </tr>
         <tr>
@@ -4606,7 +4422,7 @@ tags:
             <p>3608</p>
           </td>
           <td>
-            <p>AVG Cargo Parcel Pharma&amp;Care 2-8 C</p>
+            <p>AVG Cargo Parcel Pharma&Care 2-8 C</p>
           </td>
         </tr>
         <tr>
@@ -4614,7 +4430,7 @@ tags:
             <p>3609</p>
           </td>
           <td>
-            <p>AVG Cargo Parcel Pharma&amp;Care 15-25 C</p>
+            <p>AVG Cargo Parcel Pharma&Care 15-25 C</p>
           </td>
         </tr>
         <tr>
@@ -4927,13 +4743,13 @@ tags:
             <p>3606</p>
           </td>
           <td>
-            <p>AVG Pallet Pharma&amp;Care 2-8 C</p>
+            <p>AVG Pallet Pharma&Care 2-8 C</p>
           </td>
           <td>
             <p>BENELUX</p>
           </td>
           <td>
-            <p>Pharma&amp;Care</p>
+            <p>Pharma&Care</p>
           </td>
         </tr>
         <tr>
@@ -4944,13 +4760,13 @@ tags:
             <p>3607</p>
           </td>
           <td>
-            <p>AVG Pallet Pharma&amp;Care 15-25 C</p>
+            <p>AVG Pallet Pharma&Care 15-25 C</p>
           </td>
           <td>
             <p>BENELUX</p>
           </td>
           <td>
-            <p>Pharma&amp;Care</p>
+            <p>Pharma&Care</p>
           </td>
         </tr>
         <tr>
@@ -4961,13 +4777,13 @@ tags:
             <p>3608</p>
           </td>
           <td>
-            <p>AVG Cargo Parcel Pharma&amp;Care 2-8 C</p>
+            <p>AVG Cargo Parcel Pharma&Care 2-8 C</p>
           </td>
           <td>
             <p>BENELUX</p>
           </td>
           <td>
-            <p>Pharma&amp;Care</p>
+            <p>Pharma&Care</p>
           </td>
         </tr>
         <tr>
@@ -4978,13 +4794,13 @@ tags:
             <p>3609</p>
           </td>
           <td>
-            <p>AVG Cargo Parcel Pharma&amp;Care 15-25 C</p>
+            <p>AVG Cargo Parcel Pharma&Care 15-25 C</p>
           </td>
           <td>
             <p>BENELUX</p>
           </td>
           <td>
-            <p>Pharma&amp;Care</p>
+            <p>Pharma&Care</p>
           </td>
         </tr>
         <tr>
@@ -5389,7 +5205,7 @@ tags:
             <p>3606 **</p>
           </td>
           <td>
-            <p>AVG Pallet Pharma&amp;Care 2-8 C</p>
+            <p>AVG Pallet Pharma&Care 2-8 C</p>
           </td>
         </tr>
         <tr>
@@ -5397,7 +5213,7 @@ tags:
             <p>3607 **</p>
           </td>
           <td>
-            <p>AVG Pallet Pharma&amp;Care 15-25 C</p>
+            <p>AVG Pallet Pharma&Care 15-25 C</p>
           </td>
         </tr>
         <tr>
@@ -5405,7 +5221,7 @@ tags:
             <p>3608 **</p>
           </td>
           <td>
-            <p>AVG Cargo Parcel Pharma&amp;Care 2-8 C</p>
+            <p>AVG Cargo Parcel Pharma&Care 2-8 C</p>
           </td>
         </tr>
         <tr>
@@ -5413,7 +5229,7 @@ tags:
             <p>3609 **</p>
           </td>
           <td>
-            <p>AVG Cargo Parcel Pharma&amp;Care 15-25 C</p>
+            <p>AVG Cargo Parcel Pharma&Care 15-25 C</p>
           </td>
         </tr>
         <tr>
@@ -6094,7 +5910,6 @@ tags:
         </tr>
       </tbody>
     </table>
-    
 - name: T&T status codes
   description: |
     # Status codes
@@ -7968,7 +7783,7 @@ tags:
         </tr>
         <tr>
           <td class="tg-0lax">Y48</td>
-          <td class="tg-0lax">Pakket onbestelbaar: fout exportformulier &amp; geen retouradres</td>
+          <td class="tg-0lax">Pakket onbestelbaar: fout exportformulier & geen retouradres</td>
           <td class="tg-0lax">Parcel is undeliverable: incorrect export form and  missing return adress</td>
           <td class="tg-0lax">99, Niet van toepassing</td>
         </tr>
@@ -7992,22 +7807,33 @@ tags:
         </tr>
       </tbody>
     </table>
-    
 - name: Reference codes
   description: |
     # Printer types
     
-    GraphicFile|GIF 200, 300 and 600 dpi
+    GraphicFile|GIF 200 dpi<br>
+    GraphicFile|GIF 300 dpi<br>
+    GraphicFile|GIF 600 dpi
     
-    GraphicFile|JPG 200,300 and 600 dpi
+    GraphicFile|JPG 200 dpi<br>
+    GraphicFile|JPG 300 dpi<br>
+    GraphicFile|JPG 600 dpi
     
     GraphicFile|PDF
     
-    GraphicFile|PDF|MergeA, MergeB, MergeC and MergeD 
+    GraphicFile|PDF|MergeA 
     
-    Zebra|Generic ZPL II 200, 300 and 600 dpi*
+    Zebra|Generic ZPL II 200 dpi*<br>
+    Zebra|Generic ZPL II 300 dpi*<br>
+    Zebra|Generic ZPL II 600 dpi*
     
     \* It is not recommended to send .pdf files/labels directly to a Zebra printer If you want to send it directly to your Zebra printer, please use .gif files or the native (generic) zpl printer type.
+    
+    **Printing quality**
+    
+    When submitting a call to the Shipping or Labelling API be sure to check if the requested printer type matches the supported dpi specifications of your printer. The following documentation contains information on how to improve the quality of your printed shipping labels.
+    
+    <a href="https://www.postnl.nl/Images/printkwaliteit-verzendlabels_tcm10-227254.pdf" target="_blank" rel="noopener noreferrer">Documentation Printing quality</a>
     
     # Label types
     
@@ -8021,10 +7847,6 @@ tags:
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Labeltype</td>
-          <td>Description</td>
-        </tr>
         <tr>
           <td>Label (A6)</td>
           <td>normal shipping label for all shipments except for Parcels Non-EU</td>
@@ -8207,8 +8029,6 @@ tags:
     
     # Delivery options
     
-    It is possible to specify which delivery options should be considered. The possible values are:
-    
     <table>
       <thead>
         <tr>
@@ -8230,7 +8050,7 @@ tags:
           <td>Sunday delivery</td>
         </tr>
         <tr>
-          <td>Today</td>
+          <td>Today*</td>
           <td>Delivery on day of handover to PostNL</td>
         </tr>
         <tr>
@@ -8238,19 +8058,15 @@ tags:
           <td>Sameday delivery</td>
         </tr>
         <tr>
-          <td>08:00-09:00</td>
+          <td>Morning Delivery<br>08:00-10:00</td>
           <td>Guaranteed delivery between the timeframe specified</td>
         </tr>
         <tr>
-          <td>08:00-10:00</td>
+          <td>Noon Delivery<br>08:00-12:00</td>
           <td>Guaranteed delivery between the timeframe specified</td>
         </tr>
         <tr>
-          <td>08:00-12:00</td>
-          <td>Guaranteed delivery between the timeframe specified</td>
-        </tr>
-        <tr>
-          <td>08:00-17:00</td>
+          <td>Afternoon Delivery<br>08:00-17:00</td>
           <td>Guaranteed delivery between the timeframe specified</td>
         </tr>
         <tr>
@@ -8260,8 +8076,43 @@ tags:
       </tbody>
     </table>
     
-    All the above delivery options can be used in the request of the Checkout API. PostNL will charge an additional amount for delivery of the parcels with the options Evening, Morning, (After)Noon, Sameday, Delivery on demand, Guaranteed delivery, Sunday and Today. For specific costs and the activation of this delivery options, it is recommended to consult your PostNL Pakketten account manager. For Sunday, Sameday and Today delivery it is even mandatory to consult your account manager.
-    \* The Today delivery option will be returned on any given day (Mon – Sun), but will only be on the first following business day.
+    
+    \* The Today delivery option will be returned on any given day (Mon – Sun) but will only be possible on the first following business day.
+    
+    **Checkout API**
+    
+    All the above delivery options can be used in the request of the Checkout API. 
+    
+    **Deliverydate and Timeframe API**
+    
+    The names of the guaranteed options differ.
+    
+    <table>
+      <thead>
+        <tr>
+          <th>Option</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Morning</td>
+          <td>Guaranteed delivery between the timeframe 08:00-10:00</td>
+        </tr>
+        <tr>
+          <td>Noon</td>
+          <td>Guaranteed delivery between the timeframe 08:00-12:00</td>
+        </tr>
+        <tr>
+          <td>Afternoon</td>
+          <td>Guaranteed delivery between the timeframe 08:00-17:00</td>
+        </tr>
+      </tbody>
+    </table>
+    
+    The ‘Pickup’ option is not available in the Deliverydate and Timeframe API. If you want to retrieve pickup locations, you can use the Checkout or Location API. 
+    
+    PostNL will charge an additional amount for delivery of the parcels with the options Evening, Morning, (After)Noon, Sameday, Delivery on demand, Guaranteed delivery, Sunday and Today. For specific costs and the activation of this delivery options, it is recommended to consult your PostNL Parcels account manager. For Sunday, Sameday and Today delivery it is even mandatory to consult your account manager. 
     
     # Sustainability codes
     
@@ -8302,6 +8153,11 @@ tags:
     
     Not available: Not a sustainable option (yet).
     
+    Please refer to the <a href="https://developer.postnl.nl/browse-apis/checkout/checkout-api/" target="_blank" rel="noopener noreferrer">Guidelines</a> for more information about Sustainability
+- name: FAQ
+  description: |
+  
+    <a href="https://developer.postnl.nl/support/" target="_blank" rel="noopener noreferrer">https://developer.postnl.nl/support/</a>
 paths:
   '/shipment/checkout/v1/postalcodecheck':
     $ref: 'https://api-acc.postnl.nl/shipment/checkout/v1/postalcodecheck?swagger#/paths/~1shipment~1checkout~1v1~1postalcodecheck'
