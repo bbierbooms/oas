@@ -3862,9 +3862,9 @@ tags:
     
     Parcel EU shipments are available ‘2C’ recipient is a consumer or ‘2B’ recipient is a business. Next to this there are three services available:
     
-    *	A Parcel Track & trace is a parcel with track & trace. 
-    *	A Parcel Track & trace insured is a parcel with track & trace, proof of delivery and insured up to €50,-
-    *	A Parcel Track & Trace Insured Plus is a parcel with track & trace, proof of delivery and insured up to €500,-. 
+    * A Parcel Track & trace is a parcel with track & trace. 
+    * A Parcel Track & trace insured is a parcel with track & trace, proof of delivery and insured up to €50,-
+    * A Parcel Track & Trace Insured Plus is a parcel with track & trace, proof of delivery and insured up to €500,-. 
     
     Read more about our <a href="https://www.postnl.nl/zakelijke-oplossingen/pakket-versturen/pakket-buitenland/" target="_blank" rel="noopener noreferrer">international parcel solutions</a>.
     
@@ -3874,18 +3874,18 @@ tags:
     
     Parcel EU is available to the following destinations: AT, BG, HR, CY, DK (1), EE, FI, FR (2), DE, SI, GR, HU, IE, IT (3), LV, LT, LU, MT, CZ, PL, PT (4), RO, SK, ES (5), SE
     
-    1.	Excluding Faroe Islands and Greenland 
-    2.	Including Monaco and Corsica. Excluding Andorra 
-    3.	Excluding San Marino and Vatican City 
-    4.	Including Azores and Madeira 
-    5.	Including Balearic Islands. Excluding Canary Islands, Melilla and Ceuta
+    1. Excluding Faroe Islands and Greenland 
+    2. Including Monaco and Corsica. Excluding Andorra 
+    3. Excluding San Marino and Vatican City 
+    4. Including Azores and Madeira 
+    5. Including Balearic Islands. Excluding Canary Islands, Melilla and Ceuta
     
     To recognize the Canary Islands (5):
     
     Las Palmas has country code IC and zip codes start with 35. Santa Cruz has country code IC and zip codes start with 38. Melilla has country code IC and zip code starts with 52.
     
     Parcels to the Channel Islands, the Canary Islands can only be sent with the Parcels non-EU product: Ask your account manager about the available options.
-
+    
     **Business rules**
     
     * Barcode requirements
@@ -3965,9 +3965,9 @@ tags:
     
     For Parcel Non-EU there are three services available:
     
-    *	A Parcel Track & trace is a parcel with track & trace. 
-    *	A Parcel Track & trace insured is a parcel with track & trace, proof of delivery and insured up to €50,-. 
-    *	A Parcel Track & Trace Insured Plus is a parcel with track & trace, proof of delivery and insured up to €500,-.
+    *  A Parcel Track & trace is a parcel with track & trace. 
+    *  A Parcel Track & trace insured is a parcel with track & trace, proof of delivery and insured up to €50,-. 
+    *  A Parcel Track & Trace Insured Plus is a parcel with track & trace, proof of delivery and insured up to €500,-.
     
     Read more about our <a href="https://www.postnl.nl/zakelijke-oplossingen/pakket-versturen/pakket-buitenland/" target="_blank" rel="noopener noreferrer">international parcel solutions</a>.
     
@@ -4360,9 +4360,9 @@ tags:
     
     For (letterbox)packets three services are available:
     
-    *	A (letterbox)packet Basic is a packet without extra services  
-    *	A (letterbox)packet Track & trace is a packet with Track&Trace.
-    *	A Packet Track & Trace Insured is a packet with track&trace, proof of delivery and insured up to €50,-.
+    *  A (letterbox)packet Basic is a packet without extra services  
+    *  A (letterbox)packet Track & trace is a packet with Track&Trace.
+    *  A Packet Track & Trace Insured is a packet with track&trace, proof of delivery and insured up to €50,-.
     
     Read more about our <a href="https://www.postnl.nl/zakelijke-oplossingen/pakket-versturen/pakket-buitenland/pakjes-buitenland/" target="_blank" rel="noopener noreferrer">international parcel solutions</a>.
     
@@ -8156,8 +8156,9 @@ tags:
     Please refer to the <a href="https://developer.postnl.nl/browse-apis/checkout/checkout-api/" target="_blank" rel="noopener noreferrer">Guidelines</a> for more information about Sustainability
 - name: FAQ
   description: |
-  
-    <a href="https://developer.postnl.nl/support/" target="_blank" rel="noopener noreferrer">https://developer.postnl.nl/support/</a>
+    <button type="button">
+      <a href="https://developer.postnl.nl/support/" target="_blank" rel="noopener noreferrer">Frequently asked questions</a>
+    </button>
 paths:
   '/shipment/checkout/v1/postalcodecheck':
     $ref: 'https://api-acc.postnl.nl/shipment/checkout/v1/postalcodecheck?swagger#/paths/~1shipment~1checkout~1v1~1postalcodecheck'
